@@ -32,3 +32,5 @@
 *.app
 jogo
 
+#vscode
+.vscode/settings.json
