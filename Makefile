@@ -17,8 +17,8 @@ CC=g++
 CC_FLAGS=-c         \
 		 -W         \
 		 -Wall      \
-		 -ansi      \
-		 -pedantic
+		    		\
+		 
 
 #Flags sfml
 SFML= -lsfml-graphics  \

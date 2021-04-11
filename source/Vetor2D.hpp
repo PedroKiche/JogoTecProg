@@ -1,112 +1,33 @@
 #ifndef _VETOR2D_H_
 #define _VETOR2D_H_
 
-#include<math.h>
 
-template<typename T>
+template <typename T>
 class Vetor2D
 {
 public:
     T x, y;
 
-template <typename T>
-Vetor2D<T>::Vetor2D(T x = 0.0, T y = 0.0)
-{
-    this->x = x;
-    this->y = y;
-}
+    Vetor2D(T X = 0.0, T Y = 0.0);
+    ~Vetor2D();
 
-template <typename T>
-Vetor2D<T>::~Vetor2D() 
-{
-}
-
-template <typename T>
-Vetor2D<T> Vetor2D<T>::operator +(Vetor2D<T> v) 
-{
-    return Vetor2D<T>(x + v.x, y + v.y);
-}
-
-template <typename T>
-Vetor2D<T> Vetor2D<T>::operator -(Vetor2D<T> v) 
-{
-    return Vetor2D<T>(x - v.x, y + v.y);
-}
-
-template <typename T>
-Vetor2D<T> Vetor2D<T>::operator *(int i) 
-{
-    return Vetor2D<T>(x*i, y*i);
-}
-  
-template <typename T>
-Vetor2D<T> Vetor2D<T>::operator *(float f) 
-{
-    return Vetor2D<T>(x*f, y*f);
-}
-
-template <typename T>
-Vetor2D<T> Vetor2D<T>::operator *(double d) 
-{
-    return Vetor2D<T>(x*d, y*d);  
-}
-
-template <typename T>
-void Vetor2D<T>::operator +=(Vetor2D<T> v) 
-{
-    x += v.x;
-    y += v.y;
-}
-
-template <typename T>
-void Vetor2D<T>::operator -=(Vetor2D<T> v) 
-{
-    x -= v.x;
-    y -= v.y;
-}
-
-template <typename T>
-void Vetor2D<T>::operator *=(int i) 
-{
-    x *= i;
-    y *= i;
-}
-
-template <typename T>
-void Vetor2D<T>::operator *=(float f) 
-{
-    x *= f;
-    y *= f;
-}
-
-template <typename T>
-void Vetor2D<T>::operator *=(double d) 
-{
-    x *= d;
-    y *= d;
-}
-
-template <typename T>
-T Vetor2D<T>::operator *(Vetor2D<T> v) 
-{
-    return x*v.x + y*v.y;
-}
-
-template <typename T>
-T Vetor2D<T>::modulo() 
-{
-    return sqrt(pow(x, 2) + pow(y,2));
-}
-  
-template <typename T>
-Vetor2D<T> Vetor2D<T>::versor() 
-{
-    return this->operator *(1.0/modulo());
-}
+    Vetor2D operator +(Vetor2D v);
+    void operator +=(Vetor2D v);
+    Vetor2D operator -(Vetor2D v);
+    Vetor2D operator *(int i);
+    Vetor2D operator *(float f);
+    Vetor2D operator *(double d);
+    T operator *(Vetor2D v);
+    T modulo();
+    Vetor2D versor();
+    //projeção desse vetor na direção de V
+    Vetor2D projOrtogonal(Vetor2D v);
 
 };
 
 typedef Vetor2D<float> Vetor2F;
-typedef Vetor2D<unsigned> Vetor2U;
+typedef Vetor2D<unsigned> Veotr2U;
+
+#include "Vetor2DImplementacao.hpp"
 
 #endif

@@ -32,7 +32,7 @@ void Gerenciador_Grafico::limpar()
     janela->clear(sf::Color::Black);
 }
 
-void Gerenciador_Grafico::desenhar(const std::string& caminho, const Vetor2F posicao, const Vetor2F tamanho)
+void Gerenciador_Grafico::desenhar(const std::string& caminho, const Vetor2D<float> posicao, const Vetor2D<float> tamanho)
 {
     if(texturas.count(caminho)==0)
     {
@@ -44,6 +44,8 @@ void Gerenciador_Grafico::desenhar(const std::string& caminho, const Vetor2F pos
     sf::Sprite sprite;
 
     sprite.setOrigin(tamanho.x/2, tamanho.y/2);
+
+    sprite.setScale(tamanho.x, tamanho.y);
   
     sprite.setTexture(*text);
 
@@ -51,6 +53,35 @@ void Gerenciador_Grafico::desenhar(const std::string& caminho, const Vetor2F pos
 
     janela->draw(sprite);
 
+}
+
+bool Gerenciador_Grafico::carregarTextura(const std::string& caminho)
+{
+    if(texturas.count(caminho) ==1)
+        return true;
+    else
+    {
+        sf::Texture* textura = new sf::Texture();
+        if(!textura->loadFromFile(caminho))
+        {
+            std::cout << "Imagem em " << caminho << "nao encontrada" << std::endl;
+            exit(1);
+        } 
+        texturas.insert(std::pair<const std::string, sf::Texture*>(caminho , textura));
+        return true;
+    }
+    
+}
+
+void Gerenciador_Grafico::centralizar(const Vetor2D<float> centro)
+{
+    camera.setCenter(sf::Vector2f( centro.x, centro.y));
+
+}
+
+sf::RenderWindow* Gerenciador_Grafico::getJanela() const 
+{
+    return janela;
 }
 
 

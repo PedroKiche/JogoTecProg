@@ -1,26 +1,16 @@
 #include<iostream>
 #include<SFML/Graphics.hpp>
+#include"Vetor2D.hpp"
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
+    Vetor2F v;
 
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
+    v.x=2;
+    v.y=3;
 
+    std::cout << v.x << v.y << std::endl;
     return 0;
 
 }

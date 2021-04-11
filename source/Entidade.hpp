@@ -2,25 +2,24 @@
 #define _ENTIDADE_HPP_
 
 #include"Gerenciador_Grafico.hpp"
+#include"Vetor2D.hpp"
 
 class Entidade
 {
 private:
-    int posx;
-    int posy;
-    int largura;
-    int altura;
-    Gerenciador_Grafico *gf;
+    Vetor2D<float> posicao;
+    Vetor2D<float> tamanho;
+    Gerenciador_Grafico* gf;
+    const char* caminho;
 
 public:
     Entidade();
-    Entidade(const int posx, const int posy, const int largura, const int altura);
+    Entidade(const Vetor2D<float> pos  , const Vetor2D<float> tam  , const char* caminho = NULL);
     ~Entidade();
-    void Inicializa();
-    const int getPosx();
-    void setPosx(const int posx);
-    const int getPosy();
-    void setPosy(const int posy);
+    void Inicializar(Gerenciador_Grafico &g);
+    void atualizar(float t);
+    void desenhar(Gerenciador_Grafico &g);
+
 };
 
 #endif 
