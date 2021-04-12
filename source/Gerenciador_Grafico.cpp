@@ -68,13 +68,11 @@ bool Gerenciador_Grafico::carregarTextura(const std::string& caminho)
         texturas.insert(std::pair<const std::string, sf::Texture*>(caminho , textura));
         return true;
     }
-    
 }
 
-void Gerenciador_Grafico::centralizar(const Vetor2D<float> centro)
+void Gerenciador_Grafico::centralizar(const Vetor2F centro)
 {
     camera.setCenter(sf::Vector2f( centro.x, centro.y));
-
 }
 
 sf::RenderWindow* Gerenciador_Grafico::getJanela() const 

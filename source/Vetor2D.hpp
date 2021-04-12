@@ -25,7 +25,7 @@ public:
 };
 
 typedef Vetor2D<float> Vetor2F;
-typedef Vetor2D<unsigned> Veotr2U;
+typedef Vetor2D<unsigned> Vetor2U;
 
 #include "Vetor2DImplementacao.hpp"
 
