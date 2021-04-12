@@ -1,7 +1,6 @@
 #ifndef _VETOR2D_H_
 #define _VETOR2D_H_
 
-
 template <typename T>
 class Vetor2D
 {

@@ -4,7 +4,7 @@
 
 Gerenciador_Grafico::Gerenciador_Grafico():
     janela(new sf::RenderWindow(sf::VideoMode(800,600),"Jogo")),
-    camera(sf::Vector2f(400,300), sf::Vector2f(600,200))
+    camera(sf::Vector2f(400,300), sf::Vector2f(800,600))
 {
     janela->setView(camera);
 }
@@ -44,8 +44,6 @@ void Gerenciador_Grafico::desenhar(const std::string& caminho, const Vetor2D<flo
     sf::Sprite sprite;
 
     sprite.setOrigin(tamanho.x/2, tamanho.y/2);
-
-    sprite.setScale(tamanho.x, tamanho.y);
   
     sprite.setTexture(*text);
 
@@ -83,5 +81,3 @@ sf::RenderWindow* Gerenciador_Grafico::getJanela() const
 {
     return janela;
 }
-
-

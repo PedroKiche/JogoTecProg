@@ -6,7 +6,7 @@
 
 template <typename T>
 Vetor2D<T>::Vetor2D(T X, T Y):
-x{X} ,y{Y}
+x(X) ,y(Y)
 {
 
 }
