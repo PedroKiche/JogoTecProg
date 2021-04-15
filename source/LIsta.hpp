@@ -1,29 +1,29 @@
 #ifndef _LISTA_HPP_
 #define _LISTA_HPP_
 
-template<typename TIPO>
+template<typename TL>
 class Lista
 {
 private:
-    template<typename TIPO>
+    template<typename TE>
     class Elemento
     {
     private:
-        TIPO info;
+        TE info;
         Elemento* anterior;
         Elemento* proximo;
     public:
-        Elemento(TIPO info =NULL, Elemento* anterior = NULL, Elemento* proximo = NULL);
+        Elemento(TE info =NULL, Elemento* anterior = NULL, Elemento* proximo = NULL);
         ~Elemento();
 
-        TIPO getInfo();
-        void setInfo(TIPO info);
+        TE getInfo();
+        void setInfo(TE info);
 
-        Elemento* getAnterior();
-        void setAnterior(Elemento* ant);
+        Elemento* getAnt();
+        void setAnt(Elemento* ant);
 
-        Elemento* setProximo();
-        void setProximo(Elemento* prox);
+        Elemento* getProx();
+        void setProx(Elemento* prox);
     };
 
     Elemento* inicio;
@@ -34,8 +34,9 @@ public:
     Lista();
     ~Lista();
 
-    void inserir(TIPO elem);
+    void inserir(TL elem);
     void limpar();
+    void remover();
 
 };
 
