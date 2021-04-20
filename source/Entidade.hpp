@@ -6,14 +6,14 @@
 
 class Entidade
 {
-private:
+protected:
     Vetor2F posicao;
     Vetor2F tamanho;
     const char* caminho;
 
 public:
     Entidade();
-    Entidade(const Vetor2F pos  , const Vetor2F tam  , const char* caminho);
+    Entidade(const Vetor2F pos  , const Vetor2F tam  , const char* caminho = NULL);
     virtual ~Entidade();
     
     void inicializar(Gerenciador_Grafico &g);

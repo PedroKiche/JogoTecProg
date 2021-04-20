@@ -8,7 +8,7 @@ Entidade::Entidade()
     tamanho.y=0;
     caminho=NULL;
 }
-Entidade::Entidade(const Vetor2F pos  , const Vetor2F tam  , const char* caminho = NULL):
+Entidade::Entidade(const Vetor2F pos  , const Vetor2F tam  , const char* caminho):
 posicao(pos),
 tamanho(tam),
 caminho(caminho)

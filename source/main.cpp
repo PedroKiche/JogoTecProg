@@ -1,12 +1,10 @@
-/*
-
 #include<iostream>
-#include"Entidade.hpp"
+#include"Mago.hpp"
 
 int main()
 {
     Gerenciador_Grafico gf;
-    Entidade mago(Vetor2F(200.0f,200.0f), Vetor2F(1.0f,1.0f),"../JogoTecProg/texture/mago.png");
+    Mago mago(Vetor2F(200.0f,200.0f));
     sf::Event e;
     bool end = false;
     mago.inicializar(gf);
@@ -15,8 +13,10 @@ int main()
     relogio.restart();
 
     while(!end)
-    {
+    {   
+        
         sf::Time t = relogio.getElapsedTime(); 
+        relogio.restart();
         if(gf.getJanela()->pollEvent(e))
             if(e.type == sf::Event::Closed)
                 end=true;
@@ -31,4 +31,3 @@ int main()
     return 0;
 
 }
-*/
