@@ -1,6 +1,3 @@
-#ifndef _VETOR2DIMPLEMENTACAO_H_
-#define _VETOR2DIMPLEMENTACAO_H_
-
 #include <cmath>
 #include"Vetor2D.hpp"
 
@@ -77,5 +74,3 @@ Vetor2D<T> Vetor2D<T>::projOrtogonal(Vetor2D<T> v)
 {
 	return v*(this->operator*(v) / pow(v.moduloe(), 2));
 }
-
-#endif

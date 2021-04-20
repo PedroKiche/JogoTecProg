@@ -1,3 +1,5 @@
+/*
+
 #include<iostream>
 #include"Entidade.hpp"
 
@@ -24,7 +26,9 @@ int main()
         mago.desenhar(gf);
         gf.mostrar();
     
+
     }
     return 0;
 
 }
+*/

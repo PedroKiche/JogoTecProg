@@ -18,7 +18,7 @@ public:
     
     void inicializar(Gerenciador_Grafico &g);
     void desenhar(Gerenciador_Grafico &g);
-    void atualizar(float t);
+   
     
     void setPosicao(Vetor2F posicao);
     Vetor2F getPosicao() const;

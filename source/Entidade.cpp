@@ -28,8 +28,3 @@ void Entidade::desenhar(Gerenciador_Grafico &g)
 {
     g.desenhar(caminho,posicao, tamanho);
 }
-
-void Entidade::atualizar(float t)
-{
-    posicao.x= 20*t;
-}
