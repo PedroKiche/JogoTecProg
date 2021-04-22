@@ -12,18 +12,22 @@ int main()
 
     relogio.restart();
 
-    while(ge.getOpen())
+    while(gf.getJanela()->isOpen())
     {   
         
-        sf::Time t = relogio.getElapsedTime(); 
-        relogio.restart();
-        std::cout << t.asSeconds() <<std::endl;
+        float dt = relogio.getElapsedTime().asSeconds(); 
+        if(dt > 1.0f /20.0f)
+            dt= 1.0/20.0f;
+        std::cout<< dt << std::endl;
+        relogio.restart(); 
         ge.gerenciaEventos();
-        mago.atualizar(t.asSeconds(), ge);
+        mago.atualizar(dt, ge);
         gf.limpar();
         mago.desenhar(gf);
         gf.mostrar();
-        ge.resetar();  
+        ge.resetar();
+        ge.eventosJanela();
+       
     }
     return 0;
 

@@ -12,12 +12,12 @@ private:
     bool w;
     bool a;
     bool d;
-    bool open;
 
 public:
     Gerenciador_Eventos();
     ~Gerenciador_Eventos();
     void setJanela(sf::RenderWindow* janela);
+    void eventosJanela();
 
     void gerenciaEventos();
     void resetar();
@@ -25,9 +25,6 @@ public:
     bool getW();
     bool getA();
     bool getD();
-    bool getOpen();
-
-
 };
 
 #endif

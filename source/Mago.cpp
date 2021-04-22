@@ -26,9 +26,9 @@ void Mago::colidir()
 void Mago::atualizar(float t, Gerenciador_Eventos &evento)
 {
     if(evento.getD())
-        posicao.x += t*2000;
+        posicao.x += t*200;
     if(evento.getA())
-        posicao.x -= t*2000;
+        posicao.x -= t*200;
     if(evento.getW())
-        posicao.y += t*2000;
+        posicao.y += t*200;
 }
