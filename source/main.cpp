@@ -4,29 +4,26 @@
 int main()
 {
     Gerenciador_Grafico gf;
+    Gerenciador_Eventos ge;
     Mago mago(Vetor2F(200.0f,200.0f));
-    sf::Event e;
-    bool end = false;
     mago.inicializar(gf);
     sf::Clock relogio;
+    ge.setJanela(gf.getJanela());
 
     relogio.restart();
 
-    while(!end)
+    while(ge.getOpen())
     {   
         
         sf::Time t = relogio.getElapsedTime(); 
         relogio.restart();
-        if(gf.getJanela()->pollEvent(e))
-            if(e.type == sf::Event::Closed)
-                end=true;
-
-        mago.atualizar(t.asSeconds());
+        std::cout << t.asSeconds() <<std::endl;
+        ge.gerenciaEventos();
+        mago.atualizar(t.asSeconds(), ge);
         gf.limpar();
         mago.desenhar(gf);
         gf.mostrar();
-    
-
+        ge.resetar();  
     }
     return 0;
 

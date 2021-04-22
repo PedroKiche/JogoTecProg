@@ -23,8 +23,12 @@ void Mago::colidir()
 
 }
 
-void Mago::atualizar(float t)
+void Mago::atualizar(float t, Gerenciador_Eventos &evento)
 {
-    posicao += t*5;
-    std::cout << t << std::endl;
+    if(evento.getD())
+        posicao.x += t*2000;
+    if(evento.getA())
+        posicao.x -= t*2000;
+    if(evento.getW())
+        posicao.y += t*2000;
 }

@@ -14,7 +14,7 @@ public:
     Personagem(const Vetor2F pos  , const Vetor2F tam  , const char* caminho);
     virtual ~Personagem();
     
-    virtual void atualizar(float t)=0;
+    //virtual void atualizar(float t)=0;
 
     bool getVivo();
     void setVivo(bool vivo);
