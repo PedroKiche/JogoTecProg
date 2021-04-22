@@ -1,13 +1,12 @@
 template <typename TL>
 template <typename TE>
-Lista<TL>::Elemento<TE>::Elemento(TE Info, Elemento<TE>* Ant, Elemento<TE>* Prox) :
-info(Info), ant(Ant), prox(Prox) 
+Lista<TL>::Elemento<TE>::Elemento(TE Info, Elemento<TE> *Ant, Elemento<TE> *Prox) : info(Info), ant(Ant), prox(Prox)
 {
 }
 
 template <typename TL>
 template <typename TE>
-Lista<TL>::Elemento<TE>::~Elemento() 
+Lista<TL>::Elemento<TE>::~Elemento()
 {
 }
 
@@ -20,65 +19,66 @@ TE Lista<TL>::Elemento<TE>::getInfo()
 
 template <typename TL>
 template <typename TE>
-void Lista<TL>::Elemento<TE>::setInfo(TE Info) 
+void Lista<TL>::Elemento<TE>::setInfo(TE Info)
 {
   info = Info;
 }
 
 template <typename TL>
 template <typename TE>
-Lista<TL>::Elemento<TE>* Lista<TL>::Elemento<TE>::getAnt()    
+Lista<TL>::Elemento<TE> *Lista<TL>::Elemento<TE>::getAnt()
 {
   return ant;
 }
 
 template <typename TL>
 template <typename TE>
-void Lista<TL>::Elemento<TE>::setAnt(Elemento<TE>* Ant) 
+void Lista<TL>::Elemento<TE>::setAnt(Elemento<TE> *Ant)
 {
   ant = Ant;
 }
 
 template <typename TL>
 template <typename TE>
-Lista<TL>::Elemento<TE>* Lista<TL>::Elemento<TE>::getProx() 
+Lista<TL>::Elemento<TE> *Lista<TL>::Elemento<TE>::getProx()
 {
   return prox;
 }
 
 template <typename TL>
 template <typename TE>
-void Lista<TL>::Elemento<TE>::setProx(Elemento<TE>* Prox) 
+void Lista<TL>::Elemento<TE>::setProx(Elemento<TE> *Prox)
 {
   prox = Prox;
 }
 
-
 template <typename TL>
-Lista<TL>::Lista() :
-  inicio(NULL), fim(NULL), atual(NULL)
+Lista<TL>::Lista() : inicio(NULL), fim(NULL), atual(NULL)
 {
-
-} 
+}
 
 template <typename TL>
-Lista<TL>::~Lista() 
+Lista<TL>::~Lista()
 {
   esvaziar();
 }
 
 template <typename TL>
-void Lista<TL>::inserir(TL info) {
-  if (info) { //info == NULL == 0 == false
-    
-    Elemento<TL>* novo = new Elemento<TL>(info);
-    if (!inicio) {
-    
+void Lista<TL>::inserir(TL info)
+{
+  if (info)
+  { //info == NULL == 0 == false
+
+    Elemento<TL> *novo = new Elemento<TL>(info);
+    if (!inicio)
+    {
+
       inicio = novo;
       fim = novo;
-    
-    } else {
-      
+    }
+    else
+    {
+
       fim->setProx(novo);
       novo->setAnt(fim);
       fim = novo;
@@ -87,11 +87,13 @@ void Lista<TL>::inserir(TL info) {
 }
 
 template <typename TL>
-void Lista<TL>::limpar() {
-  Elemento<TL>* paux = inicio;
+void Lista<TL>::limpar()
+{
+  Elemento<TL> *paux = inicio;
   atual = inicio;
-  
-  while (atual != nullptr) {
+
+  while (atual != nullptr)
+  {
     paux = atual->getProx();
     delete atual;
     atual = paux;

@@ -10,18 +10,17 @@ public:
     Vetor2D(T X = 0.0, T Y = 0.0);
     ~Vetor2D();
 
-    Vetor2D operator +(Vetor2D v);
-    void operator +=(Vetor2D v);
-    Vetor2D operator -(Vetor2D v);
-    Vetor2D operator *(int i);
-    Vetor2D operator *(float f);
-    Vetor2D operator *(double d);
-    T operator *(Vetor2D v);
+    Vetor2D operator+(Vetor2D v);
+    void operator+=(Vetor2D v);
+    Vetor2D operator-(Vetor2D v);
+    Vetor2D operator*(int i);
+    Vetor2D operator*(float f);
+    Vetor2D operator*(double d);
+    T operator*(Vetor2D v);
     T modulo();
     Vetor2D versor();
     //projeção desse vetor na direção de V
     Vetor2D projOrtogonal(Vetor2D v);
-
 };
 
 typedef Vetor2D<float> Vetor2F;

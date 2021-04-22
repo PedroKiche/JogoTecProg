@@ -1,21 +1,17 @@
-#include"Personagem.hpp"
+#include "Personagem.hpp"
 
-
-Personagem::Personagem():
-Entidade_Colidivel()
+Personagem::Personagem() : Entidade_Colidivel()
 {
     vivo = false;
 }
 
-Personagem::Personagem(const Vetor2F pos  , const Vetor2F tam  , const char* caminho):
-Entidade_Colidivel(tam,pos,caminho)
+Personagem::Personagem(const Vetor2F pos, const Vetor2F tam, const char *caminho) : Entidade_Colidivel(tam, pos, caminho)
 {
     vivo = true;
 }
 
 Personagem::~Personagem()
 {
-
 }
 
 void Personagem::setVivo(bool vivo)

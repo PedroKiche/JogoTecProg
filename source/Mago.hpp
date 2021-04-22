@@ -1,13 +1,12 @@
 #ifndef _MAGO_HPP_
 #define _MAGO_HPP_
 
-#include"Jogador.hpp"
-#include"Gerenciador_Eventos.hpp"
+#include "Jogador.hpp"
+#include "Gerenciador_Eventos.hpp"
 
-class Mago:public Jogador
+class Mago : public Jogador
 {
 private:
-
 public:
     Mago();
     Mago(Vetor2F pos);

@@ -1,4 +1,4 @@
-#include"Gerenciador_Eventos.hpp"
+#include "Gerenciador_Eventos.hpp"
 
 Gerenciador_Eventos::Gerenciador_Eventos()
 {
@@ -10,9 +10,8 @@ Gerenciador_Eventos::Gerenciador_Eventos()
 
 Gerenciador_Eventos::~Gerenciador_Eventos()
 {
-
 }
-void Gerenciador_Eventos::setJanela(sf::RenderWindow* janela)
+void Gerenciador_Eventos::setJanela(sf::RenderWindow *janela)
 {
     this->janela = janela;
 }
@@ -20,16 +19,16 @@ void Gerenciador_Eventos::setJanela(sf::RenderWindow* janela)
 void Gerenciador_Eventos::gerenciaEventos()
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        a=true;
+        a = true;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-        w=true;
+        w = true;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-        d=true;
+        d = true;
 }
 
 bool Gerenciador_Eventos::getW()
 {
-    return w;   
+    return w;
 }
 
 bool Gerenciador_Eventos::getA()
@@ -50,17 +49,17 @@ void Gerenciador_Eventos::resetar()
 }
 
 void Gerenciador_Eventos::eventosJanela()
-{   
+{
     sf::Event evento;
-    while(janela->pollEvent(evento))
+    while (janela->pollEvent(evento))
     {
-        switch(evento.type)
+        switch (evento.type)
         {
-            case sf::Event::Closed:
-                janela->close();
-                break;
-            default:
-                break;
+        case sf::Event::Closed:
+            janela->close();
+            break;
+        default:
+            break;
         }
     }
 }
