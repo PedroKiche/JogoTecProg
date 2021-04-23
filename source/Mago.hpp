@@ -1,19 +1,21 @@
 #ifndef _MAGO_HPP_
 #define _MAGO_HPP_
 
-#include "Jogador.hpp"
-#include "Gerenciador_Eventos.hpp"
+#include "Personagem.hpp"
+#include "Controle.hpp"
 
-class Mago : public Jogador
+class Mago : public Personagem
 {
 private:
+    Controle controle;
+
 public:
     Mago();
     Mago(Vetor2F pos);
     ~Mago();
 
     void colidir();
-    void atualizar(float t, Gerenciador_Eventos &evento);
+    void atualizar(float t);
 };
 
 #endif

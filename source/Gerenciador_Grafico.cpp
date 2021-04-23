@@ -77,3 +77,19 @@ sf::RenderWindow *Gerenciador_Grafico::getJanela() const
 {
     return janela;
 }
+
+void Gerenciador_Grafico::eventosJanela()
+{
+    sf::Event evento;
+    while (janela->pollEvent(evento))
+    {
+        switch (evento.type)
+        {
+        case sf::Event::Closed:
+            janela->close();
+            break;
+        default:
+            break;
+        }
+    }
+}

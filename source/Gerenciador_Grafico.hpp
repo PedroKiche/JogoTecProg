@@ -24,6 +24,7 @@ public:
     bool carregarTextura(const std::string &caminho);
     void centralizar(const Vetor2D<float> centro);
     sf::RenderWindow *getJanela() const;
+    void eventosJanela();
 };
 
 #endif

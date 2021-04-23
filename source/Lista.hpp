@@ -37,7 +37,6 @@ public:
 
     void inserir(TL elem);
     void limpar();
-    void remover();
 };
 
 #include "ListaImplementacao.hpp"

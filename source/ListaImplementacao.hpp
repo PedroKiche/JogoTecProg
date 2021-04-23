@@ -60,7 +60,7 @@ Lista<TL>::Lista() : inicio(NULL), fim(NULL), atual(NULL)
 template <typename TL>
 Lista<TL>::~Lista()
 {
-  esvaziar();
+  limpar();
 }
 
 template <typename TL>
