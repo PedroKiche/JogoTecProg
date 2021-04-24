@@ -1,6 +1,8 @@
 template <typename TL>
 template <typename TE>
-Lista<TL>::Elemento<TE>::Elemento(TE Info, Elemento<TE> *Ant, Elemento<TE> *Prox) : info(Info), ant(Ant), prox(Prox)
+Lista<TL>::Elemento<TE>::Elemento(TE Info, Elemento<TE> *Ant, Elemento<TE> *Prox) : info(Info),
+                                                                                    anterior(Ant),
+                                                                                    proximo(Prox)
 {
 }
 
@@ -12,7 +14,7 @@ Lista<TL>::Elemento<TE>::~Elemento()
 
 template <typename TL>
 template <typename TE>
-TE Lista<TL>::Elemento<TE>::getInfo()
+TE Lista<TL>::Elemento<TE>::getInfo() const
 {
   return info;
 }
@@ -26,34 +28,36 @@ void Lista<TL>::Elemento<TE>::setInfo(TE Info)
 
 template <typename TL>
 template <typename TE>
-Lista<TL>::Elemento<TE> *Lista<TL>::Elemento<TE>::getAnt()
+Lista<TL>::Elemento<TE> *Lista<TL>::Elemento<TE>::getAnt() const
 {
-  return ant;
+  return anterior;
 }
 
 template <typename TL>
 template <typename TE>
 void Lista<TL>::Elemento<TE>::setAnt(Elemento<TE> *Ant)
 {
-  ant = Ant;
+  anterior = Ant;
 }
 
 template <typename TL>
 template <typename TE>
-Lista<TL>::Elemento<TE> *Lista<TL>::Elemento<TE>::getProx()
+Lista<TL>::Elemento<TE> *Lista<TL>::Elemento<TE>::getProx() const
 {
-  return prox;
+  return proximo;
 }
 
 template <typename TL>
 template <typename TE>
 void Lista<TL>::Elemento<TE>::setProx(Elemento<TE> *Prox)
 {
-  prox = Prox;
+  proximo = Prox;
 }
 
 template <typename TL>
-Lista<TL>::Lista() : inicio(NULL), fim(NULL), atual(NULL)
+Lista<TL>::Lista() : inicio(NULL),
+                     fim(NULL),
+                     atual(NULL)
 {
 }
 
@@ -72,13 +76,11 @@ void Lista<TL>::inserir(TL info)
     Elemento<TL> *novo = new Elemento<TL>(info);
     if (!inicio)
     {
-
       inicio = novo;
       fim = novo;
     }
     else
     {
-
       fim->setProx(novo);
       novo->setAnt(fim);
       fim = novo;
@@ -92,13 +94,29 @@ void Lista<TL>::limpar()
   Elemento<TL> *paux = inicio;
   atual = inicio;
 
-  while (atual != nullptr)
+  while (atual != NULL)
   {
     paux = atual->getProx();
     delete atual;
     atual = paux;
   }
-  inicio = nullptr;
-  fim = nullptr;
-  atual = nullptr;
+  inicio = NULL;
+  fim = NULL;
+  atual = NULL;
+}
+
+
+template <typename TL>
+TL Lista<TL>::getinicio()
+{
+  atual = inicio;
+  return (atual) ? atual->getInfo() : NULL;
+}
+
+
+template <typename TL>
+TL Lista<TL>::irProx()
+{
+  atual = atual->getProx();
+  return (atual) ? atual->getInfo() : NULL;
 }

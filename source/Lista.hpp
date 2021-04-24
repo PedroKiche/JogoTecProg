@@ -17,19 +17,21 @@ private:
         Elemento(TE info = NULL, Elemento *anterior = NULL, Elemento *proximo = NULL);
         ~Elemento();
 
-        TE getInfo();
+        TE getInfo() const;
         void setInfo(TE info);
 
-        Elemento *getAnt();
+        Elemento *getAnt() const;
         void setAnt(Elemento *ant);
 
-        Elemento *getProx();
+        Elemento *getProx() const;
         void setProx(Elemento *prox);
+
+        void remover();
     };
 
-    Elemento *inicio;
-    Elemento *fim;
-    Elemento *atual;
+    Elemento<TL> *inicio;
+    Elemento<TL> *fim;
+    Elemento<TL> *atual;
 
 public:
     Lista();
@@ -37,6 +39,9 @@ public:
 
     void inserir(TL elem);
     void limpar();
+
+    TL getinicio();
+    TL irProx();
 };
 
 #include "ListaImplementacao.hpp"

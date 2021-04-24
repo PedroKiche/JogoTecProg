@@ -17,13 +17,13 @@ Mago::Mago(Vetor2F pos) : Personagem(pos, Vetor2F(100.0f, 150.0f), "../JogoTecPr
 
 void Mago::colidir()
 {
+
 }
 
 void Mago::atualizar(float t)
 {
     Vetor2F movimenta = controle.movimentacao();
     posicao.x += movimenta.x * t * 100;
-    std::cout << movimenta.x << std::endl;
 }
 
 void atacar()

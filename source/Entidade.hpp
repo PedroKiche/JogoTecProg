@@ -23,6 +23,8 @@ public:
 
     void setTamanho(Vetor2F tamanho);
     Vetor2F getTamanho() const;
+
+    virtual void atualizar(float t) = 0;
 };
 
 #endif
