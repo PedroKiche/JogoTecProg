@@ -1,14 +1,12 @@
 #include "Fantasma.hpp"
 
-Fantasma::Fantasma()
+Fantasma::Fantasma() : Inimigo()
 {
-    alcance = 0;
     frente = false;
 }
 
-Fantasma::Fantasma(const Vetor2F pos): Inimigo(pos, Vetor2F(50.0f, 50.0f), "../JogoTecProg/texture/fantasma.png")
+Fantasma::Fantasma(const Vetor2F pos): Inimigo(pos, Vetor2F(50.0f, 50.0f), 200.0, 100.0,  "../JogoTecProg/texture/fantasma.png")
 {
-    alcance = 200;
     frente = true;
 }
 
@@ -35,9 +33,9 @@ void Fantasma::movimentar(float t)
 {
     if (frente)
     {
-        if (posicao.x < getPosicaoInicial().x + alcance)
+        if (posicao.x < getPosicaoInicial().x + getAlcance())
         {
-            posicao.x += t * 100;   
+            posicao.x += t * getVelocidade();   
         }
         else
         {
@@ -46,9 +44,9 @@ void Fantasma::movimentar(float t)
     }
     else
     {
-        if (posicao.x > getPosicaoInicial().x - alcance)
+        if (posicao.x > getPosicaoInicial().x - getAlcance())
         {
-            posicao.x -= t * 100;   
+            posicao.x -= t * getVelocidade();   
         }
         else
         {

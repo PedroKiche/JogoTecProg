@@ -8,14 +8,15 @@ class Personagem : public Entidade_Colidivel
 {
 private:
     bool vivo;
-
+    float velocidade;
 public:
     Personagem();
-    Personagem(const Vetor2F pos, const Vetor2F tam, const char *caminho);
+    Personagem(const Vetor2F pos, const Vetor2F tam, float vel, const char *caminho);
     virtual ~Personagem();
 
     //virtual void atualizar(float t)=0;
-
+    float getVelocidade();
+    void setVelocidade(float vel);
     bool getVivo();
     void setVivo(bool vivo);
 };

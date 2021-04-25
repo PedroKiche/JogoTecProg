@@ -7,7 +7,6 @@ class Aparicao: public Inimigo
 {
 private:
 
-
 public:
     Aparicao();
     Aparicao(const Vetor2F pos);

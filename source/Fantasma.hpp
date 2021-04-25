@@ -6,7 +6,6 @@
 class Fantasma: public Inimigo
 {
 private:
-    float alcance;
     bool frente;
 public:
     Fantasma();

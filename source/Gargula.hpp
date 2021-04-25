@@ -5,6 +5,8 @@
 
 class Gargula: public Inimigo
 {
+private:
+    bool frente;
 public:
     Gargula();
     Gargula(const Vetor2F pos);

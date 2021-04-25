@@ -4,7 +4,7 @@ Espectro::Espectro()
 {
 }
 
-Espectro::Espectro(const Vetor2F pos): Inimigo(pos, Vetor2F(105.0f, 170.0f), "../JogoTecProg/texture/espectro.png")
+Espectro::Espectro(const Vetor2F pos): Inimigo(pos, Vetor2F(105.0f, 170.0f), 200.0, 100.0, "../JogoTecProg/texture/espectro.png")
 {
 
 }
