@@ -10,7 +10,7 @@ Mago::~Mago()
 {
 }
 
-Mago::Mago(Vetor2F pos) : Personagem(pos, Vetor2F(100.0f, 150.0f), 100.0, "../JogoTecProg/texture/mago.png"),
+Mago::Mago(Vetor2F pos) : Personagem(Ids::mago, pos, Vetor2F(100.0f, 150.0f), 100.0, "../JogoTecProg/texture/mago.png"),
                           controle(Teclado::A, Teclado::D, Teclado::W, Teclado::C)
 {
 }

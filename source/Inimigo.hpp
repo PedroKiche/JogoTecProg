@@ -11,7 +11,7 @@ private:
     Vetor2F posicaoInicial;
 public:
     Inimigo();
-    Inimigo(const Vetor2F pos, const Vetor2F tam, float alc, float vel, const char *caminho);
+    Inimigo(Ids::Id id, const Vetor2F pos, const Vetor2F tam, float alc, float vel, const char *caminho);
     virtual ~Inimigo();
 
     float getAlcance();

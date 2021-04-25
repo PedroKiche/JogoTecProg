@@ -5,7 +5,7 @@ Fantasma::Fantasma() : Inimigo()
     frente = false;
 }
 
-Fantasma::Fantasma(const Vetor2F pos): Inimigo(pos, Vetor2F(50.0f, 50.0f), 200.0, 100.0,  "../JogoTecProg/texture/fantasma.png")
+Fantasma::Fantasma(const Vetor2F pos): Inimigo(Ids::fantasma, pos, Vetor2F(50.0f, 50.0f), 200.0, 100.0,  "../JogoTecProg/texture/fantasma.png")
 {
     frente = true;
 }

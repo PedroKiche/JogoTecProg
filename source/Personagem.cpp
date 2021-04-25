@@ -6,7 +6,7 @@ Personagem::Personagem() : Entidade_Colidivel()
     velocidade = 0;
 }
 
-Personagem::Personagem(const Vetor2F pos, const Vetor2F tam, float vel, const char *caminho) : Entidade_Colidivel(tam, pos, caminho)
+Personagem::Personagem(Ids::Id id, const Vetor2F pos, const Vetor2F tam, float vel, const char *caminho) : Entidade_Colidivel(id, pos, tam, caminho)
 {
     vivo = true;
     velocidade = vel;

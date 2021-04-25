@@ -7,10 +7,13 @@ Entidade::Entidade()
     tamanho.x = 0;
     tamanho.y = 0;
     caminho = NULL;
+    ID = Ids::vazioID;
 }
-Entidade::Entidade( const Vetor2F pos, const Vetor2F tam, const char *caminho) : posicao(pos),
-                                                                                tamanho(tam),
-                                                                                caminho(caminho)
+Entidade::Entidade(Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho) : ID(id),
+                                                                                            posicao(pos),
+                                                                                            tamanho(tam),
+                                                                                            caminho(caminho)
+
 {
 }
 
@@ -27,22 +30,26 @@ void Entidade::desenhar(Gerenciador_Grafico &g)
     g.desenhar(caminho, posicao, tamanho);
 }
 
+void Entidade::setPosicao(const Vetor2F posicao)
+{
+    this->posicao = posicao;
+}
 
-    void Entidade::setPosicao(const  Vetor2F posicao)
-    {
-        this->posicao = posicao;
-    }
+Vetor2F Entidade::getPosicao()
+{
+    return posicao;
+}
 
-    Vetor2F Entidade::getPosicao()
-    {
-        return posicao;
-    }
+void Entidade::setTamanho(const Vetor2F tamanho)
+{
+    this->tamanho = tamanho;
+}
+Vetor2F Entidade::getTamanho()
+{
+    return tamanho;
+}
 
-    void Entidade::setTamanho(const  Vetor2F tamanho)
-    {
-        this->tamanho=tamanho;
-    }
-    Vetor2F Entidade::getTamanho()
-    {
-        return tamanho;
-    }
+Ids::Id Entidade::getID()
+{
+    return ID;
+}

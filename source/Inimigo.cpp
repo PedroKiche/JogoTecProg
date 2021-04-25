@@ -6,7 +6,7 @@ Inimigo::Inimigo() : Personagem()
     alcance = 0;
 }
 
-Inimigo::Inimigo(const Vetor2F pos, const Vetor2F tam, float alc, float vel, const char *caminho): Personagem(tam, pos, vel, caminho)
+Inimigo::Inimigo(Ids::Id id, const Vetor2F pos, const Vetor2F tam, float alc, float vel, const char *caminho): Personagem(id, pos, tam, vel, caminho)
 {
     posicaoInicial = pos;
     alcance = alc;

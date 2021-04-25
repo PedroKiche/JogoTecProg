@@ -2,17 +2,19 @@
 #define _ENTIDADE_HPP_
 
 #include "Gerenciador_Grafico.hpp"
+#include "Ids.hpp"
 
 class Entidade
 {
-protected:
+private:
+    Ids::Id ID;
     Vetor2F posicao;
     Vetor2F tamanho;
     const char *caminho;
 
 public:
     Entidade();
-    Entidade(const Vetor2F pos,const Vetor2F tam,  const char *caminho = NULL);
+    Entidade(Ids::Id id, Vetor2F pos,const Vetor2F tam,  const char *caminho = NULL);
     virtual ~Entidade();
 
     void inicializar(Gerenciador_Grafico &g);
@@ -25,6 +27,8 @@ public:
     Vetor2F getTamanho();
 
     virtual void atualizar(float t) = 0;
+
+    Ids::Id getID();
 };
 
 #endif
