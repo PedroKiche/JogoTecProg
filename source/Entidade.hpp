@@ -18,13 +18,13 @@ public:
     void inicializar(Gerenciador_Grafico &g);
     void desenhar(Gerenciador_Grafico &g);
 
-    void setPosicao(Vetor2F posicao);
+    void setPosicao(const Vetor2F posicao);
     Vetor2F getPosicao() const;
 
-    void setTamanho(Vetor2F tamanho);
+    void setTamanho(const Vetor2F tamanho);
     Vetor2F getTamanho() const;
 
-    virtual void atualizar(float t) = 0;
+    virtual void atualizar(const float t) = 0;
 };
 
 #endif

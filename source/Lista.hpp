@@ -18,13 +18,13 @@ private:
         ~Elemento();
 
         TE getInfo() const;
-        void setInfo(TE info);
+        void setInfo(const TE  info);
 
         Elemento *getAnt() const;
-        void setAnt(Elemento *ant);
+        void setAnt(Elemento*  ant);
 
         Elemento *getProx() const;
-        void setProx(Elemento *prox);
+        void setProx(Elemento*  prox);
 
         void remover();
     };
@@ -40,7 +40,7 @@ public:
     void inserir(TL elem);
     void limpar();
 
-    TL getinicio();
+    TL getInicio();
     TL irProx();
 };
 

@@ -21,7 +21,7 @@ TE Lista<TL>::Elemento<TE>::getInfo() const
 
 template <typename TL>
 template <typename TE>
-void Lista<TL>::Elemento<TE>::setInfo(TE Info)
+void Lista<TL>::Elemento<TE>::setInfo(const TE Info)
 {
   info = Info;
 }
@@ -68,12 +68,12 @@ Lista<TL>::~Lista()
 }
 
 template <typename TL>
-void Lista<TL>::inserir(TL info)
+void Lista<TL>::inserir(TL elem)
 {
-  if (info)
+  if (elem)
   { //info == NULL == 0 == false
 
-    Elemento<TL> *novo = new Elemento<TL>(info);
+    Elemento<TL> *novo = new Elemento<TL>(elem);
     if (!inicio)
     {
       inicio = novo;
@@ -107,7 +107,7 @@ void Lista<TL>::limpar()
 
 
 template <typename TL>
-TL Lista<TL>::getinicio()
+TL Lista<TL>::getInicio()
 {
   atual = inicio;
   return (atual) ? atual->getInfo() : NULL;

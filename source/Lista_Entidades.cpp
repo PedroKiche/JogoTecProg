@@ -15,7 +15,7 @@ void Lista_Entidades::inserir(Entidade *info)
 
 void Lista_Entidades::inicializarEntidades(Gerenciador_Grafico &gf)
 {
-    Entidade *aux = lista.getinicio();
+    Entidade *aux = lista.getInicio();
     while (aux)
     {
         aux->inicializar(gf);
@@ -25,7 +25,7 @@ void Lista_Entidades::inicializarEntidades(Gerenciador_Grafico &gf)
 
 void Lista_Entidades::atualizarEntidades(float t)
 {
-    Entidade *aux = lista.getinicio();
+    Entidade *aux = lista.getInicio();
 
     while (aux)
     {
@@ -36,7 +36,7 @@ void Lista_Entidades::atualizarEntidades(float t)
 
 void Lista_Entidades::desenharEntidades(Gerenciador_Grafico &gf)
 {
-    Entidade *aux = lista.getinicio();
+    Entidade *aux = lista.getInicio();
 
     while (aux)
     {
@@ -47,7 +47,7 @@ void Lista_Entidades::desenharEntidades(Gerenciador_Grafico &gf)
 
 void Lista_Entidades::destruirEntidades()
 {
-    Entidade* aux = lista.getinicio();
+    Entidade* aux = lista.getInicio();
     
     while(aux)
     {
