@@ -23,7 +23,7 @@ void Mago::colidir()
 void Mago::atualizar(float t)
 {
     Vetor2F movimenta = controle.movimentacao();
-    posicao.x += movimenta.x * t * getVelocidade();
+    setPosicao(Vetor2F(getPosicao().x+ movimenta.x * t * getVelocidade(), getPosicao().y));
 }
 
 void atacar()

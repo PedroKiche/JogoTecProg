@@ -33,9 +33,9 @@ void Fantasma::movimentar(float t)
 {
     if (frente)
     {
-        if (posicao.x < getPosicaoInicial().x + getAlcance())
+        if (getPosicao().x < getPosicaoInicial().x + getAlcance())
         {
-            posicao.x += t * getVelocidade();   
+            setPosicao(Vetor2F(getPosicao().x + t * getVelocidade(), getPosicao().y));
         }
         else
         {
@@ -44,9 +44,9 @@ void Fantasma::movimentar(float t)
     }
     else
     {
-        if (posicao.x > getPosicaoInicial().x - getAlcance())
+        if (getPosicao().x  > getPosicaoInicial().x - getAlcance())
         {
-            posicao.x -= t * getVelocidade();   
+            setPosicao(Vetor2F(getPosicao().x - t * getVelocidade(), getPosicao().y)); 
         }
         else
         {
