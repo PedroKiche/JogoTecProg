@@ -19,15 +19,15 @@ void Mago::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
     if(id == Ids::plataforma || id == Ids::fantasma)
     {
-        setPosicao(Vetor2F(getPosicao().x, getPosicao().y - 2.0));
+        posicao.y -= 2.0;
     }
 }
 
 void Mago::atualizar(float t)
 {
     Vetor2F movimenta = controle.movimentacao();
-    setPosicao(Vetor2F(getPosicao().x+ movimenta.x * t * getVelocidade(), getPosicao().y + t * 10));
-
+    posicao.x += movimenta.x * t * velocidade;
+    posicao.y += t * 10;
 }
 
 void atacar()

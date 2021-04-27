@@ -6,7 +6,7 @@
 
 class Entidade
 {
-private:
+protected:
     Ids::Id ID;
     Vetor2F posicao;
     Vetor2F tamanho;

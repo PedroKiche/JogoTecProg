@@ -33,9 +33,9 @@ void Gargula::movimentar(float t)
 {
     if (frente)
     {
-        if (getPosicao().x < getPosicaoInicial().x + getAlcance())
+        if (posicao.x < posicaoInicial.x + alcance)
         {
-            setPosicao(Vetor2F(getPosicao().x + t * getVelocidade(), getPosicao().y));
+            posicao.x += t * velocidade;
         }
         else
         {
@@ -44,9 +44,9 @@ void Gargula::movimentar(float t)
     }
     else
     {
-        if (getPosicao().x  > getPosicaoInicial().x - getAlcance())
+        if (posicao.x  > posicaoInicial.x - alcance)
         {
-            setPosicao(Vetor2F(getPosicao().x - t * getVelocidade(), getPosicao().y)); 
+            posicao.x -= t * velocidade;
         }
         else
         {

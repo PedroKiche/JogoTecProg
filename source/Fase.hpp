@@ -8,9 +8,9 @@
 
 class Fase : public Entidade
 {
-private:
-    Gerenciador_Colisoes* gc;
-    Lista_Entidades* listaEntidades;
+protected:
+    Gerenciador_Colisoes gc;
+    Lista_Entidades listaEntidades;
     Gerenciador_Grafico* gf;
     Mago* mago;
     

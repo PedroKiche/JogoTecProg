@@ -23,22 +23,24 @@ void Fantasma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
     if(id == Ids::plataforma)
     {
-        setPosicao(Vetor2F(getPosicao().x, getPosicao().y - 2.0));
+        posicao.y -= 2.0;
     }
 }
 
 void Fantasma::atualizar(float t)
 {
     movimentar(t);
+    posicao.y += t * 10;
+    
 }
 
 void Fantasma::movimentar(float t)
 {
     if (frente)
     {
-        if (getPosicao().x < getPosicaoInicial().x + getAlcance())
+        if (posicao.x < posicaoInicial.x + alcance)
         {
-            setPosicao(Vetor2F(getPosicao().x + t * getVelocidade(), getPosicao().y + t * 10));
+            posicao.x += t * velocidade;
         }
         else
         {
@@ -47,9 +49,9 @@ void Fantasma::movimentar(float t)
     }
     else
     {
-        if (getPosicao().x  > getPosicaoInicial().x - getAlcance())
+        if (posicao.x  > posicaoInicial.x - alcance)
         {
-            setPosicao(Vetor2F(getPosicao().x - t * getVelocidade(), getPosicao().y + t * 10)); 
+            posicao.x -= t * velocidade;
         }
         else
         {

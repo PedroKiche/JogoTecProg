@@ -6,7 +6,7 @@
 
 class Personagem : public Entidade_Colidivel
 {
-private:
+protected:
     bool vivo;
     float velocidade;
 public:

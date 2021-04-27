@@ -1,58 +1,54 @@
 #include "Fase.hpp"
 
-Fase::Fase():Entidade()
-{   
+Fase::Fase() : Entidade()
+{
     gf = NULL;
-    gc = NULL;
-    listaEntidades = NULL;
     mago = NULL;
 }
 
-Fase::Fase(Gerenciador_Grafico* GeGr, Mago* mg, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho): Entidade(id,pos,tam,caminho)
+Fase::Fase(Gerenciador_Grafico *GeGr, Mago *mg, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho) : Entidade(id, pos, tam, caminho)
 {
-    mago=mg;
-    gf=GeGr;
-    listaEntidades = new Lista_Entidades();
-    gc = new Gerenciador_Colisoes();
+    mago = mg;
+    gf = GeGr;
 }
 
 Fase::~Fase()
 {
-    listaEntidades->destruirEntidades();
-    gc->removerTodos();
+    listaEntidades.destruirEntidades();
+    gc.removerTodos();
 }
 
-Gerenciador_Colisoes* Fase::getGerenciador_Colisoes()
+Gerenciador_Colisoes *Fase::getGerenciador_Colisoes()
 {
-    return gc;
+    return &gc;
 }
 
-Lista_Entidades* Fase::getLista_Entidades()
+Lista_Entidades *Fase::getLista_Entidades()
 {
-    return listaEntidades;
+    return &listaEntidades;
 }
 
-Mago* Fase::getMago()
+Mago *Fase::getMago()
 {
     return mago;
 }
 
-Gerenciador_Grafico* Fase::GetGerenciador_Grafico()
+Gerenciador_Grafico *Fase::GetGerenciador_Grafico()
 {
     return gf;
 }
 
 void Fase::atualizar(float t)
 {
-    listaEntidades->atualizarEntidades(t);
-    gc->gerenciarColisoes();
+    listaEntidades.atualizarEntidades(t);
+    gc.gerenciarColisoes();
 
-    listaEntidades->desenharEntidades(gf);
+    listaEntidades.desenharEntidades(gf);
 }
 
-void Fase::adicionar(Entidade_Colidivel* ec)
-{   
-    listaEntidades->inserir(ec);
+void Fase::adicionar(Entidade_Colidivel *ec)
+{
+    listaEntidades.inserir(ec);
     printf("teste\n");
-    gc->adicionarEntidade_Colidivel(ec);
+    gc.adicionarEntidade_Colidivel(ec);
 }

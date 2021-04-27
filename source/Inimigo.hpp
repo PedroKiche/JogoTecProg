@@ -6,7 +6,7 @@
 
 class Inimigo:public Personagem
 {
-private:
+protected:
     float alcance;
     Vetor2F posicaoInicial;
 public:
