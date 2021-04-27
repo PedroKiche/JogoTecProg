@@ -10,7 +10,7 @@ Lista_Entidades::~Lista_Entidades()
 
 void Lista_Entidades::inserir(Entidade *info)
 {
-    printf("teste\n");
+
     lista.inserir(info);
 }
 

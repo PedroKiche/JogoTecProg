@@ -43,12 +43,13 @@ void Fase::atualizar(float t)
     listaEntidades.atualizarEntidades(t);
     gc.gerenciarColisoes();
 
+    this->desenhar(gf);
     listaEntidades.desenharEntidades(gf);
+   
 }
 
 void Fase::adicionar(Entidade_Colidivel *ec)
 {
     listaEntidades.inserir(ec);
-    printf("teste\n");
     gc.adicionarEntidade_Colidivel(ec);
 }

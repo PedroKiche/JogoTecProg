@@ -70,25 +70,22 @@ Lista<TL>::~Lista()
 template <typename TL>
 void Lista<TL>::inserir(TL info)
 {
-  printf("teste\n");
-  if (info==NULL)
-  { 
-    printf("teste\n");
-    Elemento<TL> *novo = NULL;
-    novo = new Elemento<TL>(info);
-    if (!inicio)
-    {
-      inicio = novo;
-      fim = novo;
-    }
-    else
-    {
-      fim->setProx(novo);
-      novo->setAnt(fim);
-      fim = novo;
-    }
+  Elemento<TL> *novo = NULL;
+  novo = new Elemento<TL>(info);
+  novo->setInfo(info);
+  if (!inicio)
+  {
+    inicio = novo;
+    fim = novo;
+  }
+  else
+  {
+    fim->setProx(novo);
+    novo->setAnt(fim);
+    fim = novo;
   }
 }
+
 
 template <typename TL>
 void Lista<TL>::limpar()
@@ -107,14 +104,12 @@ void Lista<TL>::limpar()
   atual = NULL;
 }
 
-
 template <typename TL>
 TL Lista<TL>::getInicio()
 {
   atual = inicio;
   return (atual) ? atual->getInfo() : NULL;
 }
-
 
 template <typename TL>
 TL Lista<TL>::irProx()

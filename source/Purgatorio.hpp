@@ -10,8 +10,6 @@ public:
     Purgatorio(Gerenciador_Grafico* GeGr, Mago* mg);
     ~Purgatorio();
     void inicializarEntidades();
-
-    
 };
 
 #endif
