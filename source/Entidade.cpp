@@ -20,14 +20,14 @@ Entidade::Entidade(Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char 
 Entidade::~Entidade()
 {
 }
-void Entidade::inicializar(Gerenciador_Grafico &g)
+void Entidade::inicializar(Gerenciador_Grafico *g)
 {
-    g.carregarTextura(caminho);
+    g->carregarTextura(caminho);
 }
 
-void Entidade::desenhar(Gerenciador_Grafico &g)
+void Entidade::desenhar(Gerenciador_Grafico *g)
 {
-    g.desenhar(caminho, posicao, tamanho);
+    g->desenhar(caminho, posicao, tamanho);
 }
 
 void Entidade::setPosicao(const Vetor2F posicao)

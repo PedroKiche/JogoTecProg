@@ -68,12 +68,14 @@ Lista<TL>::~Lista()
 }
 
 template <typename TL>
-void Lista<TL>::inserir(TL elem)
+void Lista<TL>::inserir(TL info)
 {
-  if (elem)
-  { //info == NULL == 0 == false
-
-    Elemento<TL> *novo = new Elemento<TL>(elem);
+  printf("teste\n");
+  if (info==NULL)
+  { 
+    printf("teste\n");
+    Elemento<TL> *novo = NULL;
+    novo = new Elemento<TL>(info);
     if (!inicio)
     {
       inicio = novo;

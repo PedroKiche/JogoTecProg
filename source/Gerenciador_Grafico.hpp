@@ -22,7 +22,7 @@ public:
     void limpar();
     void desenhar(const std::string &caminho, const Vetor2D<float> posicao, const Vetor2D<float> tamanho);
     bool carregarTextura(const std::string &caminho);
-    void centralizar(const Vetor2D<float> centro);
+    void centralizar(const Vetor2F centro);
     sf::RenderWindow *getJanela() const;
     void eventosJanela();
 };

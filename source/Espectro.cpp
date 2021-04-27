@@ -18,7 +18,7 @@ void Espectro::atacar(Mago &mago)
     //Implementar 
 } 
 
-void Espectro::colidir()
+void Espectro::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
     //Implementar
 }

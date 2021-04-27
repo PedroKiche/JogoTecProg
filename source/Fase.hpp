@@ -1,11 +1,39 @@
 #ifndef _FASE_HPP_
 #define _FASE_HPP_
 
-#include"Entidade.hpp"
+#include "Gerenciador_Colisoes.hpp"
+#include "Lista_Entidades.hpp"
+#include "Mago.hpp"
+#include "Plataforma.hpp"
 
 class Fase : public Entidade
 {
+private:
+    Gerenciador_Colisoes* gc;
+    Lista_Entidades* listaEntidades;
+    Gerenciador_Grafico* gf;
+    Mago* mago;
+    
 
+public:
+    Fase();
+    Fase(Gerenciador_Grafico* GeGr, Mago* mg, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho);
+    ~Fase();
+
+    Gerenciador_Colisoes* getGerenciador_Colisoes();
+    
+    Lista_Entidades* getLista_Entidades();
+    
+    Mago* getMago();
+    
+    Gerenciador_Grafico* GetGerenciador_Grafico();
+    
+    virtual void inicializarEntidades() = 0;
+
+    void atualizar(float t);
+
+    void adicionar(Entidade_Colidivel* ec);
+  
 };
 
 #endif

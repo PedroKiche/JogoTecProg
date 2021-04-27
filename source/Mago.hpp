@@ -14,7 +14,7 @@ public:
     Mago(Vetor2F pos);
     ~Mago();
 
-    void colidir();
+    void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);
     void atualizar(float t);
 };
 

@@ -19,7 +19,7 @@ void Gargula::atacar(Mago &mago)
     //Implementar 
 } 
 
-void Gargula::colidir()
+void Gargula::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
     //Implementar
 }

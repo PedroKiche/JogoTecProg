@@ -13,7 +13,7 @@ public:
     virtual ~Aparicao();
 
     void atacar(Mago &mago);
-    void colidir();
+    void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);
     void atualizar(float t);
     void movimentar(float t);
 };

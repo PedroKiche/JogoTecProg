@@ -19,9 +19,12 @@ void Fantasma::atacar(Mago &mago)
     //Implementar 
 } 
 
-void Fantasma::colidir()
+void Fantasma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
-    //Implementar
+    if(id == Ids::plataforma)
+    {
+        setPosicao(Vetor2F(getPosicao().x, getPosicao().y - 2.0));
+    }
 }
 
 void Fantasma::atualizar(float t)
@@ -35,7 +38,7 @@ void Fantasma::movimentar(float t)
     {
         if (getPosicao().x < getPosicaoInicial().x + getAlcance())
         {
-            setPosicao(Vetor2F(getPosicao().x + t * getVelocidade(), getPosicao().y));
+            setPosicao(Vetor2F(getPosicao().x + t * getVelocidade(), getPosicao().y + t * 10));
         }
         else
         {
@@ -46,7 +49,7 @@ void Fantasma::movimentar(float t)
     {
         if (getPosicao().x  > getPosicaoInicial().x - getAlcance())
         {
-            setPosicao(Vetor2F(getPosicao().x - t * getVelocidade(), getPosicao().y)); 
+            setPosicao(Vetor2F(getPosicao().x - t * getVelocidade(), getPosicao().y + t * 10)); 
         }
         else
         {

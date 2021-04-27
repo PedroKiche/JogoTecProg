@@ -12,7 +12,7 @@ private:
 public:
     Gerenciador_Colisoes();
     ~Gerenciador_Colisoes();
-    void adiocionarEntidade_Colidivel(Entidade_Colidivel* ec);
+    void adicionarEntidade_Colidivel(Entidade_Colidivel* ec);
     void removerEntidade_Colidivel(Entidade_Colidivel* ec);
     bool estaoColidindo(Entidade_Colidivel* ec1,Entidade_Colidivel* ec2);
     void removerTodos();

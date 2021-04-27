@@ -71,6 +71,7 @@ bool Gerenciador_Grafico::carregarTextura(const std::string &caminho)
 void Gerenciador_Grafico::centralizar(const Vetor2F centro)
 {
     camera.setCenter(sf::Vector2f(centro.x, centro.y));
+    janela->setView(camera);
 }
 
 sf::RenderWindow *Gerenciador_Grafico::getJanela() const

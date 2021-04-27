@@ -10,10 +10,11 @@ Lista_Entidades::~Lista_Entidades()
 
 void Lista_Entidades::inserir(Entidade *info)
 {
+    printf("teste\n");
     lista.inserir(info);
 }
 
-void Lista_Entidades::inicializarEntidades(Gerenciador_Grafico &gf)
+void Lista_Entidades::inicializarEntidades(Gerenciador_Grafico* gf)
 {
     Entidade *aux = lista.getInicio();
     while (aux)
@@ -34,7 +35,7 @@ void Lista_Entidades::atualizarEntidades(float t)
     }
 }
 
-void Lista_Entidades::desenharEntidades(Gerenciador_Grafico &gf)
+void Lista_Entidades::desenharEntidades(Gerenciador_Grafico* gf)
 {
     Entidade *aux = lista.getInicio();
 

@@ -37,7 +37,7 @@ public:
     Lista();
     ~Lista();
 
-    void inserir(TL elem);
+    void inserir(TL info);
     void limpar();
 
     TL getInicio();

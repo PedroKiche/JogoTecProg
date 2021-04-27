@@ -18,7 +18,7 @@ void Aparicao::atacar(Mago &mago)
     //Implementar 
 } 
 
-void Aparicao::colidir()
+void Aparicao::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
     //Implementar
 }

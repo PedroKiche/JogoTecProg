@@ -3,7 +3,7 @@
 
 
 namespace Ids
-{
+{  
     enum Id
     {   
         vazioID = -1,
@@ -19,7 +19,8 @@ namespace Ids
         buraconegro,
         purgatorio,
         limiar,
-        floresta
+        floresta,
+        plataforma
     };
 }
 

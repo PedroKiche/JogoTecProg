@@ -9,7 +9,7 @@ public:
     Entidade_Colidivel(Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho);
     Entidade_Colidivel();
     virtual ~Entidade_Colidivel();
-    virtual void colidir() = 0;
+    virtual void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam) = 0;
 };
 
 #endif
