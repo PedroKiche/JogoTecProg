@@ -14,16 +14,15 @@ Agonia::~Agonia()
 
 void Agonia::executar()
 {
-    sf::Clock relogio;
-    relogio.restart();
+    relogio.restartar();
     while (gf.getJanela()->isOpen())
     {
 
-        float dt = relogio.getElapsedTime().asSeconds();
+        float dt = relogio.tempoDecorrido();
         if (dt > 1.0f / 20.0f)
             dt = 1.0 / 20.0f;
         //std::cout << dt << std::endl;
-        relogio.restart();
+        relogio.restartar();
         gf.limpar();
         
         purgatorio->atualizar(dt);
