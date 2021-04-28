@@ -5,6 +5,7 @@ Mago::Mago() : Personagem(),
                controle()
 {
     altPulo = 0;
+    aceleracao = 0;
     podePular = false;
 }
 
@@ -15,7 +16,8 @@ Mago::~Mago()
 Mago::Mago(Vetor2F pos) : Personagem(Ids::mago, pos, Vetor2F(50.0f, 75.0f), 200.0, "../JogoTecProg/texture/mago.png"),
                           controle(Teclado::A, Teclado::D, Teclado::W, Teclado::C)
 {
-    altPulo = 900;
+    altPulo = 135;
+    aceleracao = 0;
     podePular = true;
 }
 
@@ -52,6 +54,7 @@ void Mago::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
                 else
                 {
                     posicao.y -= interY;
+                    aceleracao = 0;
                 }
             }
         }
@@ -73,9 +76,8 @@ void Mago::movimentar(float t)
     posicao.x += movimenta.x * t * velocidade;
     if (movimenta.y == -1 && podePular){
         podePular = false;
-        aceleracao = - (t * altPulo);
-    }
-    
-    aceleracao += t * 40.0f;
-    posicao.y += aceleracao;
+        aceleracao = - sqrt(2 * 1000 * altPulo);
+    }    
+    aceleracao += t * 1000.0f;
+    posicao.y += t * aceleracao;
 }
