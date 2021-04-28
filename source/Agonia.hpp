@@ -8,8 +8,8 @@ class Agonia
 {
 private:
     Gerenciador_Grafico gf;
-    Mago mago;
-    Purgatorio purgatorio;
+    Mago* mago;
+    Purgatorio* purgatorio;
 
 public:
     Agonia();

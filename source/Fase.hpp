@@ -23,7 +23,7 @@ public:
 
     void adicionar(Entidade_Colidivel *ec);
 
-     virtual void inicializarEntidades() = 0;
+    virtual void inicializarEntidades() = 0;
 };
 
 #endif

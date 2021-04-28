@@ -1,10 +1,10 @@
 #include "Agonia.hpp"
 #include <iostream>
 #include<stdio.h>
-Agonia::Agonia():mago(Vetor2F(200.0f,200.0f)),
-                 purgatorio(&gf,&mago)
+Agonia::Agonia()
 {
-   
+   mago = new Mago(Vetor2F(200.0f, 200.0f));
+   purgatorio = new Purgatorio(&gf, mago);
 }
 
 Agonia::~Agonia()
@@ -26,11 +26,11 @@ void Agonia::executar()
         relogio.restart();
         gf.limpar();
         
-        purgatorio.atualizar(dt);
+        purgatorio->atualizar(dt);
         
         
-        if(mago.getPosicao().x > 400.0f && mago.getPosicao().x < 2800.0f)
-        gf.centralizar(Vetor2F(mago.getPosicao().x, 300.0f));
+        if(mago->getPosicao().x > 400.0f && mago->getPosicao().x < 2800.0f)
+        gf.centralizar(Vetor2F(mago->getPosicao().x, 300.0f));
         gf.mostrar();
         gf.eventosJanela();
     }

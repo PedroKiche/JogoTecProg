@@ -72,7 +72,6 @@ Lista<TL>::~Lista()
 template <typename TL>
 void Lista<TL>::inserir(TL info)
 {
-  std::cout << "inserir" << std::endl;
   Elemento *novo = NULL;
   novo = new Elemento(info);
   novo->setInfo(info);

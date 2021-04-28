@@ -28,7 +28,7 @@ Vetor2F Controle::movimentacao()
     if (Teclado::teclaFoiPressionada(direita))
         movimento.x += 1;
     if (Teclado::teclaFoiPressionada(pulo))
-        movimento.y += 1;
+        movimento.y -= 1;
     return movimento;
 }
 
