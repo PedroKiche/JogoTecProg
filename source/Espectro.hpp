@@ -7,10 +7,10 @@ class Espectro: public Inimigo
 {
 public:
     Espectro();
-    Espectro(const Vetor2F pos);
+    Espectro(const Vetor2F pos, Mago* mg);
     virtual ~Espectro();
 
-    void atacar(Mago &mago);
+    void atacar();
     void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);
     void atualizar(float t);
     void movimentar(float t);

@@ -4,12 +4,14 @@ Inimigo::Inimigo() : Personagem()
 {
     posicaoInicial = Vetor2F(0.0f, 0.0f);
     alcance = 0;
+    mago = NULL;
 }
 
-Inimigo::Inimigo(Ids::Id id, const Vetor2F pos, const Vetor2F tam, float alc, float vel, const char *caminho): Personagem(id, pos, tam, vel, caminho)
+Inimigo::Inimigo(Ids::Id id, const Vetor2F pos, const Vetor2F tam, float alc, float vel,Mago* mg, const char *caminho): Personagem(id, pos, tam, vel, caminho)
 {
     posicaoInicial = pos;
     alcance = alc;
+    mago = mg;
 }
 
 Inimigo::~Inimigo()
