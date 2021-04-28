@@ -20,6 +20,7 @@ Entidade::Entidade(Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char 
 Entidade::~Entidade()
 {
 }
+
 void Entidade::inicializar(Gerenciador_Grafico *g)
 {
     g->carregarTextura(caminho);
@@ -35,7 +36,7 @@ void Entidade::setPosicao(const Vetor2F posicao)
     this->posicao = posicao;
 }
 
-Vetor2F Entidade::getPosicao()
+ Vetor2F Entidade::getPosicao() const
 {
     return posicao;
 }

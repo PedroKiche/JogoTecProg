@@ -14,28 +14,8 @@ Fase::Fase(Gerenciador_Grafico *GeGr, Mago *mg, Ids::Id id, const Vetor2F pos, c
 
 Fase::~Fase()
 {
-    listaEntidades.destruirEntidades();
+    //listaEntidades.destruirEntidades();
     gc.removerTodos();
-}
-
-Gerenciador_Colisoes *Fase::getGerenciador_Colisoes()
-{
-    return &gc;
-}
-
-Lista_Entidades *Fase::getLista_Entidades()
-{
-    return &listaEntidades;
-}
-
-Mago *Fase::getMago()
-{
-    return mago;
-}
-
-Gerenciador_Grafico *Fase::GetGerenciador_Grafico()
-{
-    return gf;
 }
 
 void Fase::atualizar(float t)

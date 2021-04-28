@@ -19,19 +19,11 @@ public:
     Fase(Gerenciador_Grafico *GeGr, Mago *mg, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho);
     ~Fase();
 
-    Gerenciador_Colisoes *getGerenciador_Colisoes();
-
-    Lista_Entidades *getLista_Entidades();
-
-    Mago *getMago();
-
-    Gerenciador_Grafico *GetGerenciador_Grafico();
-
-    virtual void inicializarEntidades() = 0;
-
     void atualizar(float t);
 
     void adicionar(Entidade_Colidivel *ec);
+
+     virtual void inicializarEntidades() = 0;
 };
 
 #endif

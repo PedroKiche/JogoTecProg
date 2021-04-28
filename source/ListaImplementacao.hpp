@@ -1,55 +1,57 @@
+#include<iostream>
+
 template <typename TL>
-template <typename TE>
-Lista<TL>::Elemento<TE>::Elemento(TE Info, Elemento<TE> *Ant, Elemento<TE> *Prox) : info(Info),
+
+Lista<TL>::Elemento::Elemento(TL Info, Elemento *Ant, Elemento *Prox) : info(Info),
                                                                                     anterior(Ant),
                                                                                     proximo(Prox)
 {
 }
 
 template <typename TL>
-template <typename TE>
-Lista<TL>::Elemento<TE>::~Elemento()
+
+Lista<TL>::Elemento::~Elemento()
 {
 }
 
 template <typename TL>
-template <typename TE>
-TE Lista<TL>::Elemento<TE>::getInfo() const
+
+TL Lista<TL>::Elemento::getInfo() const
 {
   return info;
 }
 
 template <typename TL>
-template <typename TE>
-void Lista<TL>::Elemento<TE>::setInfo(const TE Info)
+
+void Lista<TL>::Elemento::setInfo(const TL Info)
 {
   info = Info;
 }
 
 template <typename TL>
-template <typename TE>
-Lista<TL>::Elemento<TE> *Lista<TL>::Elemento<TE>::getAnt() const
+
+typename Lista<TL>::Elemento *Lista<TL>::Elemento::getAnt() const
 {
   return anterior;
 }
 
 template <typename TL>
-template <typename TE>
-void Lista<TL>::Elemento<TE>::setAnt(Elemento<TE> *Ant)
+
+void Lista<TL>::Elemento::setAnt(Elemento *Ant)
 {
   anterior = Ant;
 }
 
 template <typename TL>
-template <typename TE>
-Lista<TL>::Elemento<TE> *Lista<TL>::Elemento<TE>::getProx() const
+
+typename Lista<TL>::Elemento *Lista<TL>::Elemento::getProx() const
 {
   return proximo;
 }
 
 template <typename TL>
-template <typename TE>
-void Lista<TL>::Elemento<TE>::setProx(Elemento<TE> *Prox)
+
+void Lista<TL>::Elemento::setProx(Elemento *Prox)
 {
   proximo = Prox;
 }
@@ -70,10 +72,11 @@ Lista<TL>::~Lista()
 template <typename TL>
 void Lista<TL>::inserir(TL info)
 {
-  Elemento<TL> *novo = NULL;
-  novo = new Elemento<TL>(info);
+  std::cout << "inserir" << std::endl;
+  Elemento *novo = NULL;
+  novo = new Elemento(info);
   novo->setInfo(info);
-  if (!inicio)
+  if (inicio==NULL)
   {
     inicio = novo;
     fim = novo;
@@ -90,7 +93,7 @@ void Lista<TL>::inserir(TL info)
 template <typename TL>
 void Lista<TL>::limpar()
 {
-  Elemento<TL> *paux = inicio;
+  Elemento *paux = inicio;
   atual = inicio;
 
   while (atual != NULL)
@@ -116,4 +119,30 @@ TL Lista<TL>::irProx()
 {
   atual = atual->getProx();
   return (atual) ? atual->getInfo() : NULL;
+}
+
+template <typename TL>
+TL Lista<TL>::removeInicio()
+{
+  if(inicio!=NULL)
+  {
+    std::cout << "TL Lista<TL>::removeInicio()" << std::endl;
+    TL aux = inicio->getInfo();
+   
+    Elemento* aux2 = inicio;
+    if(atual==inicio)
+    {
+      atual= inicio->getProx();
+    }
+   
+    if(fim==inicio)
+    {
+      fim= NULL;
+    }
+    inicio->setAnt(NULL);
+    inicio = inicio->getProx();
+    delete aux2;
+    return aux;
+  }
+  return NULL;
 }

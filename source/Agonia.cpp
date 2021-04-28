@@ -25,7 +25,11 @@ void Agonia::executar()
         //std::cout << dt << std::endl;
         relogio.restart();
         gf.limpar();
+        
         purgatorio.atualizar(dt);
+        
+        
+        if(mago.getPosicao().x > 400.0f && mago.getPosicao().x < 2800.0f)
         gf.centralizar(Vetor2F(mago.getPosicao().x, 300.0f));
         gf.mostrar();
         gf.eventosJanela();

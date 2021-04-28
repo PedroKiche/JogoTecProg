@@ -5,12 +5,13 @@ Lista_Entidades::Lista_Entidades()
 }
 Lista_Entidades::~Lista_Entidades()
 {
-    destruirEntidades();
+    if(lista.getInicio()!=NULL)
+        destruirEntidades();
+    
 }
 
 void Lista_Entidades::inserir(Entidade *info)
 {
-
     lista.inserir(info);
 }
 
@@ -48,12 +49,12 @@ void Lista_Entidades::desenharEntidades(Gerenciador_Grafico* gf)
 
 void Lista_Entidades::destruirEntidades()
 {
-    Entidade* aux = lista.getInicio();
-    
+    Entidade* aux = lista.removeInicio();
     while(aux)
-    {
+    {   
         delete aux;
-        aux = lista.irProx();
+        lista.imprimirD();
+        aux = lista.removeInicio();
     }
-    lista.limpar();
+    lista.imprimirD();
 }

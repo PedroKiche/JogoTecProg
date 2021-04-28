@@ -1,24 +1,24 @@
 #ifndef _LISTA_HPP_
 #define _LISTA_HPP_
+#include<iostream>
 
 template <typename TL>
 class Lista
 {
 private:
-    template <typename TE>
     class Elemento
     {
     private:
-        TE info;
+        TL info;
         Elemento *anterior;
         Elemento *proximo;
 
     public:
-        Elemento(TE info = NULL, Elemento *anterior = NULL, Elemento *proximo = NULL);
+        Elemento(TL info = NULL, Elemento *anterior = NULL, Elemento *proximo = NULL);
         ~Elemento();
 
-        TE getInfo() const;
-        void setInfo(const TE  info);
+        TL getInfo() const;
+        void setInfo(const TL  info);
 
         Elemento *getAnt() const;
         void setAnt(Elemento*  ant);
@@ -29,9 +29,9 @@ private:
         void remover();
     };
 
-    Elemento<TL> *inicio;
-    Elemento<TL> *fim;
-    Elemento<TL> *atual;
+    Elemento *inicio;
+    Elemento *fim;
+    Elemento *atual;
 
 public:
     Lista();
@@ -40,8 +40,15 @@ public:
     void inserir(TL info);
     void limpar();
 
+    TL removeInicio();
     TL getInicio();
     TL irProx();
+    void imprimirD()
+    {
+        std::cout << (inicio==NULL ? "nulo" : "nao nulo") << std::endl;
+        std::cout << (atual==NULL ? "nulo" : "nao nulo") << std::endl;
+        std::cout << (fim==NULL ? "nulo" : "nao nulo") << std::endl;
+    }
 };
 
 #include "ListaImplementacao.hpp"

@@ -21,7 +21,7 @@ public:
     void desenhar(Gerenciador_Grafico* g);
 
     void setPosicao(const  Vetor2F posicao);
-    Vetor2F getPosicao() ;
+    Vetor2F getPosicao() const;
 
     void setTamanho(const Vetor2F tamanho);
     Vetor2F getTamanho();

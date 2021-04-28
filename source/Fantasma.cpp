@@ -21,16 +21,45 @@ void Fantasma::atacar(Mago &mago)
 
 void Fantasma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
-    if(id == Ids::plataforma)
+    if (id == Ids::plataforma)
     {
-        posicao.y -= 2.0;
+        float deltaX = pos.x - posicao.x;
+        float deltaY = pos.y - posicao.y;
+        float interX = abs(deltaX) - (tam.x / 2 + tamanho.x / 2);
+        float interY = abs(deltaY) - (tam.y / 2 + tamanho.y / 2);
+
+        if (interX < 0.0f && interY < 0.0f)
+        {
+            if (interX > interY)
+            {
+                if (deltaX > 0.0f)
+                {
+                    posicao.x += interX;
+                }
+                else
+                {
+                    posicao.x -= interX;
+                }
+            }
+            else
+            {
+                if (deltaY > 0.0f)
+                {
+                    posicao.y += interY;
+                }
+                else
+                {
+                    posicao.y -= interY;
+                }
+            }
+        }
     }
 }
 
 void Fantasma::atualizar(float t)
 {
     movimentar(t);
-    posicao.y += t * 10;
+    posicao.y += t * 100;
     
 }
 
