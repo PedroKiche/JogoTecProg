@@ -39,7 +39,7 @@ void Fantasma::atacar(float t)
 
 void Fantasma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
-    if (id == Ids::plataforma)
+    if (id == Ids::plataforma || id == Ids::fantasma)
     {
         float deltaX = pos.x - posicao.x;
         float deltaY = pos.y - posicao.y;

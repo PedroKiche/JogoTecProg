@@ -22,10 +22,12 @@ void Alma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
         if (descendo)
         {
             descendo = false;
+            posicao.y -= 10;
         }
         else
         {
             descendo = true;
+            posicao.y += 10;
         }
     }
 }
