@@ -5,7 +5,7 @@ Gargula::Gargula()
     frente = false;
 }
 
-Gargula::Gargula(const Vetor2F pos, Mago* mg): Inimigo(Ids::gargula, pos, Vetor2F(90.0f, 100.0f), 200.0, 150.0, mg, "../JogoTecProg/texture/gargula.png")
+Gargula::Gargula(const Vetor2F pos, Mago* mg): Inimigo(Ids::gargula, pos, Vetor2F(90.0f, 100.0f), 100.0, 150.0, mg, "../JogoTecProg/texture/gargula.png")
 {
     frente = true;
 }

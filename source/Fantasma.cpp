@@ -7,7 +7,7 @@ Fantasma::Fantasma() : Inimigo()
     velQueda = 0;
 }
 
-Fantasma::Fantasma(const Vetor2F pos, Mago* mg): Inimigo(Ids::fantasma, pos, Vetor2F(50.0f, 50.0f), 200.0, 100.0, mg,  "../JogoTecProg/texture/fantasma.png")
+Fantasma::Fantasma(const Vetor2F pos, Mago* mg): Inimigo(Ids::fantasma, pos, Vetor2F(50.0f, 50.0f), 130.0, 100.0, mg,  "../JogoTecProg/texture/fantasma.png")
 {
     frente = true;
     atacando = false;
