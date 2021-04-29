@@ -16,17 +16,57 @@ Gargula::~Gargula()
 
 void Gargula::atacar(float t)
 {
-    //Implementar 
+    float distanciaY = posicao.y - mago->getPosicao().y;
+    float distanciaX = posicao.x - mago->getPosicao().x;
+    if (abs(distanciaX) < alcance && distanciaY > -alcance && distanciaY < 0)
+    {
+        if ((posicao.y - posicaoInicial.y) < alcance){
+            posicao.y += t * velocidade;
+        }
+    }
 } 
 
 void Gargula::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
-    //Implementar
+     if (id == Ids::plataforma)
+    {
+        float deltaX = pos.x - posicao.x;
+        float deltaY = pos.y - posicao.y;
+        float interX = abs(deltaX) - (tam.x / 2 + tamanho.x / 2);
+        float interY = abs(deltaY) - (tam.y / 2 + tamanho.y / 2);
+
+        if (interX < 0.0f && interY < 0.0f)
+        {
+            if (interX > interY)
+            {
+                if (deltaX > 0.0f)
+                {
+                    posicao.x += interX;
+                }
+                else
+                {
+                    posicao.x -= interX;
+                }
+            }
+            else
+            {
+                if (deltaY > 0.0f)
+                {
+                    posicao.y += interY;
+                }
+                else
+                {
+                    posicao.y -= interY;
+                }
+            }
+        }
+    }
 }
 
 void Gargula::atualizar(float t)
 {
     movimentar(t);
+    atacar(t);
 }
 
 void Gargula::movimentar(float t)

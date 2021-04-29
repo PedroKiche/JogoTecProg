@@ -10,7 +10,6 @@ protected:
     float alcance;
     Vetor2F posicaoInicial;
     Mago* mago;
-
 public:
     Inimigo();
     Inimigo(Ids::Id id, const Vetor2F pos, const Vetor2F tam, float alc, float vel,Mago* mg, const char *caminho);

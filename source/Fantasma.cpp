@@ -3,15 +3,15 @@
 Fantasma::Fantasma() : Inimigo()
 {
     frente = false;
-    atacando =false;
+    atacando = false;
     velQueda = 0;
 }
 
 Fantasma::Fantasma(const Vetor2F pos, Mago* mg): Inimigo(Ids::fantasma, pos, Vetor2F(50.0f, 50.0f), 130.0, 100.0, mg,  "../JogoTecProg/texture/fantasma.png")
 {
     frente = true;
-    atacando = false;
     velQueda = 0;
+    atacando = false;
 }
 
 Fantasma::~Fantasma()
@@ -25,7 +25,7 @@ void Fantasma::atacar(float t)
     {
         atacando=true;
         velocidade = 150.0f;
-        if(distancia >0)
+        if(distancia > 0)
             posicao.x -= t * velocidade;
         else
             posicao.x += t * velocidade;

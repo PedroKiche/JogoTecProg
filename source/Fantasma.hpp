@@ -7,8 +7,8 @@ class Fantasma: public Inimigo
 {
 private:
     bool frente;
-    bool atacando;
     float velQueda;
+    bool atacando;
 public:
     Fantasma();
     Fantasma(const Vetor2F pos, Mago* mg);

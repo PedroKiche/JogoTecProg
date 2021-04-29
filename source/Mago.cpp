@@ -61,10 +61,9 @@ void Mago::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
     }
     if(Ids::espinhos == id)
     {
-        velocidade = 50.0f;
+        //velocidade = 50.0f;
     }
-    else 
-        velocidade = 200.0f;
+    
 }
 
 void Mago::atualizar(float t)
