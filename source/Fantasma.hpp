@@ -7,12 +7,14 @@ class Fantasma: public Inimigo
 {
 private:
     bool frente;
+    bool atacando;
+    float velQueda;
 public:
     Fantasma();
     Fantasma(const Vetor2F pos, Mago* mg);
     virtual ~Fantasma();
 
-    void atacar();
+    void atacar(float t);
     void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);
     void atualizar(float t);
     void movimentar(float t);

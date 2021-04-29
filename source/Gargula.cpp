@@ -14,7 +14,7 @@ Gargula::~Gargula()
 {
 }
 
-void Gargula::atacar()
+void Gargula::atacar(float t)
 {
     //Implementar 
 } 

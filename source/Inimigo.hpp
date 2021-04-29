@@ -20,7 +20,7 @@ public:
     void setAlcance(float alc);
     void setPosicaoInicial(Vetor2F pos);
     Vetor2F getPosicaoInicial();
-    virtual void atacar() = 0;
+    virtual void atacar(float t) = 0;
 };
 
 #endif

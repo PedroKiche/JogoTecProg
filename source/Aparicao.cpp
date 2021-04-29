@@ -13,7 +13,7 @@ Aparicao::~Aparicao()
 {
 }
 
-void Aparicao::atacar()
+void Aparicao::atacar(float t)
 {
     //Implementar 
 } 

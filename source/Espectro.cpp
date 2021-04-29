@@ -13,7 +13,7 @@ Espectro::~Espectro()
 {
 }
 
-void Espectro::atacar()
+void Espectro::atacar(float t)
 {
     //Implementar 
 } 

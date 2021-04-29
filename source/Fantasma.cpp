@@ -3,20 +3,38 @@
 Fantasma::Fantasma() : Inimigo()
 {
     frente = false;
+    atacando =false;
+    velQueda = 0;
 }
 
 Fantasma::Fantasma(const Vetor2F pos, Mago* mg): Inimigo(Ids::fantasma, pos, Vetor2F(50.0f, 50.0f), 200.0, 100.0, mg,  "../JogoTecProg/texture/fantasma.png")
 {
     frente = true;
+    atacando = false;
+    velQueda = 0;
 }
 
 Fantasma::~Fantasma()
 {
 }
 
-void Fantasma::atacar()
+void Fantasma::atacar(float t)
 {
-    //Implementar 
+    float distancia = posicao.x - mago->getPosicao().x;
+    if(abs(distancia) < alcance)
+    {
+        atacando=true;
+        velocidade = 150.0f;
+        if(distancia >0)
+            posicao.x -= t * velocidade;
+        else
+            posicao.x += t * velocidade;
+    }
+    else
+    {
+        velocidade = 100.0f;
+        atacando=false;
+    }
 } 
 
 void Fantasma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
@@ -46,6 +64,7 @@ void Fantasma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
                 if (deltaY > 0.0f)
                 {
                     posicao.y += interY;
+                    velQueda = 0;
                 }
                 else
                 {
@@ -57,9 +76,13 @@ void Fantasma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 }
 
 void Fantasma::atualizar(float t)
-{
+{   
+    if(atacando == false)
     movimentar(t);
-    posicao.y += t * 100;
+
+    atacar(t);
+    velQueda += 1000.0f * t;
+    posicao.y += velQueda * t;
     
 }
 

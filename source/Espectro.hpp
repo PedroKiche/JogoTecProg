@@ -10,7 +10,7 @@ public:
     Espectro(const Vetor2F pos, Mago* mg);
     virtual ~Espectro();
 
-    void atacar();
+    void atacar(float t);
     void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);
     void atualizar(float t);
     void movimentar(float t);
