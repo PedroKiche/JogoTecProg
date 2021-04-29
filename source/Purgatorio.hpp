@@ -11,7 +11,8 @@ public:
     ~Purgatorio();
     void inicializarEntidades();
     void criaPlataformas();
-
+    void criaInimigos();
+    void criaObstaculos();
 };
 
 #endif
