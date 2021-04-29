@@ -1,6 +1,8 @@
 #include"Purgatorio.hpp"
 #include "Fantasma.hpp"
 #include "Gargula.hpp"
+#include "Alma.hpp"
+#include "Espinho.hpp"
 
 Purgatorio::Purgatorio():Fase()
 {
@@ -28,7 +30,9 @@ void Purgatorio::inicializarEntidades()
     criaPlataformas();
 
     adicionar(new Fantasma(Vetor2F(300.0f,300.0F),mago));  
-    adicionar(new Gargula(Vetor2F(800.0f,200.0F),mago));   
+    adicionar(new Gargula(Vetor2F(800.0f,200.0F),mago));
+    adicionar(new Alma(Vetor2F(400.0f, 60.0f)));
+    adicionar(new Espinho(Vetor2F(675.0f, 310.0f)));      
     
     listaEntidades.inicializarEntidades(gf);
 }
@@ -36,6 +40,7 @@ void Purgatorio::inicializarEntidades()
 void Purgatorio::criaPlataformas()
 {
     adicionar(new Plataforma(Vetor2F(1600.0f,520.0f), Vetor2F(3200.0f,10.0f)));
+    adicionar(new Plataforma(Vetor2F(1600.0f,0.0f), Vetor2F(3200.0f,10.0f)));
 
     adicionar(new Plataforma(Vetor2F(275.0f,415.0f), Vetor2F(150.0f,30.0f)));
     adicionar(new Plataforma(Vetor2F(480.0f,345.0f), Vetor2F(100.0f,30.0f)));
