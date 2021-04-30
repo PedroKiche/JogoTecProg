@@ -53,8 +53,6 @@ void Lista_Entidades::destruirEntidades()
     while(aux)
     {   
         delete aux;
-        lista.imprimirD();
         aux = lista.removeInicio();
     }
-    lista.imprimirD();
 }

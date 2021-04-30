@@ -17,8 +17,8 @@ public:
 
     float getAlcance();
     void setAlcance(float alc);
-    void setPosicaoInicial(Vetor2F pos);
     Vetor2F getPosicaoInicial();
+    void setPosicaoInicial(Vetor2F pos);
     virtual void atacar(float t) = 0;
 };
 

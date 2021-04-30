@@ -13,7 +13,7 @@ Mago::~Mago()
 {
 }
 
-Mago::Mago(Vetor2F pos) : Personagem(Ids::mago, pos, Vetor2F(40.0f, 75.0f), 200.0, "../JogoTecProg/texture/mago.png"),
+Mago::Mago(const Vetor2F pos) : Personagem(Ids::mago, pos, Vetor2F(40.0f, 75.0f), 200.0, "../JogoTecProg/texture/mago.png"),
                           controle(Teclado::A, Teclado::D, Teclado::W, Teclado::C)
 {
     altPulo = 135;

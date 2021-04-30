@@ -13,7 +13,7 @@ private:
     float aceleracao;
 public:
     Mago();
-    Mago(Vetor2F pos);
+    Mago(const Vetor2F pos);
     ~Mago();
 
     void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);

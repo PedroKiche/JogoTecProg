@@ -43,12 +43,6 @@ public:
     TL removeInicio();
     TL getInicio();
     TL irProx();
-    void imprimirD()
-    {
-        std::cout << (inicio==NULL ? "nulo" : "nao nulo") << std::endl;
-        std::cout << (atual==NULL ? "nulo" : "nao nulo") << std::endl;
-        std::cout << (fim==NULL ? "nulo" : "nao nulo") << std::endl;
-    }
 };
 
 #include "ListaImplementacao.hpp"
