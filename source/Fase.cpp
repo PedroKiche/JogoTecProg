@@ -33,3 +33,13 @@ void Fase::adicionar(Entidade_Colidivel *ec)
     listaEntidades.inserir(ec);
     gc.adicionarEntidade_Colidivel(ec);
 }
+
+Mago* Fase::getMago()
+{
+    return mago;
+}
+
+void Fase::inicializarEntidades()
+{
+    listaEntidades.inicializarEntidades(gf);
+}

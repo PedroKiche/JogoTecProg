@@ -12,7 +12,7 @@ protected:
     Gerenciador_Colisoes gc;
     Lista_Entidades listaEntidades;
     Gerenciador_Grafico *gf;
-    Mago *mago;
+    Mago* mago;
 
 public:
     Fase();
@@ -23,7 +23,9 @@ public:
 
     void adicionar(Entidade_Colidivel *ec);
 
-    virtual void inicializarEntidades() = 0;
+    void inicializarEntidades();
+
+    Mago* getMago();
 };
 
 #endif

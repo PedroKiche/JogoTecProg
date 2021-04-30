@@ -1,10 +1,11 @@
 #include "Agonia.hpp"
 #include <iostream>
 #include<stdio.h>
+#include"PurgatorioBuilder.hpp"
+
 Agonia::Agonia()
 {
    mago = new Mago(Vetor2F(100.0f, 400.0f));
-   purgatorio = new Purgatorio(&gf, mago);
 }
 
 Agonia::~Agonia()
@@ -15,6 +16,7 @@ Agonia::~Agonia()
 void Agonia::executar()
 {
     relogio.restartar();
+    geraFase();
     while (gf.getJanela()->isOpen())
     {
 
@@ -25,7 +27,7 @@ void Agonia::executar()
         relogio.restartar();
         gf.limpar();
         
-        purgatorio->atualizar(dt);
+        fase->atualizar(dt);
         
         
         if(mago->getPosicao().x > 400.0f && mago->getPosicao().x < 2800.0f)
@@ -33,4 +35,14 @@ void Agonia::executar()
         gf.mostrar();
         gf.eventosJanela();
     }
+}
+
+void Agonia::geraFase()
+{
+    FaseBuilder* geraFase = new PurgatorioBuilder(&gf,mago);
+    geraFase->criaPlataformas();
+    geraFase->criaInimigo();
+    geraFase->criaObstaculo();
+    fase = geraFase->getFase();
+    fase->inicializarEntidades();
 }
