@@ -6,7 +6,7 @@
 class Aparicao: public Inimigo
 {
 private:
-
+    bool descendo;
 public:
     Aparicao();
     Aparicao(const Vetor2F pos, Mago* mg);

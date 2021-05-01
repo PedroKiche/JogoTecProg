@@ -7,7 +7,6 @@
 #include "Alma.hpp"
 #include "Espinho.hpp"
 
-
 class Purgatorio:public Fase
 {
 public:
