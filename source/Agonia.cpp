@@ -17,6 +17,7 @@ void Agonia::executar()
 {
     relogio.restartar();
     geraFase();
+    mago->setFase(fase);
     while (gf.getJanela()->isOpen())
     {
 

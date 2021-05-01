@@ -3,6 +3,10 @@
 
 #include "Personagem.hpp"
 #include "Controle.hpp"
+#include"SuperNova.hpp"
+#include "Fase.hpp"
+class Fase;
+
 
 class Mago : public Personagem
 {
@@ -11,6 +15,10 @@ private:
     bool podePular;
     float altPulo;
     float aceleracao;
+    Fase* fase;
+    SuperNova* supernova;
+    bool frente;
+
 public:
     Mago();
     Mago(const Vetor2F pos);
@@ -19,6 +27,8 @@ public:
     void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);
     void atualizar(float t);
     void movimentar(float t);
+    void atirar();
+    void setFase(Fase* fase);
 };
 
 #endif

@@ -43,3 +43,8 @@ void Fase::inicializarEntidades()
 {
     listaEntidades.inicializarEntidades(gf);
 }
+
+void Fase::inicializa(Entidade_Colidivel *ec)
+{
+    ec->inicializar(gf);
+}

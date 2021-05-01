@@ -5,6 +5,7 @@
 #include "Lista_Entidades.hpp"
 #include "Mago.hpp"
 #include "Plataforma.hpp"
+class  Mago;
 
 class Fase : public Entidade
 {
@@ -22,6 +23,8 @@ public:
     void atualizar(float t);
 
     void adicionar(Entidade_Colidivel *ec);
+
+    void inicializa(Entidade_Colidivel *ec);
 
     void inicializarEntidades();
 

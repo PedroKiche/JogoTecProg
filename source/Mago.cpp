@@ -7,6 +7,9 @@ Mago::Mago() : Personagem(),
     altPulo = 0;
     aceleracao = 0;
     podePular = false;
+    fase = NULL;
+    supernova = NULL;
+    frente = false;
 }
 
 Mago::~Mago()
@@ -19,6 +22,9 @@ Mago::Mago(const Vetor2F pos) : Personagem(Ids::mago, pos, Vetor2F(40.0f, 75.0f)
     altPulo = 135;
     aceleracao = 0;
     podePular = true;
+    fase = NULL;
+    supernova = NULL;
+    frente = false;
 }
 
 void Mago::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
@@ -68,6 +74,8 @@ void Mago::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 
 void Mago::atualizar(float t)
 {
+    if(controle.atacar())
+        atirar();
     movimentar(t);
 }
 
@@ -82,7 +90,26 @@ void Mago::movimentar(float t)
     if (movimenta.y == -1 && podePular){
         podePular = false;
         aceleracao = - sqrt(2 * 1000 * altPulo);
-    }    
+    }
+    if (movimenta.x >0)
+        frente = true;
+    else if (movimenta.x < 0 )
+        frente = false;   
     aceleracao += t * 1000.0f;
     posicao.y += t * aceleracao;
 }
+
+void Mago::atirar()
+{
+    if(supernova == NULL)
+    {
+        supernova = new SuperNova(Vetor2F(posicao.x + 30.0f, posicao.y),frente,true,300.0f);
+        fase->adicionar(supernova);
+        fase->inicializa(supernova);
+    }
+}
+
+void Mago::setFase(Fase* fase)
+{
+    this->fase = fase;
+}   
