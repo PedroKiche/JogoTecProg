@@ -11,7 +11,7 @@ private:
     std::vector<Vetor2F> posicoesFantasma;
     std::vector<Vetor2F> posicoesGargula;
     std::vector<Vetor2F> posicoesAlma;
-    std::vector<Vetor2F> posicoesGargula;
+    std::vector<Vetor2F> posicoesEspinho;
 public:
     PurgatorioBuilder(Gerenciador_Grafico* gf, Mago* mg);
     ~PurgatorioBuilder();

@@ -53,6 +53,29 @@ void PurgatorioBuilder::criaPosInimigos()
     posicoesGargula.push_back(Vetor2F(3020.0f,330.0F));
 }
 
+void PurgatorioBuilder::criaPosObstaculos()
+{
+    posicoesAlma.push_back(Vetor2F(150.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(275.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(390.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(480.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(1750.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(2100.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(2750.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(2850.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(3150.0f, 60.0f));
+
+    posicoesEspinho.push_back(Vetor2F(275.0f, 380.0f));
+    posicoesEspinho.push_back(Vetor2F(565.0f, 495.0f));
+    posicoesEspinho.push_back(Vetor2F(675.0f, 310.0f));
+    posicoesEspinho.push_back(Vetor2F(1250.0f, 380.0f));
+    posicoesEspinho.push_back(Vetor2F(1550.0f, 495.0f));
+    posicoesEspinho.push_back(Vetor2F(1925.0f, 310.0f));
+    posicoesEspinho.push_back(Vetor2F(1925.0f, 495.0f));
+    posicoesEspinho.push_back(Vetor2F(3025.0f, 240.0f));
+    posicoesEspinho.push_back(Vetor2F(3025.0f, 495.0f));
+}
+
 void PurgatorioBuilder::criaInimigo()
 {
     for (int i = 0; i < 5; i++)
@@ -72,25 +95,19 @@ void PurgatorioBuilder::criaInimigo()
 
 void PurgatorioBuilder::criaObstaculo()
 {
-    fase->adicionar(new Alma(Vetor2F(150.0f, 60.0f)));
-    fase->adicionar(new Alma(Vetor2F(275.0f, 60.0f)));
-    fase->adicionar(new Alma(Vetor2F(390.0f, 60.0f)));
-    fase->adicionar(new Alma(Vetor2F(480.0f, 60.0f)));
-    fase->adicionar(new Alma(Vetor2F(1750.0f, 60.0f)));
-    fase->adicionar(new Alma(Vetor2F(2100.0f, 60.0f)));
-    fase->adicionar(new Alma(Vetor2F(2750.0f, 60.0f)));
-    fase->adicionar(new Alma(Vetor2F(2850.0f, 60.0f)));
-    fase->adicionar(new Alma(Vetor2F(3150.0f, 60.0f)));
-
-    fase->adicionar(new Espinho(Vetor2F(275.0f, 380.0f)));
-    fase->adicionar(new Espinho(Vetor2F(565.0f, 495.0f)));
-    fase->adicionar(new Espinho(Vetor2F(675.0f, 310.0f)));
-    fase->adicionar(new Espinho(Vetor2F(1250.0f, 380.0f)));
-    fase->adicionar(new Espinho(Vetor2F(1550.0f, 495.0f)));
-    fase->adicionar(new Espinho(Vetor2F(1925.0f, 310.0f)));
-    fase->adicionar(new Espinho(Vetor2F(1925.0f, 495.0f)));
-    fase->adicionar(new Espinho(Vetor2F(3025.0f, 240.0f)));
-    fase->adicionar(new Espinho(Vetor2F(3025.0f, 495.0f)));
+    for (int i = 0; i < 5; i++)
+    {
+        int p = rand()%(9 - i);
+        fase->adicionar(new Alma(posicoesAlma[p]));
+        posicoesAlma.erase(posicoesAlma.begin() + p);
+    }
+    
+    for (int i = 0; i < 5; i++)
+    {
+        int p = rand()%(9 - i);
+        fase->adicionar(new Espinho(posicoesEspinho[p]));
+        posicoesEspinho.erase(posicoesEspinho.begin() + p);
+    }
 }
 
 Fase* PurgatorioBuilder::getFase()

@@ -9,8 +9,9 @@ public:
     FaseBuilder();
     ~FaseBuilder();
     virtual void criaPlataformas()=0;
-    virtual void criaInimigo()=0;
     virtual void criaPosInimigos()=0;
+    virtual void criaPosObstaculos()=0;
+    virtual void criaInimigo()=0;
     virtual void criaObstaculo()=0;
     virtual Fase* getFase()=0;
 };
