@@ -41,6 +41,7 @@ void Agonia::geraFase()
 {
     FaseBuilder* geraFase = new PurgatorioBuilder(&gf,mago);
     geraFase->criaPlataformas();
+    geraFase->criaPosInimigos();
     geraFase->criaInimigo();
     geraFase->criaObstaculo();
     fase = geraFase->getFase();

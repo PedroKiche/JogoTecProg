@@ -1,7 +1,7 @@
 #ifndef _PURGATORIO_HPP_
 #define _PURGATORIO_HPP_
 
-#include"Fase.hpp"
+#include "Fase.hpp"
 #include "Fantasma.hpp"
 #include "Gargula.hpp"
 #include "Alma.hpp"

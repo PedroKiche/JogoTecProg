@@ -8,11 +8,16 @@ class PurgatorioBuilder: public FaseBuilder
 {
 private:
     Fase* fase;
-
+    std::vector<Vetor2F> posicoesFantasma;
+    std::vector<Vetor2F> posicoesGargula;
+    std::vector<Vetor2F> posicoesAlma;
+    std::vector<Vetor2F> posicoesGargula;
 public:
     PurgatorioBuilder(Gerenciador_Grafico* gf, Mago* mg);
     ~PurgatorioBuilder();
     void criaPlataformas();
+    void criaPosInimigos();
+    void criaPosObstaculos();
     void criaInimigo();
     void criaObstaculo();
     void inicializarEntidades();
