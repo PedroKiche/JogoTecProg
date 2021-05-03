@@ -5,6 +5,7 @@
 #include "Lista_Entidades.hpp"
 #include "Mago.hpp"
 #include "Plataforma.hpp"
+#include "Inimigo.hpp"
 class  Mago;
 
 class Fase : public Entidade
@@ -14,6 +15,7 @@ protected:
     Lista_Entidades listaEntidades;
     Gerenciador_Grafico *gf;
     Mago* mago;
+    std::set<Inimigo*> inimigos;
 
 public:
     Fase();
@@ -31,6 +33,10 @@ public:
     void inicializarEntidades();
 
     Mago* getMago();
+
+     void adicionarInimigo(Inimigo *ec);
+
+     void verificarInimigos();
 };
 
 #endif

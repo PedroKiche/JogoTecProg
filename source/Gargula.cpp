@@ -1,5 +1,5 @@
 #include "Gargula.hpp"
-
+#include "Mago.hpp"
 Gargula::Gargula()
 {
     frente = false;
@@ -61,6 +61,8 @@ void Gargula::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
             }
         }
     }
+    if (id == Ids::supernova)
+        vivo = false;
 }
 
 void Gargula::atualizar(float t)

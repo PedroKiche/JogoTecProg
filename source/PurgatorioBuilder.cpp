@@ -81,14 +81,14 @@ void PurgatorioBuilder::criaInimigo()
     for (int i = 0; i < 5; i++)
     {
         int p = rand()%(9 - i);
-        fase->adicionar(new Fantasma(posicoesFantasma[p],fase->getMago()));
+        fase->adicionarInimigo(new Fantasma(posicoesFantasma[p],fase->getMago()));
         posicoesFantasma.erase(posicoesFantasma.begin() + p);
     }
     
     for (int i = 0; i < 5; i++)
     {
         int p = rand()%(9 - i);
-        fase->adicionar(new Gargula(posicoesGargula[p],fase->getMago()));
+        fase->adicionarInimigo(new Gargula(posicoesGargula[p],fase->getMago()));
         posicoesGargula.erase(posicoesGargula.begin() + p);
     }
 }

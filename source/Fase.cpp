@@ -25,7 +25,8 @@ void Fase::atualizar(float t)
 
     this->desenhar(gf);
     listaEntidades.desenharEntidades(gf);
-   
+
+    verificarInimigos();   
 }
 
 void Fase::adicionar(Entidade_Colidivel *ec)
@@ -52,6 +53,26 @@ void Fase::inicializa(Entidade_Colidivel *ec)
 void Fase::remover(Entidade_Colidivel *ec)
 {
     gc.removerEntidade_Colidivel(ec);
-    std::cout<< "gc.removerEntidade_Colidivel(ec)" << std::endl;
     listaEntidades.removerEntidade(ec);
 }
+
+void Fase::adicionarInimigo(Inimigo* ini)
+{
+    adicionar(ini);
+    inimigos.insert(ini);
+}
+
+void Fase::verificarInimigos()
+{
+    std::set<Inimigo *>::iterator itr1;
+    for (itr1 = inimigos.begin(); itr1 != inimigos.end(); itr1++)
+    {
+        Inimigo* ini = *itr1;
+        if(!ini->getVivo())
+        {
+            remover(ini);
+            //inimigos.erase(ini);
+        }
+    }
+}
+

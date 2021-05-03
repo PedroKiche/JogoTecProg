@@ -1,4 +1,5 @@
 #include "Fantasma.hpp"
+#include "Mago.hpp"
 
 Fantasma::Fantasma() : Inimigo()
 {
@@ -72,6 +73,10 @@ void Fantasma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
                 }
             }
         }
+    }
+    if (id == Ids::supernova)
+    {
+        vivo = false;
     }
 }
 

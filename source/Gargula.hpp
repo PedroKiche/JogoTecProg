@@ -2,6 +2,7 @@
 #define _GARGULA_HPP_
 
 #include "Inimigo.hpp"
+class  Mago;
 
 class Gargula: public Inimigo
 {

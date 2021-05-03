@@ -160,7 +160,6 @@ void Lista<TL>::removerElemento(TL elemento)
   {
     if(atual->getInfo() == elemento)
     {
-      std::cout<< "atual->getInfo() == elemento" << std::endl;
       if(atual == inicio)
         inicio = atual->getProx();
       if(atual == fim)

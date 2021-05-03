@@ -1,4 +1,5 @@
 #include "Mago.hpp"
+#include"Fase.hpp"
 #include <iostream>
 
 Mago::Mago() : Personagem(),

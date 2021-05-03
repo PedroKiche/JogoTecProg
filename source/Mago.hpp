@@ -4,7 +4,7 @@
 #include "Personagem.hpp"
 #include "Controle.hpp"
 #include"SuperNova.hpp"
-#include "Fase.hpp"
+
 class Fase;
 
 

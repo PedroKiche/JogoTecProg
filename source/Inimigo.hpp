@@ -2,7 +2,9 @@
 #define _INIMIGO_HPP_
 
 #include "Personagem.hpp"
-#include "Mago.hpp"
+
+
+class Mago;
 
 class Inimigo:public Personagem
 {

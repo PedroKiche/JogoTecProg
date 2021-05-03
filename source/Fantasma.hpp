@@ -2,6 +2,7 @@
 #define _FANTASMA_HPP_
 
 #include "Inimigo.hpp"
+class Mago;
 
 class Fantasma: public Inimigo
 {
