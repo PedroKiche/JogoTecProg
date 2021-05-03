@@ -1,13 +1,13 @@
-#ifndef _FASEBUILDER_HPP_
-#define _FASEBUILDER_HPP_
+#ifndef _FASEFACTORY_HPP
+#define _FASEFACTORY_HPP
 
 #include"Fase.hpp"
 
-class FaseBuilder
+class FaseFactory
 {
 public:
-    FaseBuilder();
-    ~FaseBuilder();
+    FaseFactory();
+    ~FaseFactory();
     virtual void criaPlataformas()=0;
     virtual void criaPosInimigos()=0;
     virtual void criaPosObstaculos()=0;

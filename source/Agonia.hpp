@@ -4,7 +4,7 @@
 #include "Mago.hpp"
 #include "Purgatorio.hpp"
 #include "Relogio.hpp"
-#include "FaseBuilder.hpp"
+#include "FaseFactory.hpp"
 #include "Fase.hpp"
 
 class Agonia

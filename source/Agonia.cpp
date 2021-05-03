@@ -1,7 +1,7 @@
 #include "Agonia.hpp"
 #include <iostream>
 #include<stdio.h>
-#include"PurgatorioBuilder.hpp"
+#include "PurgatorioFactory.hpp"
 
 Agonia::Agonia()
 {
@@ -40,7 +40,7 @@ void Agonia::executar()
 
 void Agonia::geraFase()
 {
-    FaseBuilder* geraFase = new PurgatorioBuilder(&gf,mago);
+    FaseFactory* geraFase = new PugatorioFactory(&gf,mago);
     geraFase->criaPlataformas();
     geraFase->criaPosInimigos();
     geraFase->criaPosObstaculos();

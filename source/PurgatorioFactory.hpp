@@ -1,10 +1,10 @@
-#ifndef _PURGATORIOBUILDER_HPP_
-#define _PURGATORIOBUILDER_HPP_
+#ifndef _PURGATORIOFACTORY_HPP_
+#define _PURGATORIOFACTORY_HPP_
 
-#include"FaseBuilder.hpp"
+#include"FaseFactory.hpp"
 #include"Purgatorio.hpp"
 
-class PurgatorioBuilder: public FaseBuilder
+class PugatorioFactory: public FaseFactory
 {
 private:
     Fase* fase;
@@ -13,8 +13,8 @@ private:
     std::vector<Vetor2F> posicoesAlma;
     std::vector<Vetor2F> posicoesEspinho;
 public:
-    PurgatorioBuilder(Gerenciador_Grafico* gf, Mago* mg);
-    ~PurgatorioBuilder();
+    PugatorioFactory(Gerenciador_Grafico* gf, Mago* mg);
+    ~PugatorioFactory();
     void criaPlataformas();
     void criaPosInimigos();
     void criaPosObstaculos();

@@ -1,17 +1,17 @@
-#include"PurgatorioBuilder.hpp"
+#include"PurgatorioFactory.hpp"
 
 
-PurgatorioBuilder::PurgatorioBuilder(Gerenciador_Grafico* gf, Mago* mg): FaseBuilder()
+PugatorioFactory::PugatorioFactory(Gerenciador_Grafico* gf, Mago* mg): FaseFactory()
 {
     fase = new Purgatorio(gf, mg);
     fase->adicionar(mg);
     srand(time(NULL));
 }
-PurgatorioBuilder::~PurgatorioBuilder()
+PugatorioFactory::~PugatorioFactory()
 {
 }
 
-void PurgatorioBuilder::criaPlataformas()
+void PugatorioFactory::criaPlataformas()
 {
     fase->adicionar(new Plataforma(Vetor2F(1600.0f,520.0f), Vetor2F(3200.0f,10.0f))); // chao
     fase->adicionar(new Plataforma(Vetor2F(1600.0f,0.0f), Vetor2F(3200.0f,10.0f))); // teto
@@ -30,7 +30,7 @@ void PurgatorioBuilder::criaPlataformas()
 
 }
 
-void PurgatorioBuilder::criaPosInimigos()
+void PugatorioFactory::criaPosInimigos()
 {
     posicoesFantasma.push_back(Vetor2F(300.0f,495.0F));
     posicoesFantasma.push_back(Vetor2F(750.0f,495.0F));
@@ -53,7 +53,7 @@ void PurgatorioBuilder::criaPosInimigos()
     posicoesGargula.push_back(Vetor2F(3020.0f,330.0F));
 }
 
-void PurgatorioBuilder::criaPosObstaculos()
+void PugatorioFactory::criaPosObstaculos()
 {
     posicoesAlma.push_back(Vetor2F(150.0f, 60.0f));
     posicoesAlma.push_back(Vetor2F(275.0f, 60.0f));
@@ -76,7 +76,7 @@ void PurgatorioBuilder::criaPosObstaculos()
     posicoesEspinho.push_back(Vetor2F(3025.0f, 495.0f));
 }
 
-void PurgatorioBuilder::criaInimigo()
+void PugatorioFactory::criaInimigo()
 {
     for (int i = 0; i < 5; i++)
     {
@@ -93,7 +93,7 @@ void PurgatorioBuilder::criaInimigo()
     }
 }
 
-void PurgatorioBuilder::criaObstaculo()
+void PugatorioFactory::criaObstaculo()
 {
     for (int i = 0; i < 5; i++)
     {
@@ -110,7 +110,7 @@ void PurgatorioBuilder::criaObstaculo()
     }
 }
 
-Fase* PurgatorioBuilder::getFase()
+Fase* PugatorioFactory::getFase()
 {
     Fase* aux = fase;
     fase = NULL;
