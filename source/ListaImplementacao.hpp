@@ -57,6 +57,13 @@ void Lista<TL>::Elemento::setProx(Elemento *Prox)
 }
 
 template <typename TL>
+void Lista<TL>::Elemento::remover()
+{
+  if (anterior) anterior->proximo = proximo;
+    if (proximo) proximo->anterior = anterior;
+}
+
+template <typename TL>
 Lista<TL>::Lista() : inicio(NULL),
                      fim(NULL),
                      atual(NULL)
@@ -125,7 +132,6 @@ TL Lista<TL>::removeInicio()
 {
   if(inicio!=NULL)
   {
-    std::cout << "TL Lista<TL>::removeInicio()" << std::endl;
     TL aux = inicio->getInfo();
    
     Elemento* aux2 = inicio;
@@ -144,4 +150,25 @@ TL Lista<TL>::removeInicio()
     return aux;
   }
   return NULL;
+}
+
+template <typename TL>
+void Lista<TL>::removerElemento(TL elemento)
+{
+  getInicio();
+  for(getInicio(); atual!=NULL; irProx())
+  {
+    if(atual->getInfo() == elemento)
+    {
+      std::cout<< "atual->getInfo() == elemento" << std::endl;
+      if(atual == inicio)
+        inicio = atual->getProx();
+      if(atual == fim)
+        fim = atual->getAnt();
+      atual->remover();
+      delete atual;
+      getInicio();
+      return;
+    }
+  }
 }

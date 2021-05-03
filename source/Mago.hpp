@@ -18,6 +18,7 @@ private:
     Fase* fase;
     SuperNova* supernova;
     bool frente;
+    bool podeAtacar;
 
 public:
     Mago();

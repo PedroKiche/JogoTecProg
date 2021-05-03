@@ -43,6 +43,7 @@ public:
     TL removeInicio();
     TL getInicio();
     TL irProx();
+    void removerElemento(TL elemento);
 };
 
 #include "ListaImplementacao.hpp"

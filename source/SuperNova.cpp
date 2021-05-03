@@ -1,4 +1,5 @@
 #include"SuperNova.hpp"
+#include<iostream>
 
 SuperNova::SuperNova():Projetil()
 {
@@ -24,13 +25,13 @@ void SuperNova::mover(float t)
     {   
 
         posicao.x += t* velocidade;
-        if(posicao.x >= posInicialX + alcance)
+        if(posicao.x > posInicialX + alcance)
             ativo = false;
     }
     else
     {
         posicao.x -= t* velocidade;
-        if(posicao.x <= posInicialX + alcance)
+        if(posicao.x < posInicialX - alcance)
             ativo = false;
     }
 }
@@ -38,9 +39,13 @@ void SuperNova::mover(float t)
 void SuperNova::atualizar(float t)
 {
     mover(t);
+    
 }
 
 void SuperNova::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
-    ativo = false;
+    if(id != Ids::mago)
+    {
+        ativo = false;
+    }
 }

@@ -48,3 +48,10 @@ void Fase::inicializa(Entidade_Colidivel *ec)
 {
     ec->inicializar(gf);
 }
+
+void Fase::remover(Entidade_Colidivel *ec)
+{
+    gc.removerEntidade_Colidivel(ec);
+    std::cout<< "gc.removerEntidade_Colidivel(ec)" << std::endl;
+    listaEntidades.removerEntidade(ec);
+}

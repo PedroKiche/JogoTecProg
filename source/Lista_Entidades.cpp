@@ -56,3 +56,8 @@ void Lista_Entidades::destruirEntidades()
         aux = lista.removeInicio();
     }
 }
+
+void Lista_Entidades::removerEntidade(Entidade* info)
+{
+    lista.removerElemento(info);
+}

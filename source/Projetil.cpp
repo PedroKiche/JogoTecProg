@@ -12,7 +12,7 @@ Entidade_Colidivel(id,pos,tam,caminho)
 {
     ativo = ativa;
     direita = direito;
-    velocidade = 0;
+    this-> velocidade = velocidade;
 }
 
 Projetil::    ~Projetil()

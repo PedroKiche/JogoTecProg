@@ -26,6 +26,8 @@ public:
 
     void inicializa(Entidade_Colidivel *ec);
 
+    void remover(Entidade_Colidivel *ec);
+
     void inicializarEntidades();
 
     Mago* getMago();
