@@ -58,27 +58,26 @@ void FlorestaFactory::criaPosInimigos()
 
 void FlorestaFactory::criaPosObstaculos()
 {
-    /*
-    posicoesAlma.push_back(Vetor2F(150.0f, 60.0f));
-    posicoesAlma.push_back(Vetor2F(275.0f, 60.0f));
-    posicoesAlma.push_back(Vetor2F(390.0f, 60.0f));
-    posicoesAlma.push_back(Vetor2F(480.0f, 60.0f));
-    posicoesAlma.push_back(Vetor2F(1750.0f, 60.0f));
-    posicoesAlma.push_back(Vetor2F(2100.0f, 60.0f));
-    posicoesAlma.push_back(Vetor2F(2750.0f, 60.0f));
-    posicoesAlma.push_back(Vetor2F(2850.0f, 60.0f));
-    posicoesAlma.push_back(Vetor2F(3150.0f, 60.0f));
+    
+    posicoesAlma.push_back(Vetor2F(550.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(650.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(1150.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(1500.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(1800.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(2200.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(2475.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(2680.0f, 60.0f));
+    posicoesAlma.push_back(Vetor2F(3075.0f, 60.0f));
 
-    posicoesEspinho.push_back(Vetor2F(275.0f, 380.0f));
-    posicoesEspinho.push_back(Vetor2F(565.0f, 495.0f));
-    posicoesEspinho.push_back(Vetor2F(675.0f, 310.0f));
-    posicoesEspinho.push_back(Vetor2F(1250.0f, 380.0f));
-    posicoesEspinho.push_back(Vetor2F(1550.0f, 495.0f));
-    posicoesEspinho.push_back(Vetor2F(1925.0f, 310.0f));
-    posicoesEspinho.push_back(Vetor2F(1925.0f, 495.0f));
-    posicoesEspinho.push_back(Vetor2F(3025.0f, 240.0f));
-    posicoesEspinho.push_back(Vetor2F(3025.0f, 495.0f));
-    */
+    posicoesArvore.push_back(Vetor2F(650.0f, 200.0f));
+    posicoesArvore.push_back(Vetor2F(825.0f, 200.0f));
+    posicoesArvore.push_back(Vetor2F(1150.0f, 340.0f));
+    posicoesArvore.push_back(Vetor2F(1325.0f, 270.0f));
+    posicoesArvore.push_back(Vetor2F(1500.0f, 340.0f));
+    posicoesArvore.push_back(Vetor2F(2475.0f, 340.0f));
+    posicoesArvore.push_back(Vetor2F(2680.0f, 270.0f));
+    posicoesArvore.push_back(Vetor2F(2875.0f, 270.0f));
+    posicoesArvore.push_back(Vetor2F(3100.0f, 445.0f));
 }
 
 void FlorestaFactory::criaInimigo()
@@ -102,7 +101,7 @@ void FlorestaFactory::criaInimigo()
 
 void FlorestaFactory::criaObstaculo()
 {
-    /*
+    
     for (int i = 0; i < 5; i++)
     {
         int p = rand()%(9 - i);
@@ -113,10 +112,10 @@ void FlorestaFactory::criaObstaculo()
     for (int i = 0; i < 5; i++)
     {
         int p = rand()%(9 - i);
-        fase->adicionar(new Espinho(posicoesEspinho[p]));
-        posicoesEspinho.erase(posicoesEspinho.begin() + p);
+        fase->adicionar(new Arvore(posicoesArvore[p]));
+        posicoesArvore.erase(posicoesArvore.begin() + p);
     }
-    */
+    
 }
 
 Fase* FlorestaFactory::pedirFase()

@@ -5,6 +5,7 @@
 #include "Fantasma.hpp"
 #include "Aparicao.hpp"
 #include "Alma.hpp"
+#include "Arvore.hpp"
 
 class Floresta:public Fase
 {
