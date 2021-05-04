@@ -1,5 +1,5 @@
-#ifndef _FASEFACTORY_HPP
-#define _FASEFACTORY_HPP
+#ifndef _FASEFACTORY_HPP_
+#define _FASEFACTORY_HPP_
 
 #include"Fase.hpp"
 
@@ -13,7 +13,8 @@ public:
     virtual void criaPosObstaculos()=0;
     virtual void criaInimigo()=0;
     virtual void criaObstaculo()=0;
-    virtual Fase* getFase()=0;
+    virtual Fase* fabricaFase() = 0;
+    void pedirFase();
 };
 
 #endif

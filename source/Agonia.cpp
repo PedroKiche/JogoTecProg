@@ -40,12 +40,7 @@ void Agonia::executar()
 
 void Agonia::geraFase()
 {
-    FaseFactory* geraFase = new PugatorioFactory(&gf,mago);
-    geraFase->criaPlataformas();
-    geraFase->criaPosInimigos();
-    geraFase->criaPosObstaculos();
-    geraFase->criaInimigo();
-    geraFase->criaObstaculo();
-    fase = geraFase->getFase();
+    FaseFactory* geraFase = new PurgatorioFactory(&gf,mago);
+    fase = geraFase->fabricaFase();
     fase->inicializarEntidades();
 }

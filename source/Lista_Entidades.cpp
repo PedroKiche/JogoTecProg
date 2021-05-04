@@ -7,7 +7,6 @@ Lista_Entidades::~Lista_Entidades()
 {
     if(lista.getInicio()!=NULL)
         destruirEntidades();
-    
 }
 
 void Lista_Entidades::inserir(Entidade *info)

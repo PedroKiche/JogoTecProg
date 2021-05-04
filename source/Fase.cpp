@@ -1,4 +1,5 @@
 #include "Fase.hpp"
+#include<list>
 
 Fase::Fase() : Entidade()
 {
@@ -23,7 +24,7 @@ void Fase::atualizar(float t)
     listaEntidades.atualizarEntidades(t);
     gc.gerenciarColisoes();
 
-    this->desenhar(gf);
+    desenhar(gf);
     listaEntidades.desenharEntidades(gf);
 
     verificarInimigos();   
@@ -65,14 +66,22 @@ void Fase::adicionarInimigo(Inimigo* ini)
 void Fase::verificarInimigos()
 {
     std::set<Inimigo *>::iterator itr1;
+    std::list<Inimigo* > mortos;
     for (itr1 = inimigos.begin(); itr1 != inimigos.end(); itr1++)
     {
         Inimigo* ini = *itr1;
         if(!ini->getVivo())
         {
-            remover(ini);
-            //inimigos.erase(ini);
+            mortos.push_back(ini);
         }
+    }
+    std::list<Inimigo* >::iterator itr2;
+    for(itr2 = mortos.begin(); itr2 != mortos.end(); itr2++)
+    {
+        Inimigo* morto = *itr2;
+        remover(morto);
+        inimigos.erase(morto);
+        delete morto;
     }
 }
 

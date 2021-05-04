@@ -4,7 +4,7 @@
 #include"FaseFactory.hpp"
 #include"Purgatorio.hpp"
 
-class PugatorioFactory: public FaseFactory
+class PurgatorioFactory: public FaseFactory
 {
 private:
     Fase* fase;
@@ -13,15 +13,14 @@ private:
     std::vector<Vetor2F> posicoesAlma;
     std::vector<Vetor2F> posicoesEspinho;
 public:
-    PugatorioFactory(Gerenciador_Grafico* gf, Mago* mg);
-    ~PugatorioFactory();
+    PurgatorioFactory(Gerenciador_Grafico* gf, Mago* mg);
+    ~PurgatorioFactory();
     void criaPlataformas();
     void criaPosInimigos();
     void criaPosObstaculos();
     void criaInimigo();
     void criaObstaculo();
-    void inicializarEntidades();
-    Fase* getFase();
+    Fase* fabricaFase();
 };
 
 #endif

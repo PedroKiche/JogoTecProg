@@ -59,8 +59,8 @@ void Lista<TL>::Elemento::setProx(Elemento *Prox)
 template <typename TL>
 void Lista<TL>::Elemento::remover()
 {
-  if (anterior) anterior->proximo = proximo;
-    if (proximo) proximo->anterior = anterior;
+  if (anterior){anterior->proximo = proximo;}
+  if (proximo) {proximo->anterior = anterior;}
 }
 
 template <typename TL>
