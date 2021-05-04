@@ -13,46 +13,47 @@ FlorestaFactory::~FlorestaFactory()
 
 void FlorestaFactory::criaPlataformas()
 {   
-    fase->adicionar(new Plataforma(Vetor2F(1600.0f,520.0f), Vetor2F(3200.0f,10.0f))); // chao
-    /*fase->adicionar(new Plataforma(Vetor2F(1600.0f,0.0f), Vetor2F(3200.0f,10.0f))); // teto
+    fase->adicionar(new Plataforma(Vetor2F(1600.0f,480.0f), Vetor2F(3200.0f,10.0f))); // chao
+    fase->adicionar(new Plataforma(Vetor2F(1600.0f,0.0f), Vetor2F(3200.0f,10.0f))); // teto
 
-    fase->adicionar(new Plataforma(Vetor2F(275.0f,415.0f), Vetor2F(150.0f,30.0f)));
-    fase->adicionar(new Plataforma(Vetor2F(480.0f,345.0f), Vetor2F(100.0f,30.0f)));
-    fase->adicionar(new Plataforma(Vetor2F(675.0f,345.0f), Vetor2F(150.0f,30.0f)));
-    fase->adicionar(new Plataforma(Vetor2F(1250.0f,415.0f), Vetor2F(300.0f,30.0f)));
-    fase->adicionar(new Plataforma(Vetor2F(1750.0f,415.0f), Vetor2F(100.0f,30.0f)));
-    fase->adicionar(new Plataforma(Vetor2F(1925.0f,345.0f), Vetor2F(150.0f,30.0f)));
-    fase->adicionar(new Plataforma(Vetor2F(2100.0f,415.0f), Vetor2F(100.0f,30.0f)));
-    fase->adicionar(new Plataforma(Vetor2F(2550.0f,415.0f), Vetor2F(300.0f,30.0f)));
-    fase->adicionar(new Plataforma(Vetor2F(2750.0f,345.0f), Vetor2F(100.0f,30.0f)));
-    fase->adicionar(new Plataforma(Vetor2F(2850.0f,275.0f), Vetor2F(100.0f,30.0f)));
-    fase->adicionar(new Plataforma(Vetor2F(3025.0f,275.0f), Vetor2F(150.0f,30.0f)));
-    */
+    fase->adicionar(new Plataforma(Vetor2F(350.0f,375.0f), Vetor2F(300.0f,30.0f)));
+    fase->adicionar(new Plataforma(Vetor2F(550.0f,305.0f), Vetor2F(100.0f,30.0f)));
+    fase->adicionar(new Plataforma(Vetor2F(650.0f,235.0f), Vetor2F(100.0f,30.0f)));
+    fase->adicionar(new Plataforma(Vetor2F(825.0f,235.0f), Vetor2F(150.0f,30.0f)));
+    fase->adicionar(new Plataforma(Vetor2F(1150.0f,375.0f), Vetor2F(100.0f,30.0f)));
+    fase->adicionar(new Plataforma(Vetor2F(1325.0f,305.0f), Vetor2F(150.0f,30.0f)));
+    fase->adicionar(new Plataforma(Vetor2F(1500.0f,375.0f), Vetor2F(100.0f,30.0f)));
+    fase->adicionar(new Plataforma(Vetor2F(2000.0f,375.0f), Vetor2F(300.0f,30.0f)));
+    fase->adicionar(new Plataforma(Vetor2F(2475.0f,375.0f), Vetor2F(150.0f,30.0f)));
+    fase->adicionar(new Plataforma(Vetor2F(2680.0f,305.0f), Vetor2F(100.0f,30.0f)));
+    fase->adicionar(new Plataforma(Vetor2F(2875.0f,305.0f), Vetor2F(150.0f,30.0f)));
 }
 
 void FlorestaFactory::criaPosInimigos()
 {
-    /*
-    posicoesFantasma.push_back(Vetor2F(300.0f,495.0F));
-    posicoesFantasma.push_back(Vetor2F(750.0f,495.0F));
-    posicoesFantasma.push_back(Vetor2F(1200.0f,495.0F));
-    posicoesFantasma.push_back(Vetor2F(1250.0f,375.0F));
-    posicoesFantasma.push_back(Vetor2F(1650.0f,495.0F));
-    posicoesFantasma.push_back(Vetor2F(2100.0f,495.0F));
-    posicoesFantasma.push_back(Vetor2F(2535.0f,375.0F));
-    posicoesFantasma.push_back(Vetor2F(2550.0f,495.0F));
-    posicoesFantasma.push_back(Vetor2F(2950.0f,495.0F));
+    
+    posicoesFantasma.push_back(Vetor2F(335.0f,335.0F));
+    posicoesFantasma.push_back(Vetor2F(350.0f,445.0F));
+    posicoesFantasma.push_back(Vetor2F(750.0f,445.0F));
+    posicoesFantasma.push_back(Vetor2F(1150.0f,445.0F));
+    posicoesFantasma.push_back(Vetor2F(1500.0f,445.0F));
+    posicoesFantasma.push_back(Vetor2F(2000.0f,335.0F));
+    posicoesFantasma.push_back(Vetor2F(2000.0f,445.0F));
+    posicoesFantasma.push_back(Vetor2F(2475.0f,445.0F));
+    posicoesFantasma.push_back(Vetor2F(2950.0f,445.0F));
+    
 
-    posicoesGargula.push_back(Vetor2F(670.0f,125.0F));
-    posicoesGargula.push_back(Vetor2F(945.0f,250.0F));
-    posicoesGargula.push_back(Vetor2F(1245.0f,195.0F));
-    posicoesGargula.push_back(Vetor2F(1570.0f,250.0F));
-    posicoesGargula.push_back(Vetor2F(1920.0f,125.0F));
-    posicoesGargula.push_back(Vetor2F(2280.0f,250.0F));
-    posicoesGargula.push_back(Vetor2F(2545.0f,195.0F));
-    posicoesGargula.push_back(Vetor2F(3020.0f,80.0F));
-    posicoesGargula.push_back(Vetor2F(3020.0f,330.0F));
-    */
+    
+    posicoesAparicao.push_back(Vetor2F(350.0f,155.0F));
+    posicoesAparicao.push_back(Vetor2F(825.0f,40.0F));
+    posicoesAparicao.push_back(Vetor2F(825.0f,290.0F));
+    posicoesAparicao.push_back(Vetor2F(995.0f,210.0F));
+    posicoesAparicao.push_back(Vetor2F(1325.0f,85.0F));
+    posicoesAparicao.push_back(Vetor2F(1695.0f,210.0F));
+    posicoesAparicao.push_back(Vetor2F(2000.0f,155.0F));
+    posicoesAparicao.push_back(Vetor2F(2305.0f,210.0F));
+    posicoesAparicao.push_back(Vetor2F(2875.0f,85.0F));
+    
 }
 
 void FlorestaFactory::criaPosObstaculos()
@@ -82,7 +83,7 @@ void FlorestaFactory::criaPosObstaculos()
 
 void FlorestaFactory::criaInimigo()
 {
-    /*
+    
     for (int i = 0; i < 5; i++)
     {
         int p = rand()%(9 - i);
@@ -93,10 +94,10 @@ void FlorestaFactory::criaInimigo()
     for (int i = 0; i < 5; i++)
     {
         int p = rand()%(9 - i);
-        fase->adicionarInimigo(new Gargula(posicoesGargula[p],fase->getMago()));
-        posicoesGargula.erase(posicoesGargula.begin() + p);
+        fase->adicionarInimigo(new Aparicao(posicoesAparicao[p],fase->getMago()));
+        posicoesAparicao.erase(posicoesAparicao.begin() + p);
     }
-    */
+    
 }
 
 void FlorestaFactory::criaObstaculo()

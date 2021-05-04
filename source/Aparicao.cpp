@@ -65,6 +65,10 @@ void Aparicao::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
             }
         }
     }
+    if (id == Ids::supernova)
+    {
+        vivo = false;
+    }
 }
 
 void Aparicao::atualizar(float t)
