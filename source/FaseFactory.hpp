@@ -13,8 +13,8 @@ public:
     virtual void criaPosObstaculos()=0;
     virtual void criaInimigo()=0;
     virtual void criaObstaculo()=0;
-    virtual Fase* fabricaFase() = 0;
-    void pedirFase();
+    virtual Fase* pedirFase() = 0;
+    void fabricaFase();
 };
 
 #endif

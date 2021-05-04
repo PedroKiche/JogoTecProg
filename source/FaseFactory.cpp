@@ -11,7 +11,7 @@ FaseFactory::FaseFactory()
 
 }
 
-void FaseFactory::pedirFase()
+void FaseFactory::fabricaFase()
 {
    criaPlataformas();
    criaPosInimigos();

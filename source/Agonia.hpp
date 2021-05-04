@@ -6,6 +6,8 @@
 #include "Relogio.hpp"
 #include "FaseFactory.hpp"
 #include "Fase.hpp"
+#include "Floresta.hpp"
+#include "FlorestaFactory.hpp"
 
 class Agonia
 {
@@ -20,7 +22,8 @@ public:
     Agonia();
     ~Agonia();
     void executar();
-    void geraFase();
+    void geraFasePurgatorio();
+    void geraFaseFloresta();
 };
 
 #endif

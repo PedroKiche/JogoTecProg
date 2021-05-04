@@ -16,7 +16,7 @@ Agonia::~Agonia()
 void Agonia::executar()
 {
     relogio.restartar();
-    geraFase();
+    geraFaseFloresta();
     mago->setFase(fase);
     while (gf.getJanela()->isOpen())
     {
@@ -38,9 +38,16 @@ void Agonia::executar()
     }
 }
 
-void Agonia::geraFase()
+void Agonia::geraFasePurgatorio()
 {
     FaseFactory* geraFase = new PurgatorioFactory(&gf,mago);
-    fase = geraFase->fabricaFase();
+    fase = geraFase->pedirFase();
+    fase->inicializarEntidades();
+}
+
+void Agonia::geraFaseFloresta()
+{
+    FaseFactory* geraFase = new FlorestaFactory(&gf,mago);
+    fase = geraFase->pedirFase();
     fase->inicializarEntidades();
 }
