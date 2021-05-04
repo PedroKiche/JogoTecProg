@@ -20,7 +20,9 @@ namespace Ids
         purgatorio,
         limiar,
         floresta,
-        plataforma
+        plataforma,
+        menuprincipal,
+        menupausa
     };
 }
 
