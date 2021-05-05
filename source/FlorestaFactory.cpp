@@ -15,6 +15,7 @@ void FlorestaFactory::criaPlataformas()
 {   
     fase->adicionar(new Plataforma(Vetor2F(1600.0f,480.0f), Vetor2F(3200.0f,10.0f))); // chao
     fase->adicionar(new Plataforma(Vetor2F(1600.0f,0.0f), Vetor2F(3200.0f,10.0f))); // teto
+    fase->adicionar(new Plataforma(Vetor2F(0.0f,300.0f), Vetor2F(10.0f,600.0f))); // teto
 
     fase->adicionar(new Plataforma(Vetor2F(350.0f,375.0f), Vetor2F(300.0f,30.0f)));
     fase->adicionar(new Plataforma(Vetor2F(550.0f,305.0f), Vetor2F(100.0f,30.0f)));
@@ -93,7 +94,7 @@ void FlorestaFactory::criaInimigo()
     for (int i = 0; i < 5; i++)
     {
         int p = rand()%(9 - i);
-        fase->adicionarInimigo(new Aparicao(posicoesAparicao[p],fase->getMago()));
+        fase->adicionarInimigo(new Aparicao(posicoesAparicao[p],fase->getMago(), fase));
         posicoesAparicao.erase(posicoesAparicao.begin() + p);
     }
     

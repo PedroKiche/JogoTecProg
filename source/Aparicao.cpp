@@ -1,12 +1,22 @@
 #include "Aparicao.hpp"
+#include "Fase.hpp"
 
-Aparicao::Aparicao()
+Aparicao::Aparicao():Inimigo()
 {
+    descendo = false;
+    fase = NULL;
+    buraconegro = NULL;
+    podeAtacar = false;
+    frente = false;
 }
 
-Aparicao::Aparicao(const Vetor2F pos, Mago* mg): Inimigo(Ids::aparicao, pos, Vetor2F(65.0f, 100.0f), 80.0, 100.0, mg, "../JogoTecProg/texture/aparicao.png")
+Aparicao::Aparicao(const Vetor2F pos, Mago* mg, Fase* fs): Inimigo(Ids::aparicao, pos, Vetor2F(65.0f, 100.0f), 80.0, 100.0, mg, "../JogoTecProg/texture/aparicao.png")
 {
-
+    descendo = false;
+    fase = fs;
+    buraconegro = NULL;
+    frente = false;
+    podeAtacar = true;
 }
 
 Aparicao::~Aparicao()
@@ -15,7 +25,13 @@ Aparicao::~Aparicao()
 
 void Aparicao::atacar(float t)
 {
-    //Implementar 
+    if(podeAtacar)
+    {
+        buraconegro = new BuracoNegro(posicao, mago->getPosicao(),frente , true, 100.0f);
+        fase->adicionar(buraconegro);
+        fase->inicializa(buraconegro);
+        podeAtacar = false;
+    }
 } 
 
 void Aparicao::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
@@ -72,7 +88,24 @@ void Aparicao::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 }
 
 void Aparicao::atualizar(float t)
-{
+{   
+    if(posicao.x >  mago->getPosicao().x)
+        frente = false;
+    else 
+        frente = true;
+    
+    float ataque = abs(posicao.x - mago->getPosicao().x);
+    if(ataque<  400.0 && ataque > 150.0)
+        atacar(t);
+    if(!podeAtacar)
+    {
+        if(!buraconegro->getAtivo())
+        {
+        fase->remover(buraconegro);
+        delete buraconegro;
+        podeAtacar = true;
+        }
+    }
     movimentar(t);
 }
 
