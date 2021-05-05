@@ -15113,7 +15113,7 @@
 											"font": "Arial;13;0",
 											"left": 5453,
 											"top": 3413,
-											"width": 350,
+											"width": 361.638671875,
 											"height": 13,
 											"text": "«Fase 2»"
 										},
@@ -15127,9 +15127,9 @@
 											"font": "Arial;13;1",
 											"left": 5453,
 											"top": 3428,
-											"width": 350,
+											"width": 361.638671875,
 											"height": 13,
-											"text": "Floresta das Almas"
+											"text": "Floresta"
 										},
 										{
 											"_type": "LabelView",
@@ -15165,7 +15165,7 @@
 									"font": "Arial;13;0",
 									"left": 5448,
 									"top": 3408,
-									"width": 360,
+									"width": 371.638671875,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF5I+5/uR4FRJ4="
@@ -15193,7 +15193,7 @@
 									"font": "Arial;13;0",
 									"left": 5448,
 									"top": 3446,
-									"width": 360,
+									"width": 371.638671875,
 									"height": 10
 								},
 								{
@@ -15205,12 +15205,68 @@
 									"model": {
 										"$ref": "AAAAAAF5I+5/tx4BLBg="
 									},
+									"subViews": [
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF5PTvfjp82oYI=",
+											"_parent": {
+												"$ref": "AAAAAAF5I+5/uR4KOqk="
+											},
+											"model": {
+												"$ref": "AAAAAAF5PTvfXJ8aYTo="
+											},
+											"fillColor": "#a3ffa3",
+											"font": "Arial;13;0",
+											"left": 5453,
+											"top": 3461,
+											"width": 361.638671875,
+											"height": 13,
+											"text": "«create»+Floresta(GeGr: Gerenciador_Grafico*, mg: Mago*)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF5PTvpZKM89Zc=",
+											"_parent": {
+												"$ref": "AAAAAAF5I+5/uR4KOqk="
+											},
+											"model": {
+												"$ref": "AAAAAAF5PTvpOqMkapw="
+											},
+											"fillColor": "#a3ffa3",
+											"font": "Arial;13;0",
+											"left": 5453,
+											"top": 3476,
+											"width": 361.638671875,
+											"height": 13,
+											"text": "«create»+Floresta()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF5PTvxpqdCH18=",
+											"_parent": {
+												"$ref": "AAAAAAF5I+5/uR4KOqk="
+											},
+											"model": {
+												"$ref": "AAAAAAF5PTvxeacqFzI="
+											},
+											"fillColor": "#a3ffa3",
+											"font": "Arial;13;0",
+											"left": 5453,
+											"top": 3491,
+											"width": 361.638671875,
+											"height": 13,
+											"text": "«destroy»+Floresta()",
+											"horizontalAlignment": 0
+										}
+									],
 									"fillColor": "#a3ffa3",
 									"font": "Arial;13;0",
 									"left": 5448,
 									"top": 3456,
-									"width": 360,
-									"height": 10
+									"width": 371.638671875,
+									"height": 53
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -15252,7 +15308,7 @@
 							"containerChangeable": true,
 							"left": 5448,
 							"top": 3408,
-							"width": 360,
+							"width": 371.638671875,
 							"height": 112,
 							"nameCompartment": {
 								"$ref": "AAAAAAF5I+5/uB4ED38="
@@ -17810,7 +17866,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 5832,
+									"left": 5844,
 									"top": 3443,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -17831,7 +17887,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 5835,
+									"left": 5847,
 									"top": 3429,
 									"height": 13,
 									"alpha": 0.7853981633974483,
@@ -17852,7 +17908,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 5828,
+									"left": 5840,
 									"top": 3470,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -17965,7 +18021,7 @@
 							"tail": {
 								"$ref": "AAAAAAF5I+5/uB4D7Go="
 							},
-							"points": "5807:3464;5928:3464;5928:1984;5431:1984",
+							"points": "5819:3464;5928:3464;5928:1984;5431:1984",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF5JAY2naE38jk="
@@ -23484,7 +23540,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 5922,
+									"left": 5928,
 									"top": 3497,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -23505,7 +23561,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 5922,
+									"left": 5928,
 									"top": 3512,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -23526,7 +23582,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 5923,
+									"left": 5929,
 									"top": 3467,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -23544,7 +23600,7 @@
 							"tail": {
 								"$ref": "AAAAAAF5PNL2G4nqsEM="
 							},
-							"points": "6040:3488;5807:3488",
+							"points": "6040:3488;5819:3488",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF5PN4xnkP2Wec="
@@ -31344,8 +31400,57 @@
 							"_parent": {
 								"$ref": "AAAAAAF5I4Auxyg8Ifw="
 							},
-							"name": "Floresta das Almas",
-							"stereotype": "Fase 2"
+							"name": "Floresta",
+							"stereotype": "Fase 2",
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAF5PTvfXJ8aYTo=",
+									"_parent": {
+										"$ref": "AAAAAAF5I+5/tx4BLBg="
+									},
+									"name": "Floresta",
+									"stereotype": "create",
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAF5PTvfXJ8bIJY=",
+											"_parent": {
+												"$ref": "AAAAAAF5PTvfXJ8aYTo="
+											},
+											"name": "GeGr",
+											"type": "Gerenciador_Grafico*"
+										},
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAF5PTvfXJ8cu/8=",
+											"_parent": {
+												"$ref": "AAAAAAF5PTvfXJ8aYTo="
+											},
+											"name": "mg",
+											"type": "Mago*"
+										}
+									]
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAF5PTvpOqMkapw=",
+									"_parent": {
+										"$ref": "AAAAAAF5I+5/tx4BLBg="
+									},
+									"name": "Floresta",
+									"stereotype": "create"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAF5PTvxeacqFzI=",
+									"_parent": {
+										"$ref": "AAAAAAF5I+5/tx4BLBg="
+									},
+									"name": "Floresta",
+									"stereotype": "destroy"
+								}
+							]
 						},
 						{
 							"_type": "UMLClass",
