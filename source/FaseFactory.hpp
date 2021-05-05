@@ -5,6 +5,9 @@
 
 class FaseFactory
 {
+protected:
+    Fase* fase;
+    void fabricaFase();
 public:
     FaseFactory();
     ~FaseFactory();
@@ -14,7 +17,6 @@ public:
     virtual void criaInimigo()=0;
     virtual void criaObstaculo()=0;
     virtual Fase* pedirFase() = 0;
-    void fabricaFase();
 };
 
 #endif

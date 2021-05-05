@@ -7,7 +7,6 @@
 class PurgatorioFactory: public FaseFactory
 {
 private:
-    Fase* fase;
     std::vector<Vetor2F> posicoesFantasma;
     std::vector<Vetor2F> posicoesGargula;
     std::vector<Vetor2F> posicoesAlma;

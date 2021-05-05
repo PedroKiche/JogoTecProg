@@ -8,7 +8,7 @@ FaseFactory::~FaseFactory()
 
 FaseFactory::FaseFactory()
 {
-
+   fase = NULL;
 }
 
 void FaseFactory::fabricaFase()
