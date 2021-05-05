@@ -1,10 +1,10 @@
 #include"PurgatorioFactory.hpp"
 
 
-PurgatorioFactory::PurgatorioFactory(Gerenciador_Grafico* gf, Mago* mg): FaseFactory()
+PurgatorioFactory::PurgatorioFactory(Gerenciador_Grafico* gf): FaseFactory()
 {
-    fase = new Purgatorio(gf, mg);
-    fase->adicionar(mg);
+    fase = new Purgatorio(gf);
+    fase->adicionar(fase->getMago());
     srand(time(NULL));
 }
 PurgatorioFactory::~PurgatorioFactory()

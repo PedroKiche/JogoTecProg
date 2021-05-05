@@ -1,10 +1,10 @@
 #include"FlorestaFactory.hpp"
 
 
-FlorestaFactory::FlorestaFactory(Gerenciador_Grafico* gf, Mago* mg): FaseFactory()
+FlorestaFactory::FlorestaFactory(Gerenciador_Grafico* gf): FaseFactory()
 {
-    fase = new Floresta(gf, mg);
-    fase->adicionar(mg);
+    fase = new Floresta(gf);
+    fase->adicionar(fase->getMago());
     srand(time(NULL));
 }
 FlorestaFactory::~FlorestaFactory()
@@ -15,7 +15,7 @@ void FlorestaFactory::criaPlataformas()
 {   
     fase->adicionar(new Plataforma(Vetor2F(1600.0f,480.0f), Vetor2F(3200.0f,10.0f))); // chao
     fase->adicionar(new Plataforma(Vetor2F(1600.0f,0.0f), Vetor2F(3200.0f,10.0f))); // teto
-    fase->adicionar(new Plataforma(Vetor2F(0.0f,300.0f), Vetor2F(10.0f,600.0f))); // teto
+    fase->adicionar(new Plataforma(Vetor2F(0.0f,300.0f), Vetor2F(10.0f,600.0f))); // parede inicio
 
     fase->adicionar(new Plataforma(Vetor2F(350.0f,375.0f), Vetor2F(300.0f,30.0f)));
     fase->adicionar(new Plataforma(Vetor2F(550.0f,305.0f), Vetor2F(100.0f,30.0f)));

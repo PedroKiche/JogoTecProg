@@ -19,7 +19,7 @@ protected:
 
 public:
     Fase();
-    Fase(Gerenciador_Grafico *GeGr, Mago *mg, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho);
+    Fase(Gerenciador_Grafico *GeGr, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho);
     ~Fase();
 
     void atualizar(float t);
@@ -37,6 +37,8 @@ public:
      void adicionarInimigo(Inimigo *ec);
 
      void verificarInimigos();
+
+     bool FaseAcabou();
 };
 
 #endif

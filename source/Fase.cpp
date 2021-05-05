@@ -7,15 +7,16 @@ Fase::Fase() : Entidade()
     mago = NULL;
 }
 
-Fase::Fase(Gerenciador_Grafico *GeGr, Mago *mg, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho) : Entidade(id, pos, tam, caminho)
+Fase::Fase(Gerenciador_Grafico *GeGr, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho) : Entidade(id, pos, tam, caminho)
 {
-    mago = mg;
+    mago = new Mago(Vetor2F(100.0,400.0));
     gf = GeGr;
+    mago->setFase(this);
 }
 
 Fase::~Fase()
 {
-    //listaEntidades.destruirEntidades();
+    listaEntidades.destruirEntidades();
     gc.removerTodos();
 }
 
@@ -84,4 +85,12 @@ void Fase::verificarInimigos()
         delete morto;
     }
 }
+
+bool Fase::FaseAcabou()
+{
+    if(mago->getPosicao().x > tamanho.x)
+        return true;
+    return false;
+}
+
 

@@ -11,7 +11,7 @@ class Floresta:public Fase
 {
 public:
     Floresta();
-    Floresta(Gerenciador_Grafico* GeGr, Mago* mg);
+    Floresta(Gerenciador_Grafico* GeGr);
     ~Floresta();
 };
 

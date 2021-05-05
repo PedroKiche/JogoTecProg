@@ -13,7 +13,7 @@ private:
     std::vector<Vetor2F> posicoesAlma;
     std::vector<Vetor2F> posicoesArvore;
 public:
-    FlorestaFactory(Gerenciador_Grafico* gf, Mago* mg);
+    FlorestaFactory(Gerenciador_Grafico* gf);
     ~FlorestaFactory();
     void criaPlataformas();
     void criaPosInimigos();

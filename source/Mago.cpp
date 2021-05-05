@@ -16,6 +16,11 @@ Mago::Mago() : Personagem(),
 
 Mago::~Mago()
 {
+    if(supernova != NULL)
+    {
+        fase->remover(supernova);
+        delete supernova;
+    }
 }
 
 Mago::Mago(const Vetor2F pos) : Personagem(Ids::mago, pos, Vetor2F(40.0f, 75.0f), 200.0, "../JogoTecProg/texture/mago.png"),
@@ -72,6 +77,11 @@ void Mago::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
     {
         //velocidade = 50.0f;
     }
+    if (id == Ids::fantasma || id == Ids::gargula || id == Ids::alma || id == Ids::aparicao || id == Ids::espectro || id == Ids::buraconegro)
+    {
+       // posicao.x = 50.0f;
+        //posicao.y = 400.0f;
+    }
     
 }
 
@@ -85,6 +95,7 @@ void Mago::atualizar(float t)
         {
             fase->remover(supernova);
             delete supernova;
+            supernova = NULL;
             podeAtacar = true;
         }
     }

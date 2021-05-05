@@ -33,7 +33,7 @@ void Alma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 }
 
 void Alma::atualizar(float t)
-{
+{   
     if (descendo)
     {
         posicao.y += t * 200;

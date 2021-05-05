@@ -21,6 +21,11 @@ Aparicao::Aparicao(const Vetor2F pos, Mago* mg, Fase* fs): Inimigo(Ids::aparicao
 
 Aparicao::~Aparicao()
 {
+    if(buraconegro!=NULL)
+    {
+        fase->remover(buraconegro);
+        delete buraconegro;
+    }
 }
 
 void Aparicao::atacar(float t)
@@ -95,7 +100,7 @@ void Aparicao::atualizar(float t)
         frente = true;
     
     float ataque = abs(posicao.x - mago->getPosicao().x);
-    if(ataque<  400.0 && ataque > 150.0)
+    if(ataque<  400.0 && ataque > 200.0)
         atacar(t);
     if(!podeAtacar)
     {
@@ -103,6 +108,7 @@ void Aparicao::atualizar(float t)
         {
         fase->remover(buraconegro);
         delete buraconegro;
+        buraconegro = NULL;
         podeAtacar = true;
         }
     }

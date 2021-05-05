@@ -13,7 +13,7 @@ private:
 public:
     Fantasma();
     Fantasma(const Vetor2F pos, Mago* mg);
-    virtual ~Fantasma();
+    ~Fantasma();
 
     void atacar(float t);
     void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);

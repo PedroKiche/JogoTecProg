@@ -13,7 +13,7 @@ private:
     std::vector<Vetor2F> posicoesAlma;
     std::vector<Vetor2F> posicoesEspinho;
 public:
-    PurgatorioFactory(Gerenciador_Grafico* gf, Mago* mg);
+    PurgatorioFactory(Gerenciador_Grafico* gf);
     ~PurgatorioFactory();
     void criaPlataformas();
     void criaPosInimigos();

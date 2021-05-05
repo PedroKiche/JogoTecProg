@@ -11,7 +11,7 @@ class Purgatorio:public Fase
 {
 public:
     Purgatorio();
-    Purgatorio(Gerenciador_Grafico* GeGr, Mago* mg);
+    Purgatorio(Gerenciador_Grafico* GeGr);
     ~Purgatorio();
 };
 

@@ -12,37 +12,31 @@ MenuPrincipal::~MenuPrincipal()
 
 void MenuPrincipal::atualizar(float t)
 {
-    int opcao = -1;
-    do
-    {
-        std::cout << opcao << std::endl;
-        opcao = selecionaOpcao();
-    } while (opcao = -1);
-    
+  
 }
 
 int MenuPrincipal::selecionaOpcao()
 {
-    if (Teclado::teclaFoiPressionada(Teclado::N))
-    {
-        return 0;
-    }
-    if (Teclado::teclaFoiPressionada(Teclado::Num1) || Teclado::teclaFoiPressionada(Teclado::Numpad1))
-    {
-        return 1;
-    }
-    if (Teclado::teclaFoiPressionada(Teclado::Num2) || Teclado::teclaFoiPressionada(Teclado::Numpad2))
-    {
-        return 2;
-    }
-    if (Teclado::teclaFoiPressionada(Teclado::C))
+    if (Teclado::teclaFoiPressionada(Teclado::N)) //Novo jogo
     {
         return 3;
     }
-    if (Teclado::teclaFoiPressionada(Teclado::R))
+    if (Teclado::teclaFoiPressionada(Teclado::Num1) || Teclado::teclaFoiPressionada(Teclado::Numpad1)) //Fase 1
+    {
+        return 1;
+    }
+    if (Teclado::teclaFoiPressionada(Teclado::Num2) || Teclado::teclaFoiPressionada(Teclado::Numpad2)) //Fase 2
+    {
+        return 2;
+    }
+    if (Teclado::teclaFoiPressionada(Teclado::C)) //Carregar Jogao
     {
         return 4;
     }
+    if (Teclado::teclaFoiPressionada(Teclado::R))// Ranking
+    {
+        return 5;
+    }
 
-    return -1;
+    return 0;
 }

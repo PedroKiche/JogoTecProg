@@ -6,6 +6,7 @@
 class MenuPausa : public Menu
 {
 private:
+    bool pause;
 
 public:
     MenuPausa();
@@ -13,6 +14,12 @@ public:
 
     void atualizar(float t);
     int selecionaOpcao();
+
+    bool getPause();
+    void setPause(bool Pause);
+
+    void devoPausar();
+
 };
 
 #endif

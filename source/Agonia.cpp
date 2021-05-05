@@ -5,7 +5,11 @@
 
 Agonia::Agonia()
 {
-   mago = new Mago(Vetor2F(100.0f, 400.0f));
+    menuPrincipal.inicializar(&gf);
+    menuPausa.inicializar(&gf);
+    fase = NULL;
+    estado = 0;
+    faseCarreira = 0;
 }
 
 Agonia::~Agonia()
@@ -16,23 +20,60 @@ Agonia::~Agonia()
 void Agonia::executar()
 {
     relogio.restartar();
-    geraFaseFloresta();
-    mago->setFase(fase);
     while (gf.getJanela()->isOpen())
     {
-
         float dt = relogio.tempoDecorrido();
         if (dt > 1.0f / 20.0f)
             dt = 1.0 / 20.0f;
-        //std::cout << dt << std::endl;
         relogio.restartar();
         gf.limpar();
+
+        switch (estado)
+        {
+        //MENU PRINCIPAL
+        case 0:
+            menuPrincipal.desenhar(&gf);
+            estado = menuPrincipal.selecionaOpcao();
+            gf.centralizar(Vetor2F(400.0f, 300.0f));
+            break;
         
-        fase->atualizar(dt);
+        // PRIMEIRA FASE
+        case 1:
+            if(fase == NULL)
+            {
+                geraFasePurgatorio();
+            }
+            executaFase(dt);
+            if(fase->FaseAcabou())
+            {
+                apagaFase();
+                estado = 0;
+            } 
+            break;
         
+        // SEGUNDA FASE
+        case 2:
+            if(fase == NULL)
+            {
+                geraFaseFloresta();
+            }
+            executaFase(dt);
+            if(fase->FaseAcabou())
+            {
+                apagaFase();
+                estado = 0;
+            } 
+            break;
         
-        if(mago->getPosicao().x > 400.0f && mago->getPosicao().x < 2800.0f)
-        gf.centralizar(Vetor2F(mago->getPosicao().x, 300.0f));
+        //MODO CARREIRA
+        case 3:
+            modoCarreira(dt);
+            break;
+
+        default:
+            break;
+        }      
+            
         gf.mostrar();
         gf.eventosJanela();
     }
@@ -40,14 +81,79 @@ void Agonia::executar()
 
 void Agonia::geraFasePurgatorio()
 {
-    FaseFactory* geraFase = new PurgatorioFactory(&gf,mago);
+    FaseFactory* geraFase = new PurgatorioFactory(&gf);
     fase = geraFase->pedirFase();
     fase->inicializarEntidades();
 }
 
 void Agonia::geraFaseFloresta()
 {
-    FaseFactory* geraFase = new FlorestaFactory(&gf,mago);
+    FaseFactory* geraFase = new FlorestaFactory(&gf);
     fase = geraFase->pedirFase();
     fase->inicializarEntidades();
+}
+
+void Agonia::apagaFase()
+{
+    delete fase;
+    fase = NULL;
+}
+
+void Agonia::executaFase(float dt)
+{   
+    menuPausa.devoPausar();
+    if(!menuPausa.getPause())
+    {
+        fase->atualizar(dt);
+   
+        if(fase->getMago()->getPosicao().x < 400.0f)
+            gf.centralizar(Vetor2F(400.0f,300.0f));
+        else if(fase->getMago()->getPosicao().x > 2800.0f)
+            gf.centralizar(Vetor2F(2800.0f,300.0f));
+        else
+            gf.centralizar(Vetor2F(fase->getMago()->getPosicao().x, 300.0f));
+    }
+    else 
+        jogoPause();
+}
+
+void Agonia::modoCarreira(float dt)
+{
+    if(fase == NULL && faseCarreira == 0)
+    {
+        geraFasePurgatorio();
+        faseCarreira = 1;
+    }
+    else if(fase->FaseAcabou() && faseCarreira == 1)
+    {
+        apagaFase();
+        geraFaseFloresta();
+        faseCarreira = 2;
+    }
+    else if(fase->FaseAcabou() && faseCarreira == 2)
+    {
+        apagaFase();
+        estado = 0;
+    }
+    
+    if(estado != 0)
+        executaFase(dt);
+}
+
+void Agonia::jogoPause()
+{
+    menuPausa.desenhar(&gf);
+    gf.centralizar(Vetor2F(400.0f, 300.0f));
+    switch (menuPausa.selecionaOpcao())
+    {
+    case 0:
+        menuPausa.setPause(false);
+        break;
+    
+    case 1:
+        //implementar
+    
+    default:
+        break;
+    }
 }
