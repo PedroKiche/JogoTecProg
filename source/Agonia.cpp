@@ -134,6 +134,7 @@ void Agonia::modoCarreira(float dt)
     {
         apagaFase();
         estado = 0;
+        faseCarreira = 0;
     }
     
     if(estado != 0)

@@ -11,7 +11,7 @@ private:
 public:
     Menu();
     Menu(Ids::Id id, Vetor2F pos,const Vetor2F tam,  const char *caminho = NULL);
-    ~Menu();
+    virtual ~Menu();
 
     virtual int selecionaOpcao() = 0;
 };
