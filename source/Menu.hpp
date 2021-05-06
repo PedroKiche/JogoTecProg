@@ -14,7 +14,8 @@ public:
     Menu(Ids::Id id, Vetor2F pos,const Vetor2F tam,  const char *caminho = NULL);
     virtual ~Menu();
 
-    //virtual void desenharMenu(Gerenciador_Grafico* gf) = 0;
+    virtual void inicializarMenu(Gerenciador_Grafico* gf) = 0;
+    virtual void desenharMenu(Gerenciador_Grafico* gf) = 0;
     virtual int selecionaOpcao() = 0;
 };
 

@@ -6,7 +6,7 @@
 Agonia::Agonia()
 {
     menuPrincipal.inicializarMenu(&gf);
-    menuPausa.inicializar(&gf);
+    menuPausa.inicializarMenu(&gf);
     fase = NULL;
     estado = 0;
     faseCarreira = 0;
@@ -43,12 +43,13 @@ void Agonia::executar()
             {
                 geraFasePurgatorio();
             }
-            executaFase(dt);
             if(fase->FaseAcabou())
             {
                 apagaFase();
                 estado = 0;
             } 
+            executaFase(dt);
+            
             break;
         
         // SEGUNDA FASE
@@ -57,12 +58,12 @@ void Agonia::executar()
             {
                 geraFaseFloresta();
             }
-            executaFase(dt);
             if(fase->FaseAcabou())
             {
                 apagaFase();
                 estado = 0;
             } 
+            executaFase(dt);
             break;
         
         //MODO CARREIRA
@@ -85,7 +86,6 @@ void Agonia::geraFasePurgatorio()
     fase = geraFase->pedirFase();
     fase->inicializarEntidades();   
     if(geraFase){delete geraFase;}
-    
 }
 
 void Agonia::geraFaseFloresta()
@@ -146,7 +146,7 @@ void Agonia::modoCarreira(float dt)
 
 void Agonia::jogoPause()
 {
-    menuPausa.desenhar(&gf);
+    menuPausa.desenharMenu(&gf);
     gf.centralizar(Vetor2F(400.0f, 300.0f));
     switch (menuPausa.selecionaOpcao())
     {
@@ -157,6 +157,11 @@ void Agonia::jogoPause()
     case 1:
         //implementar
     
+    case 2:
+        apagaFase();
+        estado = 0;
+        faseCarreira = 0;
+
     default:
         break;
     }
