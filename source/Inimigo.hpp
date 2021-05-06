@@ -11,10 +11,12 @@ class Inimigo:public Personagem
 protected:
     float alcance;
     Vetor2F posicaoInicial;
-    Mago* mago;
+    Mago* mago1;
+    Mago* mago2;
+
 public:
     Inimigo();
-    Inimigo(Ids::Id id, const Vetor2F pos, const Vetor2F tam, float alc, float vel,Mago* mg, const char *caminho);
+    Inimigo(Ids::Id id, const Vetor2F pos, const Vetor2F tam, float alc, float vel,Mago* mg, Mago * mg2 = NULL, const char *caminho = NULL);
     virtual ~Inimigo();
 
     float getAlcance();

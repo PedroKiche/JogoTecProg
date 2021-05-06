@@ -5,7 +5,7 @@ Gargula::Gargula()
     frente = false;
 }
 
-Gargula::Gargula(const Vetor2F pos, Mago* mg): Inimigo(Ids::gargula, pos, Vetor2F(90.0f, 100.0f), 100.0, 150.0, mg, "../JogoTecProg/texture/gargula.png")
+Gargula::Gargula(const Vetor2F pos, Mago* mg, Mago* mg2): Inimigo(Ids::gargula, pos, Vetor2F(90.0f, 100.0f), 100.0, 150.0, mg, mg2, "../JogoTecProg/texture/gargula.png")
 {
     frente = true;
 }
@@ -16,13 +16,24 @@ Gargula::~Gargula()
 
 void Gargula::atacar(float t)
 {
-    float distanciaY = posicao.y - mago->getPosicao().y;
-    float distanciaX = posicao.x - mago->getPosicao().x;
+    float distanciaY = posicao.y - mago1->getPosicao().y;
+    float distanciaX = posicao.x - mago1->getPosicao().x;
     if (abs(distanciaX) < alcance && distanciaY > -alcance && distanciaY < 0)
     {
         if ((posicao.y - posicaoInicial.y) < alcance){
             posicao.y += t * velocidade;
         }
+    }
+    else if(mago2)
+    {
+        distanciaY = posicao.y - mago2->getPosicao().y;
+        distanciaX = posicao.x - mago2->getPosicao().x;
+         if (abs(distanciaX) < alcance && distanciaY > -alcance && distanciaY < 0)
+        {
+        if ((posicao.y - posicaoInicial.y) < alcance){
+            posicao.y += t * velocidade;
+        }
+    }
     }
 } 
 

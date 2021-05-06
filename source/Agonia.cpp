@@ -10,6 +10,7 @@ Agonia::Agonia()
     fase = NULL;
     estado = 0;
     faseCarreira = 0;
+    jogador2 = false;
 }
 
 Agonia::~Agonia()
@@ -70,6 +71,14 @@ void Agonia::executar()
             modoCarreira(dt);
             break;
 
+        case 4:
+            if(jogador2)
+                jogador2 = false;
+            else
+                jogador2= true;
+            estado = 0;
+            break;
+
         default:
             break;
         }      
@@ -81,16 +90,19 @@ void Agonia::executar()
 
 void Agonia::geraFasePurgatorio()
 {
-    FaseFactory* geraFase = new PurgatorioFactory(&gf);
+    FaseFactory* geraFase = new PurgatorioFactory(&gf,jogador2);
     fase = geraFase->pedirFase();
-    fase->inicializarEntidades();
+    fase->inicializarEntidades();   
+    if(geraFase){delete geraFase;}
+    
 }
 
 void Agonia::geraFaseFloresta()
 {
-    FaseFactory* geraFase = new FlorestaFactory(&gf);
+    FaseFactory* geraFase = new FlorestaFactory(&gf,jogador2);
     fase = geraFase->pedirFase();
     fase->inicializarEntidades();
+    if(geraFase){delete geraFase;}
 }
 
 void Agonia::apagaFase()
@@ -106,12 +118,12 @@ void Agonia::executaFase(float dt)
     {
         fase->atualizar(dt);
    
-        if(fase->getMago()->getPosicao().x < 400.0f)
+        if(fase->getMago1()->getPosicao().x < 400.0f)
             gf.centralizar(Vetor2F(400.0f,300.0f));
-        else if(fase->getMago()->getPosicao().x > 2800.0f)
+        else if(fase->getMago1()->getPosicao().x > 2800.0f)
             gf.centralizar(Vetor2F(2800.0f,300.0f));
         else
-            gf.centralizar(Vetor2F(fase->getMago()->getPosicao().x, 300.0f));
+            gf.centralizar(Vetor2F(fase->getMago1()->getPosicao().x, 300.0f));
     }
     else 
         jogoPause();

@@ -1,6 +1,6 @@
 #include "Fantasma.hpp"
 #include "Mago.hpp"
-#include<iostream>
+#include <iostream>
 
 Fantasma::Fantasma() : Inimigo()
 {
@@ -9,7 +9,7 @@ Fantasma::Fantasma() : Inimigo()
     velQueda = 0;
 }
 
-Fantasma::Fantasma(const Vetor2F pos, Mago* mg): Inimigo(Ids::fantasma, pos, Vetor2F(50.0f, 50.0f), 130.0, 100.0, mg,  "../JogoTecProg/texture/fantasma.png")
+Fantasma::Fantasma(const Vetor2F pos, Mago *mg, Mago *mg2) : Inimigo(Ids::fantasma, pos, Vetor2F(50.0f, 50.0f), 130.0, 100.0, mg, mg2, "../JogoTecProg/texture/fantasma.png")
 {
     frente = true;
     velQueda = 0;
@@ -22,22 +22,40 @@ Fantasma::~Fantasma()
 
 void Fantasma::atacar(float t)
 {
-    float distancia = posicao.x - mago->getPosicao().x;
-    if(abs(distancia) < alcance)
+    float distancia = posicao.x - mago1->getPosicao().x;
+    if (abs(distancia) < alcance)
     {
-        atacando=true;
+        atacando = true;
         velocidade = 150.0f;
-        if(distancia > 0)
+        if (distancia > 0)
             posicao.x -= t * velocidade;
         else
             posicao.x += t * velocidade;
     }
+    else if (mago2)
+    {
+        distancia = posicao.x - mago2->getPosicao().x;
+        if (abs(distancia) < alcance)
+        {
+            atacando = true;
+            velocidade = 150.0f;
+            if (distancia > 0)
+                posicao.x -= t * velocidade;
+            else
+                posicao.x += t * velocidade;
+        }
+        else
+        {
+            velocidade = 100.0f;
+            atacando = false;
+        }
+    }
     else
     {
         velocidade = 100.0f;
-        atacando=false;
+        atacando = false;
     }
-} 
+}
 
 void Fantasma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
@@ -82,14 +100,13 @@ void Fantasma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 }
 
 void Fantasma::atualizar(float t)
-{   
-    if(atacando == false)
-    movimentar(t);
+{
+    if (atacando == false)
+        movimentar(t);
 
     atacar(t);
     velQueda += 1000.0f * t;
     posicao.y += velQueda * t;
-    
 }
 
 void Fantasma::movimentar(float t)
@@ -107,7 +124,7 @@ void Fantasma::movimentar(float t)
     }
     else
     {
-        if (posicao.x  > posicaoInicial.x - alcance)
+        if (posicao.x > posicaoInicial.x - alcance)
         {
             posicao.x -= t * velocidade;
         }

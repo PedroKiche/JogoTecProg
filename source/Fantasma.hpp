@@ -12,7 +12,7 @@ private:
     bool atacando;
 public:
     Fantasma();
-    Fantasma(const Vetor2F pos, Mago* mg);
+    Fantasma(const Vetor2F pos, Mago* mg, Mago* mg2 = NULL);
     ~Fantasma();
 
     void atacar(float t);

@@ -1,10 +1,9 @@
 #include"FlorestaFactory.hpp"
 
 
-FlorestaFactory::FlorestaFactory(Gerenciador_Grafico* gf): FaseFactory()
+FlorestaFactory::FlorestaFactory(Gerenciador_Grafico* gf, bool jogador2): FaseFactory()
 {
-    fase = new Floresta(gf);
-    fase->adicionar(fase->getMago());
+    fase = new Floresta(gf,jogador2);
     srand(time(NULL));
 }
 FlorestaFactory::~FlorestaFactory()
@@ -87,14 +86,14 @@ void FlorestaFactory::criaInimigo()
     for (int i = 0; i < 5; i++)
     {
         int p = rand()%(9 - i);
-        fase->adicionarInimigo(new Fantasma(posicoesFantasma[p],fase->getMago()));
+        fase->adicionarInimigo(new Fantasma(posicoesFantasma[p],fase->getMago1(), fase->getMago2()));
         posicoesFantasma.erase(posicoesFantasma.begin() + p);
     }
     
     for (int i = 0; i < 5; i++)
     {
         int p = rand()%(9 - i);
-        fase->adicionarInimigo(new Aparicao(posicoesAparicao[p],fase->getMago(), fase));
+        fase->adicionarInimigo(new Aparicao(posicoesAparicao[p],fase->getMago1(), fase, fase->getMago2()));
         posicoesAparicao.erase(posicoesAparicao.begin() + p);
     }
     

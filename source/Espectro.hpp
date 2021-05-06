@@ -7,7 +7,7 @@ class Espectro: public Inimigo
 {
 public:
     Espectro();
-    Espectro(const Vetor2F pos, Mago* mg);
+    Espectro(const Vetor2F pos, Mago* mg, Mago* mg2 = NULL);
     ~Espectro();
 
     void atacar(float t);

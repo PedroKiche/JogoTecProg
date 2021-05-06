@@ -1,4 +1,5 @@
 #include"Agonia.hpp"
+#include<iostream>
 
 int main()
 {

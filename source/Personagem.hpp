@@ -11,7 +11,7 @@ protected:
     float velocidade;
 public:
     Personagem();
-    Personagem(Ids::Id id,const Vetor2F pos, const Vetor2F tam, float vel, const char *caminho);
+    Personagem(Ids::Id id,const Vetor2F pos, const Vetor2F tam, float vel, const char *caminho = NULL);
     virtual ~Personagem();
 
     //virtual void atualizar(float t)=0;

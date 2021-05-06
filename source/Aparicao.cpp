@@ -10,7 +10,7 @@ Aparicao::Aparicao():Inimigo()
     frente = false;
 }
 
-Aparicao::Aparicao(const Vetor2F pos, Mago* mg, Fase* fs): Inimigo(Ids::aparicao, pos, Vetor2F(65.0f, 100.0f), 80.0, 100.0, mg, "../JogoTecProg/texture/aparicao.png")
+Aparicao::Aparicao(const Vetor2F pos, Mago* mg, Fase* fs, Mago* mg2): Inimigo(Ids::aparicao, pos, Vetor2F(65.0f, 100.0f), 80.0, 100.0, mg, mg2, "../JogoTecProg/texture/aparicao.png")
 {
     descendo = false;
     fase = fs;
@@ -30,12 +30,41 @@ Aparicao::~Aparicao()
 
 void Aparicao::atacar(float t)
 {
-    if(podeAtacar)
+    
+    float ataque = abs(posicao.x - mago1->getPosicao().x);
+    if(ataque<  400.0 && ataque > 200.0)
     {
-        buraconegro = new BuracoNegro(posicao, mago->getPosicao(),frente , true, 100.0f);
-        fase->adicionar(buraconegro);
-        fase->inicializa(buraconegro);
-        podeAtacar = false;
+        if(posicao.x >  mago1->getPosicao().x)
+            frente = false;
+        else 
+            frente = true;
+        atirar(mago1);
+    }
+    else if (mago2)
+    {
+
+        ataque = abs(posicao.x - mago2->getPosicao().x);
+        
+        if(ataque<  400.0 && ataque > 200.0)
+        {
+            if(posicao.x >  mago2->getPosicao().x)
+                frente = false;
+            else 
+                frente = true;
+            atirar(mago2);
+        }
+    }
+
+
+    if(!podeAtacar)
+    {
+        if(!buraconegro->getAtivo())
+        {
+        fase->remover(buraconegro);
+        delete buraconegro;
+        buraconegro = NULL;
+        podeAtacar = true;
+        }
     }
 } 
 
@@ -93,25 +122,8 @@ void Aparicao::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 }
 
 void Aparicao::atualizar(float t)
-{   
-    if(posicao.x >  mago->getPosicao().x)
-        frente = false;
-    else 
-        frente = true;
-    
-    float ataque = abs(posicao.x - mago->getPosicao().x);
-    if(ataque<  400.0 && ataque > 200.0)
-        atacar(t);
-    if(!podeAtacar)
-    {
-        if(!buraconegro->getAtivo())
-        {
-        fase->remover(buraconegro);
-        delete buraconegro;
-        buraconegro = NULL;
-        podeAtacar = true;
-        }
-    }
+{       
+    atacar(t);
     movimentar(t);
 }
 
@@ -140,3 +152,15 @@ void Aparicao::movimentar(float t)
         }
     }
 }
+
+void Aparicao::atirar(Mago* mago)
+{
+     if(podeAtacar)
+    {
+        buraconegro = new BuracoNegro(posicao, mago->getPosicao(),frente , true, 100.0f);
+        fase->adicionar(buraconegro);
+        fase->inicializa(buraconegro);
+        podeAtacar = false;
+    }
+}
+

@@ -23,8 +23,7 @@ Mago::~Mago()
     }
 }
 
-Mago::Mago(const Vetor2F pos) : Personagem(Ids::mago, pos, Vetor2F(40.0f, 75.0f), 200.0, "../JogoTecProg/texture/mago.png"),
-                          controle(Teclado::A, Teclado::D, Teclado::W, Teclado::C)
+Mago::Mago(const Vetor2F pos, bool jogador2) : Personagem(Ids::mago, pos, Vetor2F(40.0f, 75.0f), 200.0)
 {
     altPulo = 135;
     aceleracao = 0;
@@ -33,6 +32,16 @@ Mago::Mago(const Vetor2F pos) : Personagem(Ids::mago, pos, Vetor2F(40.0f, 75.0f)
     supernova = NULL;
     frente = false;
     podeAtacar = true;
+    if(!jogador2)
+    {
+        caminho =  "../JogoTecProg/texture/mago.png";
+        controle = Controle(Teclado::A, Teclado::D, Teclado::W, Teclado::C);
+    }
+    else
+    {
+        caminho =  "../JogoTecProg/texture/mago2.png";
+        controle = Controle(Teclado::J, Teclado::L, Teclado::I, Teclado::N);
+    }
 }
 
 void Mago::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)

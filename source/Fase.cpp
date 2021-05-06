@@ -4,14 +4,23 @@
 Fase::Fase() : Entidade()
 {
     gf = NULL;
-    mago = NULL;
+    mago1 = NULL;
+    mago2 = NULL;
 }
 
-Fase::Fase(Gerenciador_Grafico *GeGr, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho) : Entidade(id, pos, tam, caminho)
+Fase::Fase(Gerenciador_Grafico *GeGr, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho, bool jogador2) : Entidade(id, pos, tam, caminho)
 {
-    mago = new Mago(Vetor2F(100.0,400.0));
     gf = GeGr;
-    mago->setFase(this);
+    mago1 = new Mago(Vetor2F(100.0,400.0));
+    mago1->setFase(this);
+    adicionar(mago1);
+    
+    if(jogador2)
+    {
+        mago2 = new Mago(Vetor2F(200.0,400.0), jogador2);
+        mago2->setFase(this);
+         adicionar(mago2);
+    }
 }
 
 Fase::~Fase()
@@ -37,9 +46,9 @@ void Fase::adicionar(Entidade_Colidivel *ec)
     gc.adicionarEntidade_Colidivel(ec);
 }
 
-Mago* Fase::getMago()
+Mago* Fase::getMago1()
 {
-    return mago;
+    return mago1;
 }
 
 void Fase::inicializarEntidades()
@@ -88,9 +97,12 @@ void Fase::verificarInimigos()
 
 bool Fase::FaseAcabou()
 {
-    if(mago->getPosicao().x > tamanho.x)
+    if(mago1->getPosicao().x > tamanho.x)
         return true;
     return false;
 }
 
-
+Mago* Fase::getMago2()
+{
+    return mago2;
+}

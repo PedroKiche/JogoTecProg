@@ -10,7 +10,7 @@ protected:
     void fabricaFase();
 public:
     FaseFactory();
-    ~FaseFactory();
+    virtual ~FaseFactory();
     virtual void criaPlataformas()=0;
     virtual void criaPosInimigos()=0;
     virtual void criaPosObstaculos()=0;

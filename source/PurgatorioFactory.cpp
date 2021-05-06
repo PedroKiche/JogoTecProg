@@ -1,10 +1,9 @@
 #include"PurgatorioFactory.hpp"
 
 
-PurgatorioFactory::PurgatorioFactory(Gerenciador_Grafico* gf): FaseFactory()
+PurgatorioFactory::PurgatorioFactory(Gerenciador_Grafico* gf, bool jogador2): FaseFactory()
 {
-    fase = new Purgatorio(gf);
-    fase->adicionar(fase->getMago());
+    fase = new Purgatorio(gf,jogador2);
     srand(time(NULL));
 }
 PurgatorioFactory::~PurgatorioFactory()
@@ -81,14 +80,14 @@ void PurgatorioFactory::criaInimigo()
     for (int i = 0; i < 5; i++)
     {
         int p = rand()%(9 - i);
-        fase->adicionarInimigo(new Fantasma(posicoesFantasma[p],fase->getMago()));
+        fase->adicionarInimigo(new Fantasma(posicoesFantasma[p],fase->getMago1(),fase->getMago2()));
         posicoesFantasma.erase(posicoesFantasma.begin() + p);
     }
     
     for (int i = 0; i < 5; i++)
     {
         int p = rand()%(9 - i);
-        fase->adicionarInimigo(new Gargula(posicoesGargula[p],fase->getMago()));
+        fase->adicionarInimigo(new Gargula(posicoesGargula[p],fase->getMago1(),fase->getMago2()));
         posicoesGargula.erase(posicoesGargula.begin() + p);
     }
 }

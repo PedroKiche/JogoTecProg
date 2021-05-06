@@ -10,7 +10,7 @@ private:
     bool frente;
 public:
     Gargula();
-    Gargula(const Vetor2F pos, Mago* mg);
+    Gargula(const Vetor2F pos, Mago* mg, Mago* mg2 = NULL);
     virtual ~Gargula();
 
     void atacar(float t);

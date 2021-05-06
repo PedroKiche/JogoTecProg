@@ -16,14 +16,14 @@ private:
     bool frente;
 public:
     Aparicao();
-    Aparicao(const Vetor2F pos, Mago* mg,  Fase* fs);
+    Aparicao(const Vetor2F pos, Mago* mg,  Fase* fs, Mago* mg2 = NULL);
     ~Aparicao();
 
     void atacar(float t);
     void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);
     void atualizar(float t);
     void movimentar(float t);
-    void atirar();
+    void atirar(Mago* mago);
 };
 
 #endif

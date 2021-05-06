@@ -22,7 +22,7 @@ private:
 
 public:
     Mago();
-    Mago(const Vetor2F pos);
+    Mago(const Vetor2F pos, bool jogador2 = false);
     ~Mago();
 
     void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);

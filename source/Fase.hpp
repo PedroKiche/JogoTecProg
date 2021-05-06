@@ -14,12 +14,13 @@ protected:
     Gerenciador_Colisoes gc;
     Lista_Entidades listaEntidades;
     Gerenciador_Grafico *gf;
-    Mago* mago;
+    Mago* mago1;
+    Mago* mago2;
     std::set<Inimigo*> inimigos;
 
 public:
     Fase();
-    Fase(Gerenciador_Grafico *GeGr, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho);
+    Fase(Gerenciador_Grafico *GeGr, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho, bool jogador2);
     ~Fase();
 
     void atualizar(float t);
@@ -32,7 +33,9 @@ public:
 
     void inicializarEntidades();
 
-    Mago* getMago();
+    Mago* getMago1();
+
+    Mago* getMago2();
 
      void adicionarInimigo(Inimigo *ec);
 
