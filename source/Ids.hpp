@@ -22,7 +22,8 @@ namespace Ids
         floresta,
         plataforma,
         menuprincipal,
-        menupausa
+        menupausa,
+        botao
     };
 }
 

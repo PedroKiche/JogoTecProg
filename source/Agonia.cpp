@@ -5,12 +5,11 @@
 
 Agonia::Agonia()
 {
-    menuPrincipal.inicializar(&gf);
+    menuPrincipal.inicializarMenu(&gf);
     menuPausa.inicializar(&gf);
     fase = NULL;
     estado = 0;
     faseCarreira = 0;
-    jogador2 = false;
 }
 
 Agonia::~Agonia()
@@ -33,7 +32,7 @@ void Agonia::executar()
         {
         //MENU PRINCIPAL
         case 0:
-            menuPrincipal.desenhar(&gf);
+            menuPrincipal.desenharMenu(&gf);
             estado = menuPrincipal.selecionaOpcao();
             gf.centralizar(Vetor2F(400.0f, 300.0f));
             break;
@@ -71,14 +70,6 @@ void Agonia::executar()
             modoCarreira(dt);
             break;
 
-        case 4:
-            if(jogador2)
-                jogador2 = false;
-            else
-                jogador2= true;
-            estado = 0;
-            break;
-
         default:
             break;
         }      
@@ -90,7 +81,7 @@ void Agonia::executar()
 
 void Agonia::geraFasePurgatorio()
 {
-    FaseFactory* geraFase = new PurgatorioFactory(&gf,jogador2);
+    FaseFactory* geraFase = new PurgatorioFactory(&gf,menuPrincipal.getJogador2());
     fase = geraFase->pedirFase();
     fase->inicializarEntidades();   
     if(geraFase){delete geraFase;}
@@ -99,7 +90,7 @@ void Agonia::geraFasePurgatorio()
 
 void Agonia::geraFaseFloresta()
 {
-    FaseFactory* geraFase = new FlorestaFactory(&gf,jogador2);
+    FaseFactory* geraFase = new FlorestaFactory(&gf,menuPrincipal.getJogador2());
     fase = geraFase->pedirFase();
     fase->inicializarEntidades();
     if(geraFase){delete geraFase;}

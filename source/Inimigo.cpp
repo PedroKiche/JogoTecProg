@@ -14,7 +14,7 @@ Inimigo::Inimigo(Ids::Id id, const Vetor2F pos, const Vetor2F tam, float alc, fl
     posicaoInicial = pos;
     alcance = alc;
     mago1 = mg;
-    mago2 =mg2;
+    mago2 = mg2;
 }
 
 Inimigo::~Inimigo()

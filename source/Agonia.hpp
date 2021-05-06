@@ -21,7 +21,6 @@ private:
     MenuPausa menuPausa;
     int estado;
     int faseCarreira;
-    bool jogador2;
 
 public:
     Agonia();
