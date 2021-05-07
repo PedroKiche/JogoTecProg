@@ -44,7 +44,7 @@ void SuperNova::atualizar(float t)
 
 void SuperNova::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
-    if(id != Ids::mago && id != Ids::buraconegro)
+    if(id != Ids::mago && id != Ids::buraconegro && id != Ids::espinhos)
     {
         ativo = false;
     }

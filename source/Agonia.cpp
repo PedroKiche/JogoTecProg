@@ -1,7 +1,7 @@
 #include "Agonia.hpp"
 #include <iostream>
 #include<stdio.h>
-#include "PurgatorioFactory.hpp"
+
 
 Agonia::Agonia()
 {
@@ -47,9 +47,9 @@ void Agonia::executar()
             {
                 apagaFase();
                 estado = 0;
-            } 
-            executaFase(dt);
-            
+            }
+            if(fase)
+                executaFase(dt);            
             break;
         
         // SEGUNDA FASE
@@ -62,8 +62,9 @@ void Agonia::executar()
             {
                 apagaFase();
                 estado = 0;
-            } 
-            executaFase(dt);
+            }
+            if(fase) 
+                executaFase(dt);
             break;
         
         //MODO CARREIRA
@@ -96,6 +97,14 @@ void Agonia::geraFaseFloresta()
     if(geraFase){delete geraFase;}
 }
 
+void Agonia::geraFaseLimiar()
+{
+    FaseFactory* geraFase = new LimiarFactory(&gf,menuPrincipal.getJogador2());
+    fase = geraFase->pedirFase();
+    fase->inicializarEntidades();
+    if(geraFase){delete geraFase;}
+}
+
 void Agonia::apagaFase()
 {
     delete fase;
@@ -111,8 +120,8 @@ void Agonia::executaFase(float dt)
    
         if(fase->getMago1()->getPosicao().x < 400.0f)
             gf.centralizar(Vetor2F(400.0f,300.0f));
-        else if(fase->getMago1()->getPosicao().x > 2800.0f)
-            gf.centralizar(Vetor2F(2800.0f,300.0f));
+        else if(fase->getMago1()->getPosicao().x > (fase->getTamanho().x)-400.0f)
+            gf.centralizar(Vetor2F((fase->getTamanho().x)-400.0f,300.0f));
         else
             gf.centralizar(Vetor2F(fase->getMago1()->getPosicao().x, 300.0f));
     }
@@ -134,6 +143,12 @@ void Agonia::modoCarreira(float dt)
         faseCarreira = 2;
     }
     else if(fase->FaseAcabou() && faseCarreira == 2)
+    {
+        apagaFase();
+        geraFaseLimiar();
+        faseCarreira = 3;
+    }
+    else if(fase->FaseAcabou() && faseCarreira == 3)
     {
         apagaFase();
         estado = 0;

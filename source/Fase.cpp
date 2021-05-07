@@ -100,6 +100,11 @@ bool Fase::FaseAcabou()
 {
     if(mago1->getPosicao().x > tamanho.x)
         return true;
+    else if(mago2)
+        if (mago2->getPosicao().x > tamanho.x)
+        {
+            return true;
+        }
     return false;
 }
 

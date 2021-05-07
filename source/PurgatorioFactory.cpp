@@ -77,14 +77,16 @@ void PurgatorioFactory::criaPosObstaculos()
 
 void PurgatorioFactory::criaInimigo()
 {
-    for (int i = 0; i < 5; i++)
+    int s;
+    s = rand()%(3);
+    for (int i = 0; i < 5 + s; i++)
     {
         int p = rand()%(9 - i);
         fase->adicionarInimigo(new Fantasma(posicoesFantasma[p],fase->getMago1(),fase->getMago2()));
         posicoesFantasma.erase(posicoesFantasma.begin() + p);
     }
-    
-    for (int i = 0; i < 5; i++)
+    s = rand()%(3);
+    for (int i = 0; i < 5 + s; i++)
     {
         int p = rand()%(9 - i);
         fase->adicionarInimigo(new Gargula(posicoesGargula[p],fase->getMago1(),fase->getMago2()));
@@ -94,14 +96,16 @@ void PurgatorioFactory::criaInimigo()
 
 void PurgatorioFactory::criaObstaculo()
 {
-    for (int i = 0; i < 5; i++)
+    int s;
+    s = rand()%(3);
+    for (int i = 0; i < 5 + s; i++)
     {
         int p = rand()%(9 - i);
         fase->adicionar(new Alma(posicoesAlma[p]));
         posicoesAlma.erase(posicoesAlma.begin() + p);
     }
-    
-    for (int i = 0; i < 5; i++)
+    s = rand()%(3);
+    for (int i = 0; i < 5 + s; i++)
     {
         int p = rand()%(9 - i);
         fase->adicionar(new Espinho(posicoesEspinho[p]));

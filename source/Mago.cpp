@@ -46,7 +46,7 @@ Mago::Mago(const Vetor2F pos, bool jogador2) : Personagem(Ids::mago, pos, Vetor2
 
 void Mago::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
-    if (id == Ids::plataforma)
+    if (id == Ids::plataforma || id == Ids::arvore)
     {
         float deltaX = pos.x - posicao.x;
         float deltaY = pos.y - posicao.y;
@@ -88,7 +88,7 @@ void Mago::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
     }
     if (id == Ids::fantasma || id == Ids::gargula || id == Ids::alma || id == Ids::aparicao || id == Ids::espectro || id == Ids::buraconegro)
     {
-       // posicao.x = 50.0f;
+        //posicao.x = 50.0f;
         //posicao.y = 400.0f;
     }
     
