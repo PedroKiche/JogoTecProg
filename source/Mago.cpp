@@ -12,6 +12,7 @@ Mago::Mago() : Personagem(),
     supernova = NULL;
     frente = false;
     podeAtacar=false;
+    lentidao = 1;
 }
 
 Mago::~Mago()
@@ -32,6 +33,7 @@ Mago::Mago(const Vetor2F pos, bool jogador2) : Personagem(Ids::mago, pos, Vetor2
     supernova = NULL;
     frente = false;
     podeAtacar = true;
+    lentidao = 1;
     if(!jogador2)
     {
         caminho =  "../JogoTecProg/texture/mago.png";
@@ -84,12 +86,17 @@ void Mago::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
     }
     if(Ids::espinhos == id)
     {
-        //velocidade = 50.0f;
+        lentidao = 0;
     }
-    if (id == Ids::fantasma || id == Ids::gargula || id == Ids::alma || id == Ids::aparicao || id == Ids::espectro || id == Ids::buraconegro)
+    if (id == Ids::fantasma || id == Ids::gargula || id == Ids::alma || id == Ids::aparicao || id == Ids::buraconegro)
     {
-        //posicao.x = 50.0f;
-        //posicao.y = 400.0f;
+        posicao.x = 50.0f;
+        posicao.y = 400.0f;
+    }
+    if(id == Ids::espectro)
+    {
+        posicao.x = 225.0f;
+        posicao.y = 350.0f;
     }
     
 }
@@ -107,6 +114,16 @@ void Mago::atualizar(float t)
             supernova = NULL;
             podeAtacar = true;
         }
+    }
+    if(lentidao < 1)
+    {
+        velocidade = 50.0f;
+        lentidao += t;
+    }
+    else 
+    {
+        velocidade = 200.0f;
+        lentidao = 1;
     }
     movimentar(t);
 }
