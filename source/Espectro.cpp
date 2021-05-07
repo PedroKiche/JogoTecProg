@@ -1,12 +1,19 @@
 #include "Espectro.hpp"
 
-Espectro::Espectro()
+Espectro::Espectro() : Inimigo()
 {
+    teleportar = false;
+    teleporte = 0;
+    tempoTP = 0;
+
 }
 
 Espectro::Espectro(const Vetor2F pos, Mago* mg, Mago* mg2): Inimigo(Ids::espectro, pos, Vetor2F(105.0f, 170.0f), 200.0, 100.0, mg, mg2, "../JogoTecProg/texture/espectro.png")
 {
-
+    criaPosTeleporte();
+    teleportar = false;
+    tempoTP = 0;
+    teleporte = 0;
 }
 
 Espectro::~Espectro()
@@ -20,15 +27,46 @@ void Espectro::atacar(float t)
 
 void Espectro::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 {
-    //Implementar
+    if(id == Ids::supernova)
+    {
+        tempoTP = 0;
+    }
+    if(id == Ids::mago)
+    {
+        tempoTP = 1;
+    }
 }
 
 void Espectro::atualizar(float t)
 {
-    //Implementar
+
+    movimentar(t);
 }
 
 void Espectro::movimentar(float t)
 {
-    //Implementar
+    tempoTP +=t;
+    if(tempoTP > 1)
+    {
+        teleportar = true;
+        tempoTP =  0;
+    }
+    if(teleportar)
+    {
+        posicao = posicoesTeleporta[teleporte];
+        teleporte++;
+        teleportar = false;
+    }
+    if(teleporte > 4)
+        teleporte = 0;
 }
+
+ void Espectro::criaPosTeleporte()
+ {
+    posicoesTeleporta.push_back(Vetor2F(387.0f,465.0f));
+    posicoesTeleporta.push_back(Vetor2F(720.0f,132.0f));
+    posicoesTeleporta.push_back(Vetor2F(720.0f,465.0f));
+    posicoesTeleporta.push_back(Vetor2F(73.0f,465.0f));
+    posicoesTeleporta.push_back(Vetor2F(73.0f,132.0f));
+    
+ }

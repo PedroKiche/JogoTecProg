@@ -19,6 +19,7 @@ private:
     SuperNova* supernova;
     bool frente;
     bool podeAtacar;
+    float lentidao;
 
 public:
     Mago();

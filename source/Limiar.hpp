@@ -2,6 +2,7 @@
 #define _LIMIAR_HPP_
 
 #include "Fase.hpp"
+#include "Espectro.hpp"
 
 class Limiar:public Fase
 {
