@@ -88,6 +88,7 @@ void Agonia::executar()
             break;
 
         default:
+            estado = 0;
             break;
         }      
             
