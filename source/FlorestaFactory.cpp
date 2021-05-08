@@ -46,7 +46,7 @@ void FlorestaFactory::criaPosInimigos()
     
 
     
-    posicoesAparicao.push_back(Vetor2F(350.0f,155.0F));
+    posicoesAparicao.push_back(Vetor2F(220.0f,155.0F));
     posicoesAparicao.push_back(Vetor2F(825.0f,40.0F));
     posicoesAparicao.push_back(Vetor2F(825.0f,290.0F));
     posicoesAparicao.push_back(Vetor2F(995.0f,210.0F));
