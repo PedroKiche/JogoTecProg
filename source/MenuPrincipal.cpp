@@ -4,8 +4,9 @@
 MenuPrincipal::MenuPrincipal() : Menu(Ids::menuprincipal, Vetor2F(400.0f, 300.0f), Vetor2F(800.0f, 600.0f), "../JogoTecProg/texture/menu.png")
 {
     botaoNovoJogo = Botao(Ids::botao, Vetor2F(400.0f, 230.0f), Vetor2F(350.0f, 60.0f), "../JogoTecProg/texture/botaonovojogo.png");
-    botaoFase1 = Botao(Ids::botao, Vetor2F(400.0f, 295.0f), Vetor2F(350.0f, 60.0f), "../JogoTecProg/texture/botaofase1.png");
-    botaoFase2 = Botao(Ids::botao, Vetor2F(400.0f, 360.0f), Vetor2F(350.0f, 60.0f), "../JogoTecProg/texture/botaofase2.png");
+    botaoFase1 = Botao(Ids::botao, Vetor2F(310.0f, 295.0f), Vetor2F(170.0f, 60.0f), "../JogoTecProg/texture/botaofase1.png");
+    botaoFase2 = Botao(Ids::botao, Vetor2F(490.0f, 295.0f), Vetor2F(170.0f, 60.0f), "../JogoTecProg/texture/botaofase2.png");
+    botaoFase3 = Botao(Ids::botao, Vetor2F(400.0f, 360.0f), Vetor2F(350.0f, 60.0f), "../JogoTecProg/texture/botaofase3.png");
     botao1Jogador = Botao(Ids::botao, Vetor2F(400.0f, 425.0f), Vetor2F(350.0f, 60.0f), "../JogoTecProg/texture/botao1jogador.png");
     botao2Jogadores = Botao(Ids::botao, Vetor2F(400.0f, 425.0f), Vetor2F(350.0f, 60.0f), "../JogoTecProg/texture/botao2jogadores.png");
     botaoCarregarJogo = Botao(Ids::botao, Vetor2F(400.0f, 490.0f), Vetor2F(350.0f, 60.0f), "../JogoTecProg/texture/botaocarregar.png");
@@ -23,6 +24,7 @@ void MenuPrincipal::inicializarMenu(Gerenciador_Grafico* gf)
     botaoNovoJogo.inicializar(gf);
     botaoFase1.inicializar(gf);
     botaoFase2.inicializar(gf);
+    botaoFase3.inicializar(gf);
     botao2Jogadores.inicializar(gf);
     botao1Jogador.inicializar(gf);
     botaoCarregarJogo.inicializar(gf);
@@ -35,6 +37,7 @@ void MenuPrincipal::desenharMenu(Gerenciador_Grafico* gf)
     botaoNovoJogo.desenhar(gf);
     botaoFase1.desenhar(gf);
     botaoFase2.desenhar(gf);
+    botaoFase3.desenhar(gf);
     if (jogador2)
     {
         botao2Jogadores.desenhar(gf);
@@ -57,7 +60,7 @@ int MenuPrincipal::selecionaOpcao()
 {
     if (Teclado::teclaFoiPressionada(Teclado::N)) //Novo jogo
     {
-        return 3;
+        return 9;
     }
     if (Teclado::teclaFoiPressionada(Teclado::Num1) || Teclado::teclaFoiPressionada(Teclado::Numpad1)) //Fase 1
     {
@@ -66,6 +69,10 @@ int MenuPrincipal::selecionaOpcao()
     if (Teclado::teclaFoiPressionada(Teclado::Num2) || Teclado::teclaFoiPressionada(Teclado::Numpad2)) //Fase 2
     {
         return 2;
+    }
+    if (Teclado::teclaFoiPressionada(Teclado::Num3) || Teclado::teclaFoiPressionada(Teclado::Numpad3)) //Fase 3
+    {
+        return 3;
     }
     if (Teclado::teclaFoiPressionada(Teclado::J)) //Alternar numero de jogadores para 2
     {

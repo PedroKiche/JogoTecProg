@@ -67,8 +67,23 @@ void Agonia::executar()
                 executaFase(dt);
             break;
         
-        //MODO CARREIRA
         case 3:
+            if(fase == NULL)
+            {
+                geraFaseLimiar();
+            }
+            if(fase->FaseAcabou())
+            {
+                apagaFase();
+                estado = 0;
+            }
+            if(fase) 
+                executaFase(dt);
+            break;
+        
+
+        //MODO CARREIRA
+        case 9:
             modoCarreira(dt);
             break;
 

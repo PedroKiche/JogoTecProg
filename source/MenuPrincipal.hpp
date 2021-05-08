@@ -9,6 +9,7 @@ private:
     Botao botaoNovoJogo;
     Botao botaoFase1;
     Botao botaoFase2;
+    Botao botaoFase3;
     Botao botao1Jogador;
     Botao botao2Jogadores;
     Botao botaoCarregarJogo;
