@@ -10,6 +10,7 @@ Agonia::Agonia()
     fase = NULL;
     estado = 0;
     faseCarreira = 0;
+    pontuacaoJogo = 0;
 }
 
 Agonia::~Agonia()
@@ -154,23 +155,26 @@ void Agonia::modoCarreira(float dt)
     }
     else if(fase->FaseAcabou() && faseCarreira == 1)
     {
+        pontuacaoJogo += fase->getPontuacao();
         apagaFase();
         geraFaseFloresta();
         faseCarreira = 2;
     }
     else if(fase->FaseAcabou() && faseCarreira == 2)
     {
+        pontuacaoJogo += fase->getPontuacao();
         apagaFase();
         geraFaseLimiar();
         faseCarreira = 3;
     }
     else if(fase->FaseAcabou() && faseCarreira == 3)
-    {
+    {   
+        pontuacaoJogo += fase->getPontuacao();
         apagaFase();
         estado = 0;
         faseCarreira = 0;
     }
-    
+    std::cout << pontuacaoJogo << std::endl;
     if(estado != 0)
         executaFase(dt);
 }

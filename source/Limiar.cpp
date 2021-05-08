@@ -1,5 +1,6 @@
 #include"Limiar.hpp"
 
+
 Limiar::Limiar():Fase()
 {
 
@@ -13,4 +14,24 @@ Limiar::Limiar(Gerenciador_Grafico* gf,bool jogador2):Fase(gf,Ids::limiar, Vetor
 Limiar::~Limiar()
 {
 
+}
+
+bool Limiar::FaseAcabou()
+{
+    int posx = mago1->getPosicao().x;
+    int posy = mago1->getPosicao().y;
+    if(posx > 390 && posx < 410 && posy > 70 && posy < 140)
+    {
+        return true;
+    }
+    else if(mago2)
+    {
+        posx = mago2->getPosicao().x;
+        posy = mago2->getPosicao().y;
+        if(posx > 390 && posx < 410 && posy > 70 && posy < 140)
+        {
+            return true;
+        }
+    }
+    return false;
 }

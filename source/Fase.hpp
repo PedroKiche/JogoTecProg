@@ -38,11 +38,11 @@ public:
 
     Mago* getMago2();
 
-     void adicionarInimigo(Inimigo *ec);
+    void adicionarInimigo(Inimigo *ec);
 
-     void verificarInimigos();
+    void verificarInimigos();
 
-    bool FaseAcabou();
+    virtual bool FaseAcabou();
     
     void ganhaPonto();
     void perdePonto();

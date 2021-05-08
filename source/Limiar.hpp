@@ -10,6 +10,8 @@ public:
     Limiar();
     Limiar(Gerenciador_Grafico* GeGr, bool jogador2);
     ~Limiar();
+
+    bool FaseAcabou();
 };
 
 #endif

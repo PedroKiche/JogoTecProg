@@ -24,6 +24,7 @@ private:
     MenuPausa menuPausa;
     int estado;
     int faseCarreira;
+    int pontuacaoJogo;
 
 public:
     Agonia();
