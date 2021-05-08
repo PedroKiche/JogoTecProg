@@ -1,11 +1,12 @@
 #include "Espectro.hpp"
+#include "Mago.hpp"
 
 Espectro::Espectro() : Inimigo()
 {
     teleportar = false;
     teleporte = 0;
     tempoTP = 0;
-
+    ataque = 0;
 }
 
 Espectro::Espectro(const Vetor2F pos, Mago* mg, Mago* mg2): Inimigo(Ids::espectro, pos, Vetor2F(105.0f, 170.0f), 200.0, 100.0, mg, mg2, "../JogoTecProg/texture/espectro.png")
@@ -14,6 +15,7 @@ Espectro::Espectro(const Vetor2F pos, Mago* mg, Mago* mg2): Inimigo(Ids::espectr
     teleportar = false;
     tempoTP = 0;
     teleporte = 0;
+    ataque = 0;   
 }
 
 Espectro::~Espectro()
@@ -22,7 +24,11 @@ Espectro::~Espectro()
 
 void Espectro::atacar(float t)
 {
-    //Implementar 
+    if(ataque > 10)
+    {
+        posicao = mago1->getPosicao(); 
+        ataque = 0;
+    }
 } 
 
 void Espectro::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
@@ -39,7 +45,7 @@ void Espectro::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
 
 void Espectro::atualizar(float t)
 {
-
+    atacar(t);
     movimentar(t);
 }
 
@@ -50,6 +56,7 @@ void Espectro::movimentar(float t)
     {
         teleportar = true;
         tempoTP =  0;
+        ataque++;
     }
     if(teleportar)
     {

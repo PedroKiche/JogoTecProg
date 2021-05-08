@@ -3,6 +3,7 @@
 
 #include "Inimigo.hpp"
 #include <vector>
+class Mago;
 
 class Espectro: public Inimigo
 {
@@ -11,6 +12,7 @@ private:
     float tempoTP;
     std::vector<Vetor2F> posicoesTeleporta;
     bool teleportar;
+    int ataque;
 
 public:
     Espectro();
