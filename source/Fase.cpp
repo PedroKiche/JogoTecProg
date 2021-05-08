@@ -11,14 +11,14 @@ Fase::Fase() : Entidade()
 Fase::Fase(Gerenciador_Grafico *GeGr, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho, bool jogador2) : Entidade(id, pos, tam, caminho)
 {
     gf = GeGr;
-    mago1 = new Mago(Vetor2F(100.0,400.0));
+    mago1 = new Mago(Vetor2F(50.0,400.0));
     mago1->setFase(this);
     adicionar(mago1);
     mago2 = NULL;
     
     if(jogador2)
     {
-        mago2 = new Mago(Vetor2F(200.0,400.0), jogador2);
+        mago2 = new Mago(Vetor2F(50.0,400.0), jogador2);
         mago2->setFase(this);
         adicionar(mago2);
     }

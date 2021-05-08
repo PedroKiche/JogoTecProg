@@ -17,6 +17,7 @@ void PurgatorioFactory::criaPlataformas()
     fase->adicionar(new Plataforma(Vetor2F(0.0f,300.0f), Vetor2F(10.0f,600.0f))); // parede inicio
     fase->adicionar(new Plataforma(Vetor2F(3300.0f,300.0f), Vetor2F(10.0f,600.0f))); // parede fim
 
+    fase->adicionar(new Plataforma(Vetor2F(105.0f,475.0f), Vetor2F(30.0f,70.0f)));
     fase->adicionar(new Plataforma(Vetor2F(275.0f,415.0f), Vetor2F(150.0f,30.0f)));
     fase->adicionar(new Plataforma(Vetor2F(480.0f,345.0f), Vetor2F(100.0f,30.0f)));
     fase->adicionar(new Plataforma(Vetor2F(675.0f,345.0f), Vetor2F(150.0f,30.0f)));

@@ -19,7 +19,10 @@ void LimiarFactory::criaPlataformas()
 
     fase->adicionar(new Plataforma(Vetor2F(90.0f,365.0f), Vetor2F(150.0f,30.0f)));
     fase->adicionar(new Plataforma(Vetor2F(225.0f,435.0f), Vetor2F(150.0f,30.0f)));
+    fase->adicionar(new Plataforma(Vetor2F(225.0f,245.0f), Vetor2F(150.0f,30.0f)));
+    fase->adicionar(new Plataforma(Vetor2F(400.0f,145.0f), Vetor2F(100.0f,30.0f)));
     fase->adicionar(new Plataforma(Vetor2F(575.0f,435.0f), Vetor2F(150.0f,30.0f)));
+    fase->adicionar(new Plataforma(Vetor2F(575.0f,245.0f), Vetor2F(150.0f,30.0f)));
     fase->adicionar(new Plataforma(Vetor2F(700.0f,365.0f), Vetor2F(150.0f,30.0f)));
 }
 
