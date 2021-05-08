@@ -1,11 +1,13 @@
 #include "Fase.hpp"
 #include<list>
+#include<iostream>
 
 Fase::Fase() : Entidade()
 {
     gf = NULL;
     mago1 = NULL;
     mago2 = NULL;
+    pontuacao = 0;
 }
 
 Fase::Fase(Gerenciador_Grafico *GeGr, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho, bool jogador2) : Entidade(id, pos, tam, caminho)
@@ -22,6 +24,7 @@ Fase::Fase(Gerenciador_Grafico *GeGr, Ids::Id id, const Vetor2F pos, const Vetor
         mago2->setFase(this);
         adicionar(mago2);
     }
+    pontuacao = 0;
 }
 
 Fase::~Fase()
@@ -93,6 +96,8 @@ void Fase::verificarInimigos()
         remover(morto);
         inimigos.erase(morto);
         delete morto;
+        ganhaPonto();
+        std::cout << pontuacao << std::endl;
     }
 }
 
@@ -111,4 +116,23 @@ bool Fase::FaseAcabou()
 Mago* Fase::getMago2()
 {
     return mago2;
+}
+
+void Fase::ganhaPonto()
+{
+    pontuacao++;
+}
+
+void Fase::perdePonto()
+{
+    pontuacao--;
+}
+
+int Fase::getPontuacao()
+{
+    return pontuacao;
+}
+void Fase::setPontuacao(const int pont)
+{
+    pontuacao = pont;
 }

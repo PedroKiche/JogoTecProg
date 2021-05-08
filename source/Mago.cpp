@@ -92,11 +92,13 @@ void Mago::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
     {
         posicao.x = 50.0f;
         posicao.y = 400.0f;
+        fase->perdePonto();
     }
     if(id == Ids::espectro)
     {
         posicao.x = 225.0f;
         posicao.y = 350.0f;
+        fase->perdePonto();
     }
     
 }
@@ -163,3 +165,8 @@ void Mago::setFase(Fase* fase)
 {
     this->fase = fase;
 }   
+
+ void Mago::morreu()
+ {
+     fase->perdePonto();
+ }

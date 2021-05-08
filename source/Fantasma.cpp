@@ -23,7 +23,7 @@ Fantasma::~Fantasma()
 void Fantasma::atacar(float t)
 {
     float distancia = posicao.x - mago1->getPosicao().x;
-    if (abs(distancia) < alcance)
+    if (abs(distancia) < alcance && abs(posicao.y - mago1->getPosicao().y) < 50)
     {
         atacando = true;
         velocidade = 150.0f;
@@ -35,7 +35,7 @@ void Fantasma::atacar(float t)
     else if (mago2)
     {
         distancia = posicao.x - mago2->getPosicao().x;
-        if (abs(distancia) < alcance)
+        if (abs(distancia) < alcance && abs(posicao.y - mago1->getPosicao().y) < 50)
         {
             atacando = true;
             velocidade = 150.0f;

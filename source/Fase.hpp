@@ -17,6 +17,7 @@ protected:
     Mago* mago1;
     Mago* mago2;
     std::set<Inimigo*> inimigos;
+    int pontuacao;
 
 public:
     Fase();
@@ -41,7 +42,13 @@ public:
 
      void verificarInimigos();
 
-     bool FaseAcabou();
+    bool FaseAcabou();
+    
+    void ganhaPonto();
+    void perdePonto();
+
+    int getPontuacao();
+    void setPontuacao(const int pont);
 };
 
 #endif

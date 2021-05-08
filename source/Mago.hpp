@@ -31,6 +31,7 @@ public:
     void movimentar(float t);
     void atirar();
     void setFase(Fase* fase);
+    void morreu();
 };
 
 #endif
