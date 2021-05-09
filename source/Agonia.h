@@ -13,6 +13,7 @@
 #include "LimiarFactory.h"
 #include "MenuPrincipal.h"
 #include "MenuPausa.h"
+#include "MenuRanking.h"
 
 class Agonia
 {
@@ -22,6 +23,7 @@ private:
     Relogio relogio;
     MenuPrincipal menuPrincipal;
     MenuPausa menuPausa;
+    MenuRanking menuRanking;
     int estado;
     int faseCarreira;
     int pontuacaoJogo;

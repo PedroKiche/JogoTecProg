@@ -23,7 +23,8 @@ namespace Ids
         plataforma,
         menuprincipal,
         menupausa,
-        botao
+        botao,
+        menuranking
     };
 }
 

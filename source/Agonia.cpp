@@ -1,12 +1,13 @@
 #include "Agonia.h"
 #include <iostream>
-#include<stdio.h>
-
+#include <stdio.h>
 
 Agonia::Agonia()
 {
     menuPrincipal.inicializarMenu(&gf);
     menuPausa.inicializarMenu(&gf);
+    menuRanking.inicializarMenu(&gf);
+    menuRanking.iniciaRanking();
     fase = NULL;
     estado = 0;
     faseCarreira = 0;
@@ -15,7 +16,6 @@ Agonia::Agonia()
 
 Agonia::~Agonia()
 {
-
 }
 
 void Agonia::executar()
@@ -37,53 +37,66 @@ void Agonia::executar()
             estado = menuPrincipal.selecionaOpcao();
             gf.centralizar(Vetor2F(400.0f, 300.0f));
             break;
-        
+
         // PRIMEIRA FASE
         case 1:
-            if(fase == NULL)
+            if (fase == NULL)
             {
                 geraFasePurgatorio();
             }
-            if(fase->FaseAcabou())
+            if (fase->FaseAcabou())
             {
                 apagaFase();
                 estado = 0;
             }
-            if(fase)
-                executaFase(dt);            
+            if (fase)
+                executaFase(dt);
             break;
-        
+
         // SEGUNDA FASE
         case 2:
-            if(fase == NULL)
+            if (fase == NULL)
             {
                 geraFaseFloresta();
             }
-            if(fase->FaseAcabou())
+            if (fase->FaseAcabou())
             {
                 apagaFase();
                 estado = 0;
             }
-            if(fase) 
+            if (fase)
                 executaFase(dt);
             break;
-        
+
+        //TERCEIRA FASE
         case 3:
-            if(fase == NULL)
+            if (fase == NULL)
             {
                 geraFaseLimiar();
             }
-            if(fase->FaseAcabou())
+            if (fase->FaseAcabou())
             {
                 apagaFase();
                 estado = 0;
             }
-            if(fase) 
+            if (fase)
                 executaFase(dt);
             break;
-        
 
-        //MODO CARREIRA
+        //RANKING
+        case 5:
+            menuRanking.desenharMenu(&gf);
+            estado = menuRanking.selecionaOpcao();
+            gf.centralizar(Vetor2F(400.0f, 300.0f));
+            break;
+        
+        //ATUALIZAR RANKING
+        case 6:
+            menuRanking.carregaRanking();
+            estado = 0;
+            break;
+        
+         //MODO CARREIRA
         case 9:
             modoCarreira(dt);
             break;
@@ -91,8 +104,8 @@ void Agonia::executar()
         default:
             estado = 0;
             break;
-        }      
-            
+        }
+
         gf.mostrar();
         gf.eventosJanela();
     }
@@ -100,26 +113,35 @@ void Agonia::executar()
 
 void Agonia::geraFasePurgatorio()
 {
-    FaseFactory* geraFase = new PurgatorioFactory(&gf,menuPrincipal.getJogador2());
+    FaseFactory *geraFase = new PurgatorioFactory(&gf, menuPrincipal.getJogador2());
     fase = geraFase->pedirFase();
-    fase->inicializarEntidades();   
-    if(geraFase){delete geraFase;}
+    fase->inicializarEntidades();
+    if (geraFase)
+    {
+        delete geraFase;
+    }
 }
 
 void Agonia::geraFaseFloresta()
 {
-    FaseFactory* geraFase = new FlorestaFactory(&gf,menuPrincipal.getJogador2());
+    FaseFactory *geraFase = new FlorestaFactory(&gf, menuPrincipal.getJogador2());
     fase = geraFase->pedirFase();
     fase->inicializarEntidades();
-    if(geraFase){delete geraFase;}
+    if (geraFase)
+    {
+        delete geraFase;
+    }
 }
 
 void Agonia::geraFaseLimiar()
 {
-    FaseFactory* geraFase = new LimiarFactory(&gf,menuPrincipal.getJogador2());
+    FaseFactory *geraFase = new LimiarFactory(&gf, menuPrincipal.getJogador2());
     fase = geraFase->pedirFase();
     fase->inicializarEntidades();
-    if(geraFase){delete geraFase;}
+    if (geraFase)
+    {
+        delete geraFase;
+    }
 }
 
 void Agonia::apagaFase()
@@ -129,52 +151,52 @@ void Agonia::apagaFase()
 }
 
 void Agonia::executaFase(float dt)
-{   
+{
     menuPausa.devoPausar();
-    if(!menuPausa.getPause())
+    if (!menuPausa.getPause())
     {
         fase->atualizar(dt);
-   
-        if(fase->getMago1()->getPosicao().x < 400.0f)
-            gf.centralizar(Vetor2F(400.0f,300.0f));
-        else if(fase->getMago1()->getPosicao().x > (fase->getTamanho().x)-400.0f)
-            gf.centralizar(Vetor2F((fase->getTamanho().x)-400.0f,300.0f));
+
+        if (fase->getMago1()->getPosicao().x < 400.0f)
+            gf.centralizar(Vetor2F(400.0f, 300.0f));
+        else if (fase->getMago1()->getPosicao().x > (fase->getTamanho().x) - 400.0f)
+            gf.centralizar(Vetor2F((fase->getTamanho().x) - 400.0f, 300.0f));
         else
             gf.centralizar(Vetor2F(fase->getMago1()->getPosicao().x, 300.0f));
     }
-    else 
+    else
         jogoPause();
 }
 
 void Agonia::modoCarreira(float dt)
 {
-    if(fase == NULL && faseCarreira == 0)
+    if (fase == NULL && faseCarreira == 0)
     {
         geraFasePurgatorio();
         faseCarreira = 1;
     }
-    else if(fase->FaseAcabou() && faseCarreira == 1)
+    else if (fase->FaseAcabou() && faseCarreira == 1)
     {
         pontuacaoJogo += fase->getPontuacao();
         apagaFase();
         geraFaseFloresta();
         faseCarreira = 2;
     }
-    else if(fase->FaseAcabou() && faseCarreira == 2)
+    else if (fase->FaseAcabou() && faseCarreira == 2)
     {
         pontuacaoJogo += fase->getPontuacao();
         apagaFase();
         geraFaseLimiar();
         faseCarreira = 3;
     }
-    else if(fase->FaseAcabou() && faseCarreira == 3)
-    {   
+    else if (fase->FaseAcabou() && faseCarreira == 3)
+    {
         pontuacaoJogo += fase->getPontuacao();
         apagaFase();
         estado = 0;
         faseCarreira = 0;
     }
-    if(estado != 0)
+    if (estado != 0)
         executaFase(dt);
 }
 
@@ -187,10 +209,10 @@ void Agonia::jogoPause()
     case 0:
         menuPausa.setPause(false);
         break;
-    
+
     case 1:
         //implementar
-    
+
     case 2:
         pontuacaoJogo = 0;
         apagaFase();
