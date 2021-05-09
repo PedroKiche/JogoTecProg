@@ -11,8 +11,8 @@ public:
     Espinho(const Vetor2F pos);
     ~Espinho();
 
-    void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);
-    void atualizar(float t);
+    void colidir(const Ids::Id id,const Vetor2F pos,const Vetor2F tam);
+    void atualizar(const float t);
 };
 
 #endif

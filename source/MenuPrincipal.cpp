@@ -96,7 +96,7 @@ int MenuPrincipal::selecionaOpcao()
     return 0;
 }
 
-bool MenuPrincipal::getJogador2()
+bool MenuPrincipal::getJogador2()const
 {
     return jogador2;
 }

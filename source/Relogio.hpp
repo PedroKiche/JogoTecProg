@@ -12,8 +12,7 @@ public:
     Relogio();
     ~Relogio();
     void restartar();
-    float tempoDecorrido();
+    float tempoDecorrido() const;
 };
-
 
 #endif

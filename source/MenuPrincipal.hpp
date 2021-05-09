@@ -21,10 +21,10 @@ public:
 
     void inicializarMenu(Gerenciador_Grafico* gf);
     void desenharMenu(Gerenciador_Grafico* gf);
-    void atualizar(float t);
+    void atualizar(const float t);
     int selecionaOpcao();
-    bool getJogador2();
-    void setJogador2(bool jog2);
+    bool getJogador2() const;
+    void setJogador2(const bool jog2);
 };
 
 #endif

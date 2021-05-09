@@ -12,11 +12,11 @@ Plataforma::~Plataforma()
 {
 }
 
-void Plataforma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
+void Plataforma::colidir(const Ids::Id id,const Vetor2F pos,const Vetor2F tam)
 {
 }
 
-void Plataforma::atualizar(float t)
+void Plataforma::atualizar(const float t)
 {
     
 }

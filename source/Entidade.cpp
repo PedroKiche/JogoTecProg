@@ -45,12 +45,12 @@ void Entidade::setTamanho(const Vetor2F tamanho)
 {
     this->tamanho = tamanho;
 }
-Vetor2F Entidade::getTamanho()
+Vetor2F Entidade::getTamanho() const
 {
     return tamanho;
 }
 
-Ids::Id Entidade::getID()
+Ids::Id Entidade::getID() const
 {
     return ID;
 }

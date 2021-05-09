@@ -21,10 +21,10 @@ protected:
 
 public:
     Fase();
-    Fase(Gerenciador_Grafico *GeGr, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho, bool jogador2);
+    Fase(Gerenciador_Grafico *GeGr,const Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho, const bool jogador2 = false);
     ~Fase();
 
-    void atualizar(float t);
+    void atualizar(const float t);
 
     void adicionar(Entidade_Colidivel *ec);
 
@@ -34,9 +34,9 @@ public:
 
     void inicializarEntidades();
 
-    Mago* getMago1();
+    Mago* getMago1() const;
 
-    Mago* getMago2();
+    Mago* getMago2() const;
 
     void adicionarInimigo(Inimigo *ec);
 
@@ -47,7 +47,7 @@ public:
     void ganhaPonto();
     void perdePonto();
 
-    int getPontuacao();
+    int getPontuacao()const;
     void setPontuacao(const int pont);
 };
 

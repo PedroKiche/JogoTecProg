@@ -14,7 +14,7 @@ protected:
 
 public:
     Entidade();
-    Entidade(Ids::Id id, Vetor2F pos,const Vetor2F tam,  const char *caminho = NULL);
+    Entidade(Ids::Id id, const Vetor2F pos,const Vetor2F tam,  const char *caminho = NULL);
     virtual ~Entidade();
 
     void inicializar(Gerenciador_Grafico* g);
@@ -24,11 +24,11 @@ public:
     Vetor2F getPosicao() const;
 
     void setTamanho(const Vetor2F tamanho);
-    Vetor2F getTamanho();
+    Vetor2F getTamanho() const;
 
-    virtual void atualizar(float t)=0;
+    virtual void atualizar(const float t)=0;
 
-    Ids::Id getID();
+    Ids::Id getID() const;
 };
 
 #endif

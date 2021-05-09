@@ -7,7 +7,7 @@ SuperNova::SuperNova():Projetil()
     posInicialX = 0;
 }
 
-SuperNova:: SuperNova(Vetor2F pos, bool direito, bool ativo,float velocidade):
+SuperNova:: SuperNova(const Vetor2F pos, const bool direito, const bool ativo,const float velocidade):
 Projetil(Ids::supernova, pos , Vetor2F(25.0,25.0),direito,ativo,velocidade,"../JogoTecProg/texture/supernova.png")
 {
     alcance = 300;
@@ -19,7 +19,7 @@ SuperNova:: ~SuperNova()
 
 }
 
-void SuperNova::mover(float t)
+void SuperNova::mover(const float t)
 {
     if(direita)
     {   
@@ -36,7 +36,7 @@ void SuperNova::mover(float t)
     }
 }
 
-void SuperNova::atualizar(float t)
+void SuperNova::atualizar(const float t)
 {
     mover(t);
     

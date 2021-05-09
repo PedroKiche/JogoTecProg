@@ -15,7 +15,7 @@ void Relogio::restartar()
     relogio.restart();
 }
 
-float Relogio::tempoDecorrido()
+float Relogio::tempoDecorrido() const
 {
     return relogio.getElapsedTime().asSeconds();
 }

@@ -16,14 +16,14 @@ protected:
 
 public:
     Inimigo();
-    Inimigo(Ids::Id id, const Vetor2F pos, const Vetor2F tam, float alc, float vel,Mago* mg, Mago * mg2 = NULL, const char *caminho = NULL);
+    Inimigo(const Ids::Id id, const Vetor2F pos, const Vetor2F tam, const float alc,const float vel,Mago* mg, Mago * mg2 = NULL, const char *caminho = NULL);
     virtual ~Inimigo();
 
-    float getAlcance();
-    void setAlcance(float alc);
-    Vetor2F getPosicaoInicial();
-    void setPosicaoInicial(Vetor2F pos);
-    virtual void atacar(float t) = 0;
+    float getAlcance() const;
+    void setAlcance(const float alc);
+    Vetor2F getPosicaoInicial() const;
+    void setPosicaoInicial(const Vetor2F pos);
+    virtual void atacar(const float t) = 0;
 };
 
 #endif

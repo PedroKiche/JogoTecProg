@@ -6,7 +6,7 @@ BuracoNegro::BuracoNegro():Projetil()
     coeficiente_linear = 0;
 }
 
-BuracoNegro::BuracoNegro(Vetor2F posIni, Vetor2F posFin,bool direito, bool ativo, float velocidade):
+BuracoNegro::BuracoNegro(const Vetor2F posIni, const Vetor2F posFin, const bool direito,const bool ativo, const float velocidade):
 Projetil(Ids::buraconegro, posIni, Vetor2F(70.0,70.0),direito, ativo, velocidade, "../JogoTecProg/texture/buraconegro.png" )
 {
     coeficiente_angular = ( (posFin.y - posIni.y) / (posFin.x - posIni.x) );
@@ -18,7 +18,7 @@ BuracoNegro::~BuracoNegro()
 
 }
 
-void BuracoNegro::mover(float t)
+void BuracoNegro::mover(const float t)
 {
     if(direita)
     {   
@@ -32,12 +32,12 @@ void BuracoNegro::mover(float t)
     }
 }
 
-void BuracoNegro::atualizar(float t)
+void BuracoNegro::atualizar(const float t)
 {
     mover(t);
 }
 
-void BuracoNegro::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
+void BuracoNegro::colidir(const Ids::Id id,const Vetor2F pos, const Vetor2F tam)
 {
     if(id != Ids::aparicao && id != Ids::alma && id != Ids::supernova && id != Ids::arvore)
     {

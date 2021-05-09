@@ -1,4 +1,4 @@
-#include"Inimigo.hpp"
+#include "Inimigo.hpp"
 #include "Mago.hpp"
 
 Inimigo::Inimigo() : Personagem()
@@ -9,7 +9,7 @@ Inimigo::Inimigo() : Personagem()
     mago2 = NULL;
 }
 
-Inimigo::Inimigo(Ids::Id id, const Vetor2F pos, const Vetor2F tam, float alc, float vel,Mago* mg, Mago * mg2, const char *caminho): Personagem(id, pos, tam, vel, caminho)
+Inimigo::Inimigo(const Ids::Id id, const Vetor2F pos, const Vetor2F tam, const float alc, const float vel, Mago *mg, Mago *mg2, const char *caminho) : Personagem(id, pos, tam, vel, caminho)
 {
     posicaoInicial = pos;
     alcance = alc;
@@ -21,7 +21,7 @@ Inimigo::~Inimigo()
 {
 }
 
-float Inimigo::getAlcance()
+float Inimigo::getAlcance() const
 {
     return alcance;
 }
@@ -31,12 +31,12 @@ void Inimigo::setAlcance(float alc)
     alcance = alc;
 }
 
-void Inimigo::setPosicaoInicial(Vetor2F pos)
+void Inimigo::setPosicaoInicial(const Vetor2F pos)
 {
     posicaoInicial = pos;
 }
 
-Vetor2F Inimigo::getPosicaoInicial()
+Vetor2F Inimigo::getPosicaoInicial() const
 {
     return posicaoInicial;
 }

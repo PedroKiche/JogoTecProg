@@ -9,15 +9,15 @@ private:
     bool frente;
     float velQueda;
     float velocidade;
-    Vetor2F posicaoInicial;
+    const Vetor2F posicaoInicial;
 public:
     Arvore ();
     Arvore (const Vetor2F pos);
     ~Arvore ();
 
-    void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);
-    void atualizar(float t);
-    void movimentar(float t);
+    void colidir(const Ids::Id id,const Vetor2F pos,const Vetor2F tam);
+    void atualizar(const float t);
+    void movimentar(const float t);
 };
 
 

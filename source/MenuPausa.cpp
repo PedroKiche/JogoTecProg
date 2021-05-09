@@ -28,7 +28,7 @@ void MenuPausa::desenharMenu(Gerenciador_Grafico* gf)
     botaoMenu.desenhar(gf);
 }
 
-void MenuPausa::atualizar(float t)
+void MenuPausa::atualizar(const float t)
 {
     
 }
@@ -52,12 +52,12 @@ int MenuPausa::selecionaOpcao()
     return -1;
 }
 
-void MenuPausa::setPause(bool Pause)
+void MenuPausa::setPause(const bool Pause)
 {
     pause = Pause;
 }
 
-bool MenuPausa::getPause()
+bool MenuPausa::getPause() const
 {
     return pause;
 }

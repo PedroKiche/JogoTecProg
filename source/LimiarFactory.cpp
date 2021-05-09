@@ -1,7 +1,7 @@
 #include"LimiarFactory.hpp"
 
 
-LimiarFactory::LimiarFactory(Gerenciador_Grafico* gf, bool jogador2): FaseFactory()
+LimiarFactory::LimiarFactory(Gerenciador_Grafico* gf, const bool jogador2): FaseFactory()
 {
     fase = new Limiar(gf,jogador2);
     srand(time(NULL));

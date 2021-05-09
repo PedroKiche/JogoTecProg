@@ -2,19 +2,17 @@
 #include "Mago.hpp"
 Gargula::Gargula()
 {
-    frente = false;
 }
 
 Gargula::Gargula(const Vetor2F pos, Mago* mg, Mago* mg2): Inimigo(Ids::gargula, pos, Vetor2F(90.0f, 100.0f), 100.0, 150.0, mg, mg2, "../JogoTecProg/texture/gargula.png")
 {
-    frente = true;
 }
 
 Gargula::~Gargula()
 {
 }
 
-void Gargula::atacar(float t)
+void Gargula::atacar(const float t)
 {
     float distanciaY = posicao.y - mago1->getPosicao().y;
     float distanciaX = posicao.x - mago1->getPosicao().x;
@@ -37,7 +35,7 @@ void Gargula::atacar(float t)
     }
 } 
 
-void Gargula::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
+void Gargula::colidir(const Ids::Id id, const Vetor2F pos, const Vetor2F tam)
 {
      if (id == Ids::plataforma)
     {
@@ -76,13 +74,13 @@ void Gargula::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
         vivo = false;
 }
 
-void Gargula::atualizar(float t)
+void Gargula::atualizar(const float t)
 {
     movimentar(t);
     atacar(t);
 }
 
-void Gargula::movimentar(float t)
+void Gargula::movimentar(const float t)
 {
     if (frente)
     {

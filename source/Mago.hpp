@@ -17,18 +17,17 @@ private:
     float aceleracao;
     Fase* fase;
     SuperNova* supernova;
-    bool frente;
     bool podeAtacar;
     float lentidao;
 
 public:
     Mago();
-    Mago(const Vetor2F pos, bool jogador2 = false);
+    Mago(const Vetor2F pos, const bool jogador2 = false);
     ~Mago();
 
-    void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);
-    void atualizar(float t);
-    void movimentar(float t);
+    void colidir(const Ids::Id id,const Vetor2F pos, const Vetor2F tam);
+    void atualizar(const float t);
+    void movimentar(const float t);
     void atirar();
     void setFase(Fase* fase);
     void morreu();

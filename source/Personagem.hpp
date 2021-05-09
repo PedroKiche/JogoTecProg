@@ -9,16 +9,16 @@ class Personagem : public Entidade_Colidivel
 protected:
     bool vivo;
     float velocidade;
+    bool frente;
 public:
     Personagem();
-    Personagem(Ids::Id id,const Vetor2F pos, const Vetor2F tam, float vel, const char *caminho = NULL);
+    Personagem(const Ids::Id id,const Vetor2F pos, const Vetor2F tam,const float vel, const char *caminho = NULL);
     virtual ~Personagem();
 
-    //virtual void atualizar(float t)=0;
-    float getVelocidade();
-    void setVelocidade(float vel);
-    bool getVivo();
-    void setVivo(bool vivo);
+    float getVelocidade() const;
+    void setVelocidade(const float vel);
+    bool getVivo() const;
+    void setVivo(const bool vivo);
 };
 
 #endif

@@ -9,10 +9,10 @@ private:
 
 public:
     Botao();
-    Botao(Ids::Id id, Vetor2F pos,const Vetor2F tam,  const char *caminho);
+    Botao(const Ids::Id id, const Vetor2F pos,const Vetor2F tam,  const char *caminho);
     ~Botao();
 
-    void atualizar(float t);
+    void atualizar(const float t);
 };
 
 #endif

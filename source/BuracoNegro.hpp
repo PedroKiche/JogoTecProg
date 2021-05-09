@@ -10,12 +10,12 @@ private:
     float coeficiente_linear;
 public:
     BuracoNegro();
-    BuracoNegro(Vetor2F posIni, Vetor2F posFin,bool direito, bool ativo, float velocidade);
+    BuracoNegro(const Vetor2F posIni, const Vetor2F posFin,const bool direito, const bool ativo,const float velocidade);
     ~BuracoNegro();
 
-    void mover(float t);
-    void atualizar(float t);
-    void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);
+    void mover(const float t);
+    void atualizar(const float t);
+    void colidir(const Ids::Id id,const Vetor2F pos,const Vetor2F tam);
     
 };
 
