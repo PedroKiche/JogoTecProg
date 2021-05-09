@@ -11,7 +11,7 @@ class Floresta:public Fase
 {
 public:
     Floresta();
-    Floresta(Gerenciador_Grafico* GeGr, bool jogador2);
+    Floresta(Gerenciador_Grafico* GeGr, const bool jogador2 = false);
     ~Floresta();
 };
 

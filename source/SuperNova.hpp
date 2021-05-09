@@ -10,12 +10,12 @@ private:
     float posInicialX;
 public:
     SuperNova();
-    SuperNova(Vetor2F pos, bool direito, bool ativo,float velocidade);
+    SuperNova(const Vetor2F pos,const bool direito,const bool ativo,const float velocidade);
     ~SuperNova();
 
     void mover(float t);
     void atualizar(float t);
-    void colidir(Ids::Id id, Vetor2F pos, Vetor2F tam);
+    void colidir(const Ids::Id id,const Vetor2F pos,const Vetor2F tam);
 
 };
 

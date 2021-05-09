@@ -15,7 +15,7 @@ Alma::~Alma()
 
 }
 
-void Alma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
+void Alma::colidir(const Ids::Id id,const Vetor2F pos,const Vetor2F tam)
 {
     if (id == Ids::plataforma)
     {
@@ -32,7 +32,7 @@ void Alma::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
     }
 }
 
-void Alma::atualizar(float t)
+void Alma::atualizar(const float t)
 {   
     if (descendo)
     {

@@ -10,7 +10,6 @@ Mago::Mago() : Personagem(),
     podePular = false;
     fase = NULL;
     supernova = NULL;
-    frente = false;
     podeAtacar=false;
     lentidao = 1;
 }
@@ -24,14 +23,13 @@ Mago::~Mago()
     }
 }
 
-Mago::Mago(const Vetor2F pos, bool jogador2) : Personagem(Ids::mago, pos, Vetor2F(40.0f, 75.0f), 200.0)
+Mago::Mago(const Vetor2F pos,const bool jogador2) : Personagem(Ids::mago, pos, Vetor2F(40.0f, 75.0f), 200.0)
 {
     altPulo = 135;
     aceleracao = 0;
     podePular = true;
     fase = NULL;
     supernova = NULL;
-    frente = false;
     podeAtacar = true;
     lentidao = 1;
     if(!jogador2)
@@ -46,7 +44,7 @@ Mago::Mago(const Vetor2F pos, bool jogador2) : Personagem(Ids::mago, pos, Vetor2
     }
 }
 
-void Mago::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
+void Mago::colidir(const Ids::Id id,const Vetor2F pos, const Vetor2F tam)
 {
     if (id == Ids::plataforma || id == Ids::arvore)
     {
@@ -103,7 +101,7 @@ void Mago::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
     
 }
 
-void Mago::atualizar(float t)
+void Mago::atualizar(const float t)
 {
     if(controle.atacar())
         atirar();
@@ -130,11 +128,8 @@ void Mago::atualizar(float t)
     movimentar(t);
 }
 
-void atacar()
-{
-}
 
-void Mago::movimentar(float t)
+void Mago::movimentar(const float t)
 {
     Vetor2F movimenta = controle.movimentacao();
     posicao.x += movimenta.x * t * velocidade;

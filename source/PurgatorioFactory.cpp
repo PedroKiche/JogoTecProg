@@ -1,7 +1,7 @@
 #include"PurgatorioFactory.hpp"
 
 
-PurgatorioFactory::PurgatorioFactory(Gerenciador_Grafico* gf, bool jogador2): FaseFactory()
+PurgatorioFactory::PurgatorioFactory(Gerenciador_Grafico* gf, const bool jogador2): FaseFactory()
 {
     fase = new Purgatorio(gf,jogador2);
     srand(time(NULL));

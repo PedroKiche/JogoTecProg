@@ -15,12 +15,12 @@ Espinho::~Espinho()
 
 }
 
-void Espinho::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
+void Espinho::colidir(const Ids::Id id, const Vetor2F pos, const Vetor2F tam)
 {
     
 }
 
-void Espinho::atualizar(float t)
+void Espinho::atualizar(const float t)
 {
     
 }

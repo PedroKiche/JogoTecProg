@@ -4,7 +4,7 @@ Botao::Botao(): Entidade()
 {
 }
 
-Botao::Botao(Ids::Id id, Vetor2F pos,const Vetor2F tam,  const char *caminho): Entidade(id, pos, tam, caminho)
+Botao::Botao(const Ids::Id id,const Vetor2F pos,const Vetor2F tam,  const char *caminho): Entidade(id, pos, tam, caminho)
 {
 }
 

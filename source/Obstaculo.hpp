@@ -9,7 +9,7 @@ private:
 
 public:
     Obstaculo();
-    Obstaculo(Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char* caminho);
+    Obstaculo(const Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char* caminho);
     virtual ~Obstaculo();
 };
 #endif

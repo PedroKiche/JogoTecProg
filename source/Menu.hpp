@@ -11,7 +11,7 @@ private:
     
 public:
     Menu();
-    Menu(Ids::Id id, Vetor2F pos,const Vetor2F tam,  const char *caminho = NULL);
+    Menu(const Ids::Id id,const Vetor2F pos,const Vetor2F tam,  const char *caminho = NULL);
     virtual ~Menu();
 
     virtual void inicializarMenu(Gerenciador_Grafico* gf) = 0;

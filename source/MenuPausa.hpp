@@ -16,10 +16,10 @@ public:
 
     void inicializarMenu(Gerenciador_Grafico* gf);
     void desenharMenu(Gerenciador_Grafico* gf);
-    void atualizar(float t);
+    void atualizar(const float t);
     int selecionaOpcao();
-    bool getPause();
-    void setPause(bool Pause);
+    bool getPause() const;
+    void setPause(const bool Pause);
     void devoPausar();
 
 };

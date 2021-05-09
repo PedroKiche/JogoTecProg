@@ -12,7 +12,7 @@ private:
     std::vector<Vetor2F> posicoesAlma;
     std::vector<Vetor2F> posicoesArvore;
 public:
-    FlorestaFactory(Gerenciador_Grafico* gf, bool jogador2=false);
+    FlorestaFactory(Gerenciador_Grafico* gf, const bool jogador2 = false);
     ~FlorestaFactory();
     void criaPlataformas();
     void criaPosInimigos();

@@ -5,24 +5,21 @@ Arvore ::Arvore () : Obstaculo()
     frente = false;
     velQueda = 0;
     velocidade = 0;
-    posicaoInicial.x = 0;
-    posicaoInicial.y = 0;
 }
 
-Arvore ::Arvore (const Vetor2F pos) : Obstaculo(Ids::arvore, pos, Vetor2F(60.0f, 65.0f), "../JogoTecProg/texture/arvore.png")
+Arvore ::Arvore (const Vetor2F pos) : Obstaculo(Ids::arvore, pos, Vetor2F(60.0f, 65.0f), "../JogoTecProg/texture/arvore.png"),
+posicaoInicial(pos)
 {
     frente = true;
     velQueda = 0;
     velocidade = 50;
-    posicaoInicial.x = pos.x;
-    posicaoInicial.y = pos.y;
 }
 
 Arvore ::~Arvore ()
 {
 }
 
-void Arvore::atualizar(float t)
+void Arvore::atualizar(const float t)
 {   
     
     movimentar(t);
@@ -31,7 +28,7 @@ void Arvore::atualizar(float t)
     
 }
 
-void Arvore::movimentar(float t)
+void Arvore::movimentar(const float t)
 {
     if (frente)
     {
@@ -58,7 +55,7 @@ void Arvore::movimentar(float t)
 }
 
 
-void Arvore::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
+void Arvore::colidir(const Ids::Id id, const Vetor2F pos, const Vetor2F tam)
 {
     if (id == Ids::plataforma)
     {

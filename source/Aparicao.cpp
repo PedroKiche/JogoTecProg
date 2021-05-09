@@ -7,7 +7,6 @@ Aparicao::Aparicao():Inimigo()
     fase = NULL;
     buraconegro = NULL;
     podeAtacar = false;
-    frente = false;
 }
 
 Aparicao::Aparicao(const Vetor2F pos, Mago* mg, Fase* fs, Mago* mg2): Inimigo(Ids::aparicao, pos, Vetor2F(65.0f, 100.0f), 80.0, 100.0, mg, mg2, "../JogoTecProg/texture/aparicao.png")
@@ -15,7 +14,6 @@ Aparicao::Aparicao(const Vetor2F pos, Mago* mg, Fase* fs, Mago* mg2): Inimigo(Id
     descendo = false;
     fase = fs;
     buraconegro = NULL;
-    frente = false;
     podeAtacar = true;
 }
 
@@ -28,7 +26,7 @@ Aparicao::~Aparicao()
     }
 }
 
-void Aparicao::atacar(float t)
+void Aparicao::atacar(const float t)
 {
     
     float ataque = abs(posicao.x - mago1->getPosicao().x);
@@ -68,7 +66,7 @@ void Aparicao::atacar(float t)
     }
 } 
 
-void Aparicao::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
+void Aparicao::colidir(const Ids::Id id,const Vetor2F pos,const Vetor2F tam)
 {
     if (id == Ids::plataforma)
     {
@@ -121,13 +119,13 @@ void Aparicao::colidir(Ids::Id id, Vetor2F pos, Vetor2F tam)
     }
 }
 
-void Aparicao::atualizar(float t)
+void Aparicao::atualizar(const float t)
 {       
     atacar(t);
     movimentar(t);
 }
 
-void Aparicao::movimentar(float t)
+void Aparicao::movimentar(const float t)
 {
     if (descendo)
     {

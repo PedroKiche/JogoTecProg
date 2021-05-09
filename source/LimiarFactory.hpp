@@ -9,7 +9,7 @@ class LimiarFactory: public FaseFactory
 private:
 
 public:
-    LimiarFactory(Gerenciador_Grafico* gf,bool jogador2 = false);
+    LimiarFactory(Gerenciador_Grafico* gf,const bool jogador2 = false);
     ~LimiarFactory();
     void criaPlataformas();
     void criaPosInimigos();

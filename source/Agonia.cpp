@@ -174,7 +174,6 @@ void Agonia::modoCarreira(float dt)
         estado = 0;
         faseCarreira = 0;
     }
-    std::cout << pontuacaoJogo << std::endl;
     if(estado != 0)
         executaFase(dt);
 }
@@ -193,6 +192,7 @@ void Agonia::jogoPause()
         //implementar
     
     case 2:
+        pontuacaoJogo = 0;
         apagaFase();
         estado = 0;
         faseCarreira = 0;

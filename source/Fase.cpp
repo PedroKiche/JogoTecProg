@@ -10,7 +10,7 @@ Fase::Fase() : Entidade()
     pontuacao = 0;
 }
 
-Fase::Fase(Gerenciador_Grafico *GeGr, Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho, bool jogador2) : Entidade(id, pos, tam, caminho)
+Fase::Fase(Gerenciador_Grafico *GeGr,const Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho, bool jogador2) : Entidade(id, pos, tam, caminho)
 {
     gf = GeGr;
     mago1 = new Mago(Vetor2F(50.0,400.0));
@@ -33,7 +33,7 @@ Fase::~Fase()
     gc.removerTodos();
 }
 
-void Fase::atualizar(float t)
+void Fase::atualizar(const float t)
 {
     listaEntidades.atualizarEntidades(t);
     gc.gerenciarColisoes();
@@ -50,7 +50,7 @@ void Fase::adicionar(Entidade_Colidivel *ec)
     gc.adicionarEntidade_Colidivel(ec);
 }
 
-Mago* Fase::getMago1()
+Mago* Fase::getMago1() const
 {
     return mago1;
 }
@@ -97,7 +97,6 @@ void Fase::verificarInimigos()
         inimigos.erase(morto);
         delete morto;
         ganhaPonto();
-        std::cout << pontuacao << std::endl;
     }
 }
 
@@ -113,7 +112,7 @@ bool Fase::FaseAcabou()
     return false;
 }
 
-Mago* Fase::getMago2()
+Mago* Fase::getMago2() const
 {
     return mago2;
 }
@@ -128,7 +127,7 @@ void Fase::perdePonto()
     pontuacao--;
 }
 
-int Fase::getPontuacao()
+int Fase::getPontuacao() const
 {
     return pontuacao;
 }
