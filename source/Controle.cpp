@@ -2,13 +2,13 @@
 
 Controle::Controle()
 {
-    esquerda = Teclado::Unknown;
-    direita = Teclado::Unknown;
-    pulo = Teclado::Unknown;
-    ataque = Teclado::Unknown;
+    esquerda = Gerenciador_Teclado::Unknown;
+    direita = Gerenciador_Teclado::Unknown;
+    pulo = Gerenciador_Teclado::Unknown;
+    ataque = Gerenciador_Teclado::Unknown;
 }
 
-Controle::Controle(Teclado::tecla esq, Teclado::tecla dir, Teclado::tecla pul, Teclado::tecla atq)
+Controle::Controle(Gerenciador_Teclado::tecla esq, Gerenciador_Teclado::tecla dir, Gerenciador_Teclado::tecla pul, Gerenciador_Teclado::tecla atq)
 {
     esquerda = esq;
     direita = dir;
@@ -23,16 +23,16 @@ Controle::~Controle()
 Vetor2F Controle::movimentacao()
 {
     Vetor2F movimento = (0.0f, 0.0f);
-    if (Teclado::teclaFoiPressionada(esquerda))
+    if (Gerenciador_Teclado::teclaFoiPressionada(esquerda))
         movimento.x -= 1;
-    if (Teclado::teclaFoiPressionada(direita))
+    if (Gerenciador_Teclado::teclaFoiPressionada(direita))
         movimento.x += 1;
-    if (Teclado::teclaFoiPressionada(pulo))
+    if (Gerenciador_Teclado::teclaFoiPressionada(pulo))
         movimento.y -= 1;
     return movimento;
 }
 
 bool Controle::atacar()
 {
-    return Teclado::teclaFoiPressionada(ataque);
+    return Gerenciador_Teclado::teclaFoiPressionada(ataque);
 }

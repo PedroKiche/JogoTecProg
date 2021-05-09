@@ -1,13 +1,13 @@
-#ifndef _TECLADO_HPP
-#define _TECLADO_HPP
+#ifndef _GERENCIADOR_TECLADO_HPP
+#define _GERENCIADOR_TECLADO_HPP
 
 #include <SFML/Graphics.hpp>
 
-class Teclado
+class Gerenciador_Teclado
 {
 public:
-    Teclado();
-    ~Teclado();
+    Gerenciador_Teclado();
+    ~Gerenciador_Teclado();
     enum tecla
     {
         Unknown = -1, ///< Unhandled key

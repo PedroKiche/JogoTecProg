@@ -44,7 +44,7 @@ void Espectro::colidir(const Ids::Id id, const Vetor2F pos, const Vetor2F tam)
     }
     if (id == Ids::mago)
     {
-        tempoTP = 1;
+        tempoTP = 0.5;
     }
 }
 
@@ -57,7 +57,7 @@ void Espectro::atualizar(float t)
 void Espectro::movimentar(float t)
 {
     tempoTP += t;
-    if (tempoTP > 1)
+    if (tempoTP > 0.5)
     {
         teleportar = true;
         tempoTP = 0;

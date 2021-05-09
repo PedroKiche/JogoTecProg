@@ -58,37 +58,37 @@ void MenuPrincipal::atualizar(float t)
 
 int MenuPrincipal::selecionaOpcao()
 {
-    if (Teclado::teclaFoiPressionada(Teclado::N)) //Novo jogo
+    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::N)) //Novo jogo
     {
         return 9;
     }
-    if (Teclado::teclaFoiPressionada(Teclado::Num1) || Teclado::teclaFoiPressionada(Teclado::Numpad1)) //Fase 1
+    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Num1) || Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Numpad1)) //Fase 1
     {
         return 1;
     }
-    if (Teclado::teclaFoiPressionada(Teclado::Num2) || Teclado::teclaFoiPressionada(Teclado::Numpad2)) //Fase 2
+    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Num2) || Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Numpad2)) //Fase 2
     {
         return 2;
     }
-    if (Teclado::teclaFoiPressionada(Teclado::Num3) || Teclado::teclaFoiPressionada(Teclado::Numpad3)) //Fase 3
+    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Num3) || Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Numpad3)) //Fase 3
     {
         return 3;
     }
-    if (Teclado::teclaFoiPressionada(Teclado::J)) //Alternar numero de jogadores para 2
+    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::J)) //Alternar numero de jogadores para 2
     {
         jogador2 = true;
         return 0;
     }
-    if (Teclado::teclaFoiPressionada(Teclado::K)) //Alternar numero de jogadores para 1
+    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::K)) //Alternar numero de jogadores para 1
     {
         jogador2 = false;
         return 0;
     }
-    if (Teclado::teclaFoiPressionada(Teclado::C)) //Carregar Jogao
+    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::C)) //Carregar Jogao
     {
         return 4;
     }
-    if (Teclado::teclaFoiPressionada(Teclado::R))// Ranking
+    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::R))// Ranking
     {
         return 5;
     }

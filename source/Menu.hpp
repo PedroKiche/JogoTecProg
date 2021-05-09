@@ -2,7 +2,7 @@
 #define _MENU_HPP_
 
 #include "Entidade.hpp"
-#include "Teclado.hpp"
+#include "Gerenciador_Teclado.hpp"
 #include "Botao.hpp"
 
 class Menu : public Entidade

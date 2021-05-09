@@ -4805,7 +4805,7 @@
 											"top": 892,
 											"width": 359,
 											"height": 13,
-											"text": "GerenciadorTeclado"
+											"text": "GerenciadorGerenciador_Teclado"
 										},
 										{
 											"_type": "LabelView",
@@ -4897,7 +4897,7 @@
 											"top": 925,
 											"width": 359,
 											"height": 13,
-											"text": "«create»+Teclado()",
+											"text": "«create»+Gerenciador_Teclado()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4915,7 +4915,7 @@
 											"top": 940,
 											"width": 359,
 											"height": 13,
-											"text": "«destroy»+Teclado()",
+											"text": "«destroy»+Gerenciador_Teclado()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5016,7 +5016,7 @@
 							"top": 920,
 							"width": 105,
 							"height": 77,
-							"text": "tecla é um enum com todas as teclas do  teclado"
+							"text": "tecla é um enum com todas as teclas do  Gerenciador_Teclado"
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -5154,7 +5154,7 @@
 											"top": 1086,
 											"width": 519,
 											"height": 13,
-											"text": "-esquerda: Teclado::tecla",
+											"text": "-esquerda: Gerenciador_Teclado::tecla",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5172,7 +5172,7 @@
 											"top": 1101,
 											"width": 519,
 											"height": 13,
-											"text": "-direita: Teclado::tecla",
+											"text": "-direita: Gerenciador_Teclado::tecla",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5190,7 +5190,7 @@
 											"top": 1116,
 											"width": 519,
 											"height": 13,
-											"text": "-pulo: Teclado::tecla",
+											"text": "-pulo: Gerenciador_Teclado::tecla",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5208,7 +5208,7 @@
 											"top": 1131,
 											"width": 519,
 											"height": 13,
-											"text": "-ataque: Teclado::tecla",
+											"text": "-ataque: Gerenciador_Teclado::tecla",
 											"horizontalAlignment": 0
 										}
 									],
@@ -33963,7 +33963,7 @@
 									},
 									"name": "esquerda",
 									"visibility": "private",
-									"type": "Teclado::tecla"
+									"type": "Gerenciador_Teclado::tecla"
 								},
 								{
 									"_type": "UMLAttribute",
@@ -33973,7 +33973,7 @@
 									},
 									"name": "direita",
 									"visibility": "private",
-									"type": "Teclado::tecla"
+									"type": "Gerenciador_Teclado::tecla"
 								},
 								{
 									"_type": "UMLAttribute",
@@ -33983,7 +33983,7 @@
 									},
 									"name": "pulo",
 									"visibility": "private",
-									"type": "Teclado::tecla"
+									"type": "Gerenciador_Teclado::tecla"
 								},
 								{
 									"_type": "UMLAttribute",
@@ -33993,7 +33993,7 @@
 									},
 									"name": "ataque",
 									"visibility": "private",
-									"type": "Teclado::tecla"
+									"type": "Gerenciador_Teclado::tecla"
 								}
 							],
 							"operations": [
@@ -34108,7 +34108,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF5CdQLWGfZbOk="
 							},
-							"name": "GerenciadorTeclado",
+							"name": "GerenciadorGerenciador_Teclado",
 							"ownedElements": [
 								{
 									"_type": "UMLAssociation",
@@ -34205,7 +34205,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF5Cfic5LW9EO0="
 									},
-									"name": "Teclado",
+									"name": "Gerenciador_Teclado",
 									"stereotype": "create"
 								},
 								{
@@ -34214,7 +34214,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF5Cfic5LW9EO0="
 									},
-									"name": "Teclado",
+									"name": "Gerenciador_Teclado",
 									"stereotype": "destroy"
 								},
 								{

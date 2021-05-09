@@ -35,15 +35,15 @@ void MenuPausa::atualizar(const float t)
 
 int MenuPausa::selecionaOpcao()
 {
-    if (Teclado::teclaFoiPressionada(Teclado::Escape) || Teclado::teclaFoiPressionada(Teclado::R))
+    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Escape) || Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::R))
     {
         return 0;
     }
-    if (Teclado::teclaFoiPressionada(Teclado::S))
+    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::S))
     {
         return 1;
     }
-    if (Teclado::teclaFoiPressionada(Teclado::M))
+    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::M))
     {
         pause = false;
         return 2;
@@ -64,6 +64,6 @@ bool MenuPausa::getPause() const
 
  void MenuPausa::devoPausar()
  {
-    if (Teclado::teclaFoiPressionada(Teclado::P) || Teclado::teclaFoiPressionada(Teclado::Escape))
+    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::P) || Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Escape))
         pause = true;
  }
