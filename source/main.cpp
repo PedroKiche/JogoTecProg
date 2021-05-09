@@ -1,4 +1,4 @@
-#include"Agonia.hpp"
+#include"Agonia.h"
 #include<iostream>
 
 int main()

@@ -1,4 +1,4 @@
-#include "Alma.hpp"
+#include "Alma.h"
 
 Alma::Alma(): Obstaculo()
 {

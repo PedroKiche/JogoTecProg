@@ -1,4 +1,4 @@
-#include "MenuPausa.hpp"
+#include "MenuPausa.h"
 
 MenuPausa::MenuPausa() : Menu(Ids::menupausa, Vetor2F(400.0f, 300.0f), Vetor2F(800.0f, 600.0f), "../JogoTecProg/texture/menu.png")
 {

@@ -1,4 +1,4 @@
-#include "MenuPrincipal.hpp"
+#include "MenuPrincipal.h"
 #include <iostream>
 
 MenuPrincipal::MenuPrincipal() : Menu(Ids::menuprincipal, Vetor2F(400.0f, 300.0f), Vetor2F(800.0f, 600.0f), "../JogoTecProg/texture/menu.png")

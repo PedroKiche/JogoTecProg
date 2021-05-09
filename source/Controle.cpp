@@ -1,4 +1,4 @@
-#include "Controle.hpp"
+#include "Controle.h"
 
 Controle::Controle()
 {

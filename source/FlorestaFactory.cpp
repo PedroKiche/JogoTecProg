@@ -1,4 +1,4 @@
-#include"FlorestaFactory.hpp"
+#include"FlorestaFactory.h"
 
 
 FlorestaFactory::FlorestaFactory(Gerenciador_Grafico* gf, const bool jogador2): FaseFactory()

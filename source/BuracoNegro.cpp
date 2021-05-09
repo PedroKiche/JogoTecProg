@@ -1,4 +1,4 @@
-#include"BuracoNegro.hpp"
+#include"BuracoNegro.h"
 
 BuracoNegro::BuracoNegro():Projetil()
 {

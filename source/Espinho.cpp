@@ -1,4 +1,4 @@
-#include "Espinho.hpp"
+#include "Espinho.h"
 
 Espinho::Espinho(): Obstaculo()
 {

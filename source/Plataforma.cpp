@@ -1,4 +1,4 @@
-#include"Plataforma.hpp"
+#include"Plataforma.h"
 
 Plataforma::Plataforma(): Entidade_Colidivel()
 {

@@ -1,4 +1,4 @@
-#include "Botao.hpp"
+#include "Botao.h"
 
 Botao::Botao(): Entidade()
 {

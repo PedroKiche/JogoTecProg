@@ -1,4 +1,4 @@
-#include"LimiarFactory.hpp"
+#include"LimiarFactory.h"
 
 
 LimiarFactory::LimiarFactory(Gerenciador_Grafico* gf, const bool jogador2): FaseFactory()

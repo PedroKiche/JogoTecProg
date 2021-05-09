@@ -1,5 +1,5 @@
-#include "Inimigo.hpp"
-#include "Mago.hpp"
+#include "Inimigo.h"
+#include "Mago.h"
 
 Inimigo::Inimigo() : Personagem()
 {

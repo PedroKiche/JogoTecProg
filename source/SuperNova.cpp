@@ -1,4 +1,4 @@
-#include"SuperNova.hpp"
+#include"SuperNova.h"
 #include<iostream>
 
 SuperNova::SuperNova():Projetil()

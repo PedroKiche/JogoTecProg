@@ -1,4 +1,4 @@
-#include"Purgatorio.hpp"
+#include"Purgatorio.h"
 
 Purgatorio::Purgatorio():Fase()
 {

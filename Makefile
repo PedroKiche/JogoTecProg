@@ -4,8 +4,8 @@ PROJ_NAME=jogo
 # .cpp files
 SOURCE=$(wildcard ./source/*.cpp)
 
-# .hpp files 
-HEADERS=$(wildcard ./source/*.hpp)
+# .h files 
+HEADERS=$(wildcard ./source/*.h)
 
 #Object files
 OBJ=$(subst .cpp,.o,$(subst source,objects,$(SOURCE)))
@@ -36,7 +36,7 @@ all: objFolder $(PROJ_NAME)
 $(PROJ_NAME): $(OBJ)
 	$(CC) $^ -o $@ $(SFML)
 
-./objects/%.o: ./source/%.cpp ./source/%.hpp
+./objects/%.o: ./source/%.cpp ./source/%.h
 	$(CC) $< $(CC_FLAGS) -o $@
 
 ./objects/main.o: ./source/main.cpp $(HEADERS)

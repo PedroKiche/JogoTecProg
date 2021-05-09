@@ -1,5 +1,5 @@
-#include "Gargula.hpp"
-#include "Mago.hpp"
+#include "Gargula.h"
+#include "Mago.h"
 Gargula::Gargula()
 {
 }

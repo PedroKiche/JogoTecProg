@@ -1,4 +1,4 @@
-#include "Entidade_Colidivel.hpp"
+#include "Entidade_Colidivel.h"
 
 Entidade_Colidivel::Entidade_Colidivel() : Entidade()
 {

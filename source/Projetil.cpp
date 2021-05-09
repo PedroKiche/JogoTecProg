@@ -1,4 +1,4 @@
-#include "Projetil.hpp"
+#include "Projetil.h"
 
 Projetil::Projetil() : Entidade_Colidivel()
 {

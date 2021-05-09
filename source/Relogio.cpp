@@ -1,4 +1,4 @@
-#include"Relogio.hpp"
+#include"Relogio.h"
 
 Relogio::Relogio()
 {

@@ -1,4 +1,4 @@
-#include"Limiar.hpp"
+#include"Limiar.h"
 
 
 Limiar::Limiar():Fase()

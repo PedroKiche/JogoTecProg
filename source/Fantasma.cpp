@@ -1,5 +1,5 @@
-#include "Fantasma.hpp"
-#include "Mago.hpp"
+#include "Fantasma.h"
+#include "Mago.h"
 #include <iostream>
 
 Fantasma::Fantasma() : Inimigo()

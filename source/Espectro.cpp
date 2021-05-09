@@ -1,5 +1,5 @@
-#include "Espectro.hpp"
-#include "Mago.hpp"
+#include "Espectro.h"
+#include "Mago.h"
 
 Espectro::Espectro() : Inimigo()
 {

@@ -1,5 +1,5 @@
-#include "Aparicao.hpp"
-#include "Fase.hpp"
+#include "Aparicao.h"
+#include "Fase.h"
 
 Aparicao::Aparicao():Inimigo()
 {

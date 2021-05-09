@@ -1,4 +1,4 @@
-#include"PurgatorioFactory.hpp"
+#include"PurgatorioFactory.h"
 
 
 PurgatorioFactory::PurgatorioFactory(Gerenciador_Grafico* gf, const bool jogador2): FaseFactory()

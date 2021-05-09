@@ -1,4 +1,4 @@
-#include "Obstaculo.hpp"
+#include "Obstaculo.h"
 
 Obstaculo::Obstaculo(): Entidade_Colidivel()
 {

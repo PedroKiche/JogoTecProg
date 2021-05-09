@@ -1,4 +1,4 @@
-#include "Gerenciador_Teclado.hpp"
+#include "Gerenciador_Teclado.h"
 
 Gerenciador_Teclado::Gerenciador_Teclado()
 {
