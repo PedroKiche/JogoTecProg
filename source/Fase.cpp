@@ -10,7 +10,7 @@ Fase::Fase() : Entidade()
     pontuacao = 0;
 }
 
-Fase::Fase(Gerenciador_Grafico *GeGr,const Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho, bool jogador2) : Entidade(id, pos, tam, caminho)
+Fase::Fase(bibliotecaGrafica::Gerenciador_Grafico *GeGr,const Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho, bool jogador2) : Entidade(id, pos, tam, caminho)
 {
     gf = GeGr;
     mago1 = new Mago(Vetor2F(50.0,400.0));

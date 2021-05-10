@@ -1,7 +1,7 @@
 #include"FlorestaFactory.h"
 
 
-FlorestaFactory::FlorestaFactory(Gerenciador_Grafico* gf, const bool jogador2): FaseFactory()
+FlorestaFactory::FlorestaFactory(bibliotecaGrafica::Gerenciador_Grafico* gf, const bool jogador2): FaseFactory()
 {
     fase = new Floresta(gf,jogador2);
     srand(time(NULL));

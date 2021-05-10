@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
+namespace bibliotecaGrafica {
 class Gerenciador_Teclado
 {
 public:
@@ -127,4 +128,5 @@ public:
     static bool teclaFoiPressionada(tecla x);
 };
 
+}
 #endif

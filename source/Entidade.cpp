@@ -21,12 +21,12 @@ Entidade::~Entidade()
 {
 }
 
-void Entidade::inicializar(Gerenciador_Grafico *g)
+void Entidade::inicializar(bibliotecaGrafica::Gerenciador_Grafico *g)
 {
     g->carregarTextura(caminho);
 }
 
-void Entidade::desenhar(Gerenciador_Grafico *g)
+void Entidade::desenhar(bibliotecaGrafica::Gerenciador_Grafico *g)
 {
     g->desenhar(caminho, posicao, tamanho);
 }

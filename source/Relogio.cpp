@@ -1,21 +1,24 @@
-#include"Relogio.h"
+#include "Relogio.h"
 
-Relogio::Relogio()
+namespace bibliotecaGrafica
 {
 
-}
+    Relogio::Relogio()
+    {
+    }
 
-Relogio::~Relogio()
-{
+    Relogio::~Relogio()
+    {
+    }
 
-}
+    void Relogio::restartar()
+    {
+        relogio.restart();
+    }
 
-void Relogio::restartar()
-{
-    relogio.restart();
-}
+    float Relogio::tempoDecorrido() const
+    {
+        return relogio.getElapsedTime().asSeconds();
+    }
 
-float Relogio::tempoDecorrido() const
-{
-    return relogio.getElapsedTime().asSeconds();
 }

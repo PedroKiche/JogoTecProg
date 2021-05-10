@@ -19,9 +19,9 @@
 class Agonia
 {
 private:
-    Gerenciador_Grafico gf;
+    bibliotecaGrafica::Gerenciador_Grafico gf;
     Fase* fase;
-    Relogio relogio;
+    bibliotecaGrafica::Relogio relogio;
     MenuPrincipal menuPrincipal;
     MenuPausa menuPausa;
     MenuRanking menuRanking;

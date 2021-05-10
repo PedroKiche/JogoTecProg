@@ -46,7 +46,7 @@ void MenuRanking::carregaRanking()
     ranking.close();   
 }
 
-void MenuRanking::inicializarMenu(Gerenciador_Grafico* gf)
+void MenuRanking::inicializarMenu(bibliotecaGrafica::Gerenciador_Grafico* gf)
 {
     for(int i =0; i < 10; i++)
     {
@@ -55,7 +55,7 @@ void MenuRanking::inicializarMenu(Gerenciador_Grafico* gf)
     inicializar(gf);   
 }
 
-void MenuRanking::desenharMenu(Gerenciador_Grafico* gf)
+void MenuRanking::desenharMenu(bibliotecaGrafica::Gerenciador_Grafico* gf)
 {
     desenhar(gf);
     for(int i = 0; i < 10; i++)
@@ -72,7 +72,7 @@ void MenuRanking::desenharMenu(Gerenciador_Grafico* gf)
 
 int MenuRanking::selecionaOpcao()
 {
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::S)) //sair
+    if (bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::S)) //sair
     {
         return 0;
     }

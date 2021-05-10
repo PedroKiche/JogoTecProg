@@ -11,7 +11,7 @@ class Purgatorio:public Fase
 {
 public:
     Purgatorio();
-    Purgatorio(Gerenciador_Grafico* GeGr, const bool jogador2 = false);
+    Purgatorio(bibliotecaGrafica::Gerenciador_Grafico* GeGr, const bool jogador2 = false);
     ~Purgatorio();
 };
 

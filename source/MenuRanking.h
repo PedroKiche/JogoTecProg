@@ -20,8 +20,8 @@ public:
     void iniciaRanking();
     void carregaRanking();
 
-    void inicializarMenu(Gerenciador_Grafico* gf);
-    void desenharMenu(Gerenciador_Grafico* gf);
+    void inicializarMenu(bibliotecaGrafica::Gerenciador_Grafico* gf);
+    void desenharMenu(bibliotecaGrafica::Gerenciador_Grafico* gf);
     int selecionaOpcao();
     void atualizar(const float t);
     void receberApelido();

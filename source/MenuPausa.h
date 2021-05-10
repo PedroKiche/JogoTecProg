@@ -14,8 +14,8 @@ public:
     MenuPausa();
     ~MenuPausa();
 
-    void inicializarMenu(Gerenciador_Grafico* gf);
-    void desenharMenu(Gerenciador_Grafico* gf);
+    void inicializarMenu(bibliotecaGrafica::Gerenciador_Grafico* gf);
+    void desenharMenu(bibliotecaGrafica::Gerenciador_Grafico* gf);
     void atualizar(const float t);
     int selecionaOpcao();
     bool getPause() const;

@@ -12,7 +12,7 @@ MenuPausa::~MenuPausa()
 {
 }
 
-void MenuPausa::inicializarMenu(Gerenciador_Grafico* gf)
+void MenuPausa::inicializarMenu(bibliotecaGrafica::Gerenciador_Grafico* gf)
 {
     inicializar(gf);
     botaoRetomar.inicializar(gf);
@@ -20,7 +20,7 @@ void MenuPausa::inicializarMenu(Gerenciador_Grafico* gf)
     botaoMenu.inicializar(gf);
 }
 
-void MenuPausa::desenharMenu(Gerenciador_Grafico* gf)
+void MenuPausa::desenharMenu(bibliotecaGrafica::Gerenciador_Grafico* gf)
 {
     desenhar(gf);
     botaoRetomar.desenhar(gf);
@@ -35,15 +35,15 @@ void MenuPausa::atualizar(const float t)
 
 int MenuPausa::selecionaOpcao()
 {
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Escape) || Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::R))
+    if (bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::Escape) || bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::R))
     {
         return 0;
     }
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::S))
+    if (bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::S))
     {
         return 1;
     }
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::M))
+    if (bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::M))
     {
         pause = false;
         return 2;
@@ -64,6 +64,6 @@ bool MenuPausa::getPause() const
 
  void MenuPausa::devoPausar()
  {
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::P) || Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Escape))
+    if (bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::P) || bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::Escape))
         pause = true;
  }

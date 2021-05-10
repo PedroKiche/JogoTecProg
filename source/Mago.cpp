@@ -35,12 +35,12 @@ Mago::Mago(const Vetor2F pos,const bool jogador2) : Personagem(Ids::mago, pos, V
     if(!jogador2)
     {
         caminho =  "../JogoTecProg/texture/mago.png";
-        controle = Controle(Gerenciador_Teclado::A, Gerenciador_Teclado::D, Gerenciador_Teclado::W, Gerenciador_Teclado::C);
+        controle = Controle(bibliotecaGrafica::Gerenciador_Teclado::A, bibliotecaGrafica::Gerenciador_Teclado::D, bibliotecaGrafica::Gerenciador_Teclado::W, bibliotecaGrafica::Gerenciador_Teclado::C);
     }
     else
     {
         caminho =  "../JogoTecProg/texture/mago2.png";
-        controle = Controle(Gerenciador_Teclado::J, Gerenciador_Teclado::L, Gerenciador_Teclado::I, Gerenciador_Teclado::N);
+        controle = Controle(bibliotecaGrafica::Gerenciador_Teclado::J, bibliotecaGrafica::Gerenciador_Teclado::L, bibliotecaGrafica::Gerenciador_Teclado::I, bibliotecaGrafica::Gerenciador_Teclado::N);
     }
 }
 

@@ -2,10 +2,14 @@ Pedro
 16
 Ranki
 16
+Names
+15
 Kiche
 10
 Senna
 10
+Final
+9
 Obrig
 8
 oMago
@@ -14,7 +18,3 @@ Marcos
 4
 Poli
 3
-oMago
-0
-oMago
-0

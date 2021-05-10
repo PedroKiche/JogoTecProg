@@ -18,7 +18,7 @@ MenuPrincipal::~MenuPrincipal()
 {
 }
 
-void MenuPrincipal::inicializarMenu(Gerenciador_Grafico* gf)
+void MenuPrincipal::inicializarMenu(bibliotecaGrafica::Gerenciador_Grafico* gf)
 {
     inicializar(gf);
     botaoNovoJogo.inicializar(gf);
@@ -31,7 +31,7 @@ void MenuPrincipal::inicializarMenu(Gerenciador_Grafico* gf)
     botaoRanking.inicializar(gf);
 }
 
-void MenuPrincipal::desenharMenu(Gerenciador_Grafico* gf)
+void MenuPrincipal::desenharMenu(bibliotecaGrafica::Gerenciador_Grafico* gf)
 {
     desenhar(gf);
     botaoNovoJogo.desenhar(gf);
@@ -58,37 +58,37 @@ void MenuPrincipal::atualizar(float t)
 
 int MenuPrincipal::selecionaOpcao()
 {
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::N)) //Novo jogo
+    if (bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::N)) //Novo jogo
     {
         return 9;
     }
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Num1) || Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Numpad1)) //Fase 1
+    if (bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::Num1) || bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::Numpad1)) //Fase 1
     {
         return 1;
     }
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Num2) || Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Numpad2)) //Fase 2
+    if (bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::Num2) || bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::Numpad2)) //Fase 2
     {
         return 2;
     }
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Num3) || Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Numpad3)) //Fase 3
+    if (bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::Num3) || bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::Numpad3)) //Fase 3
     {
         return 3;
     }
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::J)) //Alternar numero de jogadores para 2
+    if (bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::J)) //Alternar numero de jogadores para 2
     {
         jogador2 = true;
         return 0;
     }
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::K)) //Alternar numero de jogadores para 1
+    if (bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::K)) //Alternar numero de jogadores para 1
     {
         jogador2 = false;
         return 0;
     }
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::C)) //Carregar Jogao
+    if (bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::C)) //Carregar Jogao
     {
         return 4;
     }
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::R))// Ranking
+    if (bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::R))// Ranking
     {
         return 5;
     }

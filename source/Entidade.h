@@ -17,8 +17,8 @@ public:
     Entidade(Ids::Id id, const Vetor2F pos,const Vetor2F tam,  const char *caminho = NULL);
     virtual ~Entidade();
 
-    void inicializar(Gerenciador_Grafico* g);
-    void desenhar(Gerenciador_Grafico* g);
+    void inicializar(bibliotecaGrafica::Gerenciador_Grafico* g);
+    void desenhar(bibliotecaGrafica::Gerenciador_Grafico* g);
 
     void setPosicao(const  Vetor2F posicao);
     Vetor2F getPosicao() const;

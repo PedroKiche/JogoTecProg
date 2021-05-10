@@ -14,7 +14,7 @@ void Lista_Entidades::inserir(Entidade *info)
     lista.inserir(info);
 }
 
-void Lista_Entidades::inicializarEntidades(Gerenciador_Grafico* gf)
+void Lista_Entidades::inicializarEntidades(bibliotecaGrafica::Gerenciador_Grafico* gf)
 {
     Entidade *aux = lista.getInicio();
     while (aux)
@@ -35,7 +35,7 @@ void Lista_Entidades::atualizarEntidades(float t)
     }
 }
 
-void Lista_Entidades::desenharEntidades(Gerenciador_Grafico* gf)
+void Lista_Entidades::desenharEntidades(bibliotecaGrafica::Gerenciador_Grafico* gf)
 {
     Entidade *aux = lista.getInicio();
 

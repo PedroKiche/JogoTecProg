@@ -15,9 +15,9 @@ public:
 
     void inserir(Entidade* info);
     
-    void inicializarEntidades(Gerenciador_Grafico* gf);
+    void inicializarEntidades(bibliotecaGrafica::Gerenciador_Grafico* gf);
     void atualizarEntidades(float t);
-    void desenharEntidades(Gerenciador_Grafico* gf);
+    void desenharEntidades(bibliotecaGrafica::Gerenciador_Grafico* gf);
     void destruirEntidades();
     void removerEntidade(Entidade* info);
 };

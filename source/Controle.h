@@ -7,14 +7,14 @@
 class Controle
 {
 private:
-    Gerenciador_Teclado::tecla esquerda;
-    Gerenciador_Teclado::tecla direita;
-    Gerenciador_Teclado::tecla pulo;
-    Gerenciador_Teclado::tecla ataque;
+    bibliotecaGrafica::Gerenciador_Teclado::tecla esquerda;
+    bibliotecaGrafica::Gerenciador_Teclado::tecla direita;
+    bibliotecaGrafica::Gerenciador_Teclado::tecla pulo;
+    bibliotecaGrafica::Gerenciador_Teclado::tecla ataque;
 
 public:
     Controle();
-    Controle(Gerenciador_Teclado::tecla esq, Gerenciador_Teclado::tecla dir, Gerenciador_Teclado::tecla pul, Gerenciador_Teclado::tecla atq);
+    Controle(bibliotecaGrafica::Gerenciador_Teclado::tecla esq, bibliotecaGrafica::Gerenciador_Teclado::tecla dir, bibliotecaGrafica::Gerenciador_Teclado::tecla pul, bibliotecaGrafica::Gerenciador_Teclado::tecla atq);
     ~Controle();
 
     Vetor2F movimentacao();

@@ -243,7 +243,7 @@ void Agonia::escolherApelido()
      }
     gf.desenharTexto(nick, Vetor2F(300.0,100.0));
 
-    if(Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Enter))
+    if(bibliotecaGrafica::Gerenciador_Teclado::teclaFoiPressionada(bibliotecaGrafica::Gerenciador_Teclado::Enter))
     {
         menuRanking.ranquea(nick,pontuacaoJogo);
         menuRanking.carregaRanking();

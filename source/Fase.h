@@ -13,7 +13,7 @@ class Fase : public Entidade
 protected:
     Gerenciador_Colisoes gc;
     Lista_Entidades listaEntidades;
-    Gerenciador_Grafico *gf;
+    bibliotecaGrafica::Gerenciador_Grafico *gf;
     Mago* mago1;
     Mago* mago2;
     std::set<Inimigo*> inimigos;
@@ -21,7 +21,7 @@ protected:
 
 public:
     Fase();
-    Fase(Gerenciador_Grafico *GeGr,const Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho, const bool jogador2 = false);
+    Fase(bibliotecaGrafica::Gerenciador_Grafico *GeGr,const Ids::Id id, const Vetor2F pos, const Vetor2F tam, const char *caminho, const bool jogador2 = false);
     ~Fase();
 
     void atualizar(const float t);
