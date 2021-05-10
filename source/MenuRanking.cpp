@@ -20,6 +20,7 @@ void MenuRanking::iniciaRanking()
         for(int i = 0; i < 10; i++)
         {   
             getline(ranking,linha);
+            std::cout << linha << std::endl;
             ranqueados[i].setApelido(linha);
 
             getline(ranking,linha);
@@ -62,7 +63,7 @@ void MenuRanking::desenharMenu(Gerenciador_Grafico* gf)
     {   
         std::string pont = std::to_string(i);
         gf->desenharTexto(pont , Vetor2F(300.0f, 180.0f + i* 40.0f));
-        gf->desenharTexto(ranqueados[1].getApelido(), Vetor2F(350.0f, 180.0f + i* 40.0f));
+        gf->desenharTexto(ranqueados[i].getApelido(), Vetor2F(350.0f, 180.0f + i* 40.0f));
         pont = std::to_string(ranqueados[i].getPontos());
         gf->desenharTexto(pont , Vetor2F(480.0f, 180.0f + i* 40.0f));
     }

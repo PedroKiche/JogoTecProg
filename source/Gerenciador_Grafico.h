@@ -16,6 +16,8 @@ private:
     std::map<const std::string, sf::Texture *> texturas;
     sf::Text texto;
     sf::Font fonte;
+    char letra;
+    bool eventoTexto;
 
 public:
     Gerenciador_Grafico();
@@ -28,6 +30,8 @@ public:
     sf::RenderWindow *getJanela() const;
     void eventosJanela();
     void desenharTexto(std::string text, Vetor2F pos);
+    char getLetra();
+    const bool getEventoTexto() const;
 };
 
 #endif

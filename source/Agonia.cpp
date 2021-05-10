@@ -1,6 +1,7 @@
 #include "Agonia.h"
 #include <iostream>
 #include <stdio.h>
+#include "Gerenciador_Teclado.h"
 
 Agonia::Agonia()
 {
@@ -12,6 +13,8 @@ Agonia::Agonia()
     estado = 0;
     faseCarreira = 0;
     pontuacaoJogo = 0;
+    nick = "oMago";
+    contador = -1;
 }
 
 Agonia::~Agonia()
@@ -101,10 +104,15 @@ void Agonia::executar()
             modoCarreira(dt);
             break;
 
+        case 10:
+            escolherApelido();
+            break;
+
         default:
             estado = 0;
             break;
         }
+        
 
         gf.mostrar();
         gf.eventosJanela();
@@ -193,10 +201,10 @@ void Agonia::modoCarreira(float dt)
     {
         pontuacaoJogo += fase->getPontuacao();
         apagaFase();
-        estado = 0;
+        estado = 10;
         faseCarreira = 0;
     }
-    if (estado != 0)
+    if (estado != 0 && estado != 10)
         executaFase(dt);
 }
 
@@ -222,4 +230,30 @@ void Agonia::jogoPause()
     default:
         break;
     }
+}
+
+void Agonia::escolherApelido()
+{   
+    if(contador == -1){
+        gf.getLetra(); // tirar ultima letra pressionada
+        contador ++;
+    }
+    gf.desenharTexto("Escolha seu nick:", Vetor2F(100.0,100.0));
+    gf.desenharTexto("Pontuacao", Vetor2F(100.0,200.0));
+    gf.desenharTexto(std::to_string(pontuacaoJogo), Vetor2F(250.0,200.0));
+    if(gf.getEventoTexto() && contador < 5)
+    {
+        char letra = gf.getLetra();
+        nick[contador] = letra;    
+        contador ++;
+     }
+    gf.desenharTexto(nick, Vetor2F(300.0,100.0));
+
+    if(Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Enter))
+    {
+        //ranquea
+        pontuacaoJogo = 0;
+        estado = 0;
+    }
+    
 }

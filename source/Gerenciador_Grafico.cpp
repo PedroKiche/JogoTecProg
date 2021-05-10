@@ -13,6 +13,8 @@ Gerenciador_Grafico::Gerenciador_Grafico() : janela(new sf::RenderWindow(sf::Vid
     texto.setFont(fonte);
     texto.setCharacterSize(24);
     texto.setStyle(sf::Text::Bold);
+    letra = '0';
+    eventoTexto = false;
 }
 
 Gerenciador_Grafico::~Gerenciador_Grafico()
@@ -96,6 +98,14 @@ void Gerenciador_Grafico::eventosJanela()
         case sf::Event::Closed:
             janela->close();
             break;
+        
+        case sf::Event::TextEntered:
+            if(evento.text.unicode <123 && evento.text.unicode >64 && !eventoTexto)
+            {
+                letra = evento.text.unicode;
+                eventoTexto = true;
+            }
+            break;
         default:
             break;
         }
@@ -107,4 +117,15 @@ void Gerenciador_Grafico::desenharTexto(std::string text, Vetor2F pos)
     texto.setString(text);
     texto.setPosition(pos.x,pos.y);
     janela->draw(texto);
+}
+
+char Gerenciador_Grafico::getLetra()
+{
+    eventoTexto = false;
+    return letra;
+}
+
+ const bool Gerenciador_Grafico::getEventoTexto() const
+{
+    return eventoTexto;
 }

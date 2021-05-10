@@ -14,6 +14,7 @@
 #include "MenuPrincipal.h"
 #include "MenuPausa.h"
 #include "MenuRanking.h"
+#include <string>
 
 class Agonia
 {
@@ -27,6 +28,8 @@ private:
     int estado;
     int faseCarreira;
     int pontuacaoJogo;
+    std::string nick;
+    int contador;
 
 public:
     Agonia();
@@ -39,6 +42,7 @@ public:
     void executaFase(float dt);
     void modoCarreira(float dt);
     void jogoPause();
+    void escolherApelido();
 };
 
 #endif
