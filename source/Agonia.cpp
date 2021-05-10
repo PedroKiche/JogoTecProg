@@ -93,12 +93,6 @@ void Agonia::executar()
             gf.centralizar(Vetor2F(400.0f, 300.0f));
             break;
         
-        //ATUALIZAR RANKING
-        case 6:
-            menuRanking.carregaRanking();
-            estado = 0;
-            break;
-        
          //MODO CARREIRA
         case 9:
             modoCarreira(dt);
@@ -251,7 +245,9 @@ void Agonia::escolherApelido()
 
     if(Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::Enter))
     {
-        //ranquea
+        menuRanking.ranquea(nick,pontuacaoJogo);
+        menuRanking.carregaRanking();
+        contador= -1;
         pontuacaoJogo = 0;
         estado = 0;
     }

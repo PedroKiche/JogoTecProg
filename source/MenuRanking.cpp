@@ -20,7 +20,6 @@ void MenuRanking::iniciaRanking()
         for(int i = 0; i < 10; i++)
         {   
             getline(ranking,linha);
-            std::cout << linha << std::endl;
             ranqueados[i].setApelido(linha);
 
             getline(ranking,linha);
@@ -61,7 +60,7 @@ void MenuRanking::desenharMenu(Gerenciador_Grafico* gf)
     desenhar(gf);
     for(int i = 0; i < 10; i++)
     {   
-        std::string pont = std::to_string(i);
+        std::string pont = std::to_string(i+1);
         gf->desenharTexto(pont , Vetor2F(300.0f, 180.0f + i* 40.0f));
         gf->desenharTexto(ranqueados[i].getApelido(), Vetor2F(350.0f, 180.0f + i* 40.0f));
         pont = std::to_string(ranqueados[i].getPontos());
@@ -77,10 +76,6 @@ int MenuRanking::selecionaOpcao()
     {
         return 0;
     }
-    if (Gerenciador_Teclado::teclaFoiPressionada(Gerenciador_Teclado::C)) //sair
-    {
-        return 6;
-    }
     return 5;
 }
 
@@ -89,3 +84,28 @@ void MenuRanking::atualizar(const float t)
 
 }
 
+void MenuRanking::ranquea(std::string nome, int pontua)
+{
+    if(pontua > ranqueados[9].getPontos())
+    {
+        ranqueados[9].setApelido(nome);
+        ranqueados[9].setPontos(pontua);
+        for(int i = 8; i >= 0; i--)
+        {
+            if(ranqueados[i+1].getPontos() > ranqueados[i].getPontos())
+            {
+                std::string saux;
+                int iaux;
+                iaux = ranqueados[i].getPontos();
+                saux = ranqueados[i].getApelido();
+                ranqueados[i] = ranqueados[i+1];
+                ranqueados[i+1] = Ranqueado(iaux,saux);
+            }
+            else
+            {
+                return;
+            }
+        }
+    }
+
+}

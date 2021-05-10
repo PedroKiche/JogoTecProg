@@ -25,6 +25,7 @@ public:
     int selecionaOpcao();
     void atualizar(const float t);
     void receberApelido();
+    void ranquea(std::string nome, int pontua);
 };
 
 #endif
