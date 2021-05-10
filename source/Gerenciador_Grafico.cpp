@@ -6,6 +6,13 @@ Gerenciador_Grafico::Gerenciador_Grafico() : janela(new sf::RenderWindow(sf::Vid
                                              camera(sf::Vector2f(400, 300), sf::Vector2f(800, 600))
 {
     janela->setView(camera);
+    if (!fonte.loadFromFile("../JogoTecProg/Fonts/berkshireswash-regular.ttf"))
+    {
+    std::cout << "erro" << std::endl;
+    }
+    texto.setFont(fonte);
+    texto.setCharacterSize(24);
+    texto.setStyle(sf::Text::Bold);
 }
 
 Gerenciador_Grafico::~Gerenciador_Grafico()
@@ -93,4 +100,11 @@ void Gerenciador_Grafico::eventosJanela()
             break;
         }
     }
+}
+
+void Gerenciador_Grafico::desenharTexto(std::string text, Vetor2F pos)
+{
+    texto.setString(text);
+    texto.setPosition(pos.x,pos.y);
+    janela->draw(texto);
 }

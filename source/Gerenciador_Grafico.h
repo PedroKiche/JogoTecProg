@@ -14,6 +14,8 @@ private:
     sf::RenderWindow *janela;
     sf::View camera;
     std::map<const std::string, sf::Texture *> texturas;
+    sf::Text texto;
+    sf::Font fonte;
 
 public:
     Gerenciador_Grafico();
@@ -25,6 +27,7 @@ public:
     void centralizar(const Vetor2F centro);
     sf::RenderWindow *getJanela() const;
     void eventosJanela();
+    void desenharTexto(std::string text, Vetor2F pos);
 };
 
 #endif

@@ -24,6 +24,7 @@ public:
     void desenharMenu(Gerenciador_Grafico* gf);
     int selecionaOpcao();
     void atualizar(const float t);
+    void receberApelido();
 };
 
 #endif
